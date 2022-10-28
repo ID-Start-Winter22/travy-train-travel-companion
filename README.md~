@@ -1,4 +1,4 @@
-# Chatbot Projektmodul Start
+# Chatbot Travel Compagnion
 
 Beschreiben Sie kurz Ihre Projektidee (mit Bild oder Storyboard)
 
