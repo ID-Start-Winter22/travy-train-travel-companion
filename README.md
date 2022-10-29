@@ -1,4 +1,4 @@
-# Chatbot Travel Companion
+#  Train Travel Companion
 
 Beschreiben Sie kurz Ihre Projektidee (mit Bild oder Storyboard)
 
