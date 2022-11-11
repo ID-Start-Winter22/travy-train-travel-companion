@@ -1,55 +1,9 @@
 version: "3.0"
 
 stories:
-- story: happy path
+- story: bahn path
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
-
-- story: sad path 1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
-
-- story: sad path 2
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
-
-- story: greet_with_name
-  steps:
-  - intent: greet_formal
-  - action: utter_greet_ask_name
-  - intent: my_name_is
-  - action: action_store_name
-  - action: utter_greet_with_name
-
-- story: greet_with_name2
-  steps:
-  - intent: greet
-  - action: action_store_name
-  - action: utter_greet_ask_name
-  - intent: my_name_is
-  - action: utter_greet_with_name
-
-- story: Ask the bot if it remembers user's name
-  steps:
-  - intent: bot_challenge_name
-  - action: action_get_name
-
-- story: do_the_action
-  steps:
   - intent: get_bahninfo
   - action: action_print_bahndata

@@ -21,12 +21,6 @@ nlu:
     - Hallo
     - hallo
 
-- intent: greet_formal
-  examples: |
-    - guten Tag
-    - guten Abend
-
-
 - intent: goodbye
   examples: |
     - cu
@@ -67,53 +61,6 @@ nlu:
     - nein
     - ne
 
-- intent: mood_great
-  examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
-    - super
-    - gut
-
-- intent: mood_unhappy
-  examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
-    - schlecht
-
-- intent: bot_challenge
-  examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
-    - wer bist du?
-    - bist du ein Mensch?
-    - spreche ich mit einem Chatbot?
-
 - intent: my_name_is
   examples: |
     - Ich heiße [Gudrun](username)
@@ -123,12 +70,6 @@ nlu:
     - Ich bin der [Horst](username)
     - [Hans](username)
     - Meine Freunde nennen mich Michael
-
-- intent: bot_challenge_name
-  examples: |
-    - Wer bin ich?
-    - Wie heisse ich?
-    - Erinnerst du dich an meinen Namen?
 
 - intent: get_bahninfo
   examples: |
