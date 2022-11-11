@@ -1,8 +1,8 @@
 # Rasa Models
-models/*
-results/*
-.rasa
-.rasa/*
+rasa/models/*
+rasa/results/*
+rasa/.rasa
+rasa/.rasa/*
 **/.rasa/*
 **/models/*
 **/__pycache__/*
