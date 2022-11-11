@@ -1,0 +1,25 @@
+<!-- NOTE: During deployment replace localhost with your hosts IP (if you do not use a reverse-proxy). -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>Rasa Chatbot</title>
+</head>
+<body>
+    <div 
+        id="rasa-chat-widget" 
+        data-websocket-url="http://localhost:5005/"  
+        data-height=580
+        data-avatar-url="./chatbot.png"
+        data-avatar-background="#FFFFFF"
+        data-primary="#24b760"
+        data-default-open="true"
+        data-primary-highlight="##c4d32b">
+        
+    </div>
+    <script src="https://unpkg.com/@rasahq/rasa-chat" type="application/javascript"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+version: "3.0"
+
+intents:
+  - greet
+  - greet_formal
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - my_name_is
+  - bot_challenge_name
+  - get_bahninfo
+  
+actions:
+  - action_store_name
+  - action_get_name
+  - action_print_bahndata
+
+entities:
+  - username
+  - bahndata
+
+slots:
+  username:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: username
+
+responses:
+  utter_greet:
+  - text: "Hallo wie geht es Dir?"
+  - text: "Servus, wie isses?"
+  - text: "Hello there, wie geht's?"
+
+  utter_cheer_up:
+  - text: "Lass den Kopf nicht hängen. Schau mal:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Hilft das?"
+
+  utter_happy:
+  - text: "Toll weiter so."
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "Ich bin ein Chatbot, powered by Rasa."
+
+  utter_greet_ask_name:
+  - text: "Hallo, wie heißt Du?"
+
+  utter_greet_with_name:
+  - text: "Hey, {username}. Alles klar?"
+
+  utter_do_the_action:
+  - text: "Die Antwort lautet: {bahndata}!"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
