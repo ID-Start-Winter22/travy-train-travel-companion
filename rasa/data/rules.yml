@@ -1,13 +1,12 @@
 version: "3.0"
 
 rules:
-- rule: Say goodbye anytime the user says goodbye
-  steps:
-  - intent: goodbye
-  - action: utter_goodbye
-  
-- rule: Do the action
+- rule: Get inital train data if the user provides a train-id
   steps:
   - intent: get_bahninfo
   - action: action_print_bahndata
 
+- rule: Answer to 'Ping Pong' status check
+  steps:
+  - intent: check_status
+  - action: utter_pong

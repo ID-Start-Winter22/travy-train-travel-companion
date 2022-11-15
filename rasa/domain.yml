@@ -1,43 +1,25 @@
 version: "3.0"
 
 intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
   - get_bahninfo
   
 actions:
-  - action_store_name
-  - action_get_name
   - action_print_bahndata
 
 entities:
-  - username
-  - bahndata
+  - train_id
 
 slots:
-  username:
+  train_id:
     type: text
     influence_conversation: true
     mappings:
     - type: from_entity
-      entity: username
+      entity: train_id
 
 responses:
-  utter_greet:
-  - text: "Hallo wie geht es Dir?"
-  - text: "Servus, wie isses?"
-  - text: "Hello there, wie geht's?"
-
-  utter_goodbye:
-  - text: "Bye"
-
-  utter_greet_ask_name:
-  - text: "Hallo, wie heißt Du?"
-
-  utter_greet_with_name:
-  - text: "Hey, {username}. Alles klar?"
+  utter_pong:
+  - text: "Pong!"
 
 session_config:
   session_expiration_time: 60
