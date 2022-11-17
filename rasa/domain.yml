@@ -1,10 +1,11 @@
 version: "3.0"
 
 intents:
-  - get_bahninfo
+  - get_traindata
+  - check_status
   
 actions:
-  - action_print_bahndata
+  - action_print_traindata
 
 entities:
   - train_id

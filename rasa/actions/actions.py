@@ -45,10 +45,10 @@ class ActionUserName(Action):
 
         return []
 
-class ActionPrintBahnData(Action):
+class ActionPrintTraindata(Action):
 
     def name(self) -> Text:
-        return "action_print_bahndata"
+        return "action_print_traindata"
 
 
     def run(self, dispatcher, tracker, domain):
@@ -63,8 +63,25 @@ class ActionPrintBahnData(Action):
             # print(platform, scheduled_time, time, delay)
             
             return res.json()"""
-        #bahndata = get_train_details(8000105)
-        bahndata = requests.get('https://google.com/')
-        dispatcher.utter_message('Die Antwort lautet {}'.format(bahndata))
+        #traindata = get_train_details(8000105)
+        #traindata = requests.get('https://google.com/')
+        #dispatcher.utter_message('Die Antwort lautet {}'.format(traindata))
+        number = tracker.get_slot("train_id")
+        if not number :
+            dispatcher.utter_message("Ich kenne deinen Zug noch nicht.")
+        else:
+            dispatcher.utter_message(' Dein Zug ist {}'.format(number))
 
         return []
+    
+class ActionStoreTraindata(Action):
+
+     def name(self) -> Text:
+         return "action_store_traindata"
+         
+     def run(self, dispatcher, tracker, domain):
+        username = tracker.get_slot("train_id")
+        print("Train ID: ", tracker.sender_id)
+
+        return []
+

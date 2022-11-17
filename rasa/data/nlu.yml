@@ -1,12 +1,23 @@
 version: "3.0"
 
 nlu:
-- intent: get_bahninfo
+- intent: get_traindata
   examples: |
-    - Wie heißt der Zug?
-    - Welcher Zug?
-    - Nenne mir den Namen des Zuges.
+    - Wie heißt mein Zug?
+    - Welchen Zug nehme ich?
+    - Nenne mir die Nummer meines Zuges.
     - Zug?
+    - Zugnummer?
+
+- regex: train_id
+  examples: |
+    - \d{7, 9}
+
+- intent: give_traindata
+  examples: |
+    - Mein Zug hat die Nummer [12345678](train_id).
+    - Ich möchte den Zug [12345678](train_id) nehmen.
+    - Zug [12345678](train_id)
 
 - intent: check_status
   examples: |
