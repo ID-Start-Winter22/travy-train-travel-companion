@@ -14,37 +14,6 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 import requests
 
-
-# NOTE(Michael): We could use this action to store the name in
-#                the TrackerStore (in memory database) or a persitent DB
-#                such as MySQL. But we need to store a key-value pair 
-#                to identify the user by id eg. (user_id, slotvalue)
-class ActionStoreUserName(Action):
-
-     def name(self) -> Text:
-         return "action_store_name"
-         
-     def run(self, dispatcher, tracker, domain):
-        username = tracker.get_slot("username")
-        print("Sender ID: ", tracker.sender_id)
-
-        return []
-
-
-class ActionUserName(Action):
-
-     def name(self) -> Text:
-         return "action_get_name"
-
-     def run(self, dispatcher, tracker, domain):
-        username = tracker.get_slot("username")
-        if not username :
-            dispatcher.utter_message(" Du hast mir Deinen Namen nicht gesagt.")
-        else:
-            dispatcher.utter_message(' Du bist {}'.format(username))
-
-        return []
-
 class ActionPrintTraindata(Action):
 
     def name(self) -> Text:
@@ -81,7 +50,7 @@ class ActionStoreTraindata(Action):
          
      def run(self, dispatcher, tracker, domain):
         username = tracker.get_slot("train_id")
-        print("Train ID: ", tracker.sender_id)
+        print("Sender ID: ", tracker.sender_id)
 
         return []
 

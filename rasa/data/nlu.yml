@@ -11,7 +11,7 @@ nlu:
 
 - regex: train_id
   examples: |
-    - \d{7, 9}
+    - /((ECE|ICE|EC|IC|RE|THA|RJ|FLX|HBX|WB|D|EN|NJ|DN|IRE|MEX|RE|FEX|RB|S)(\s|)(\d{1,5}))
 
 - intent: give_traindata
   examples: |
