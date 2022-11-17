@@ -2,6 +2,7 @@ version: "3.0"
 
 intents:
   - get_traindata
+  - give_traindata
   - check_status
   
 actions:
