@@ -7,6 +7,7 @@ intents:
   
 actions:
   - action_print_train_id
+  - action_store_train_data
 
 entities:
   - train_id
