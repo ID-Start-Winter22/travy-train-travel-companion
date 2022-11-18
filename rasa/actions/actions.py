@@ -15,56 +15,28 @@ from rasa_sdk.executor import CollectingDispatcher
 import requests
 
 
-# NOTE(Michael): We could use this action to store the name in
-#                the TrackerStore (in memory database) or a persitent DB
-#                such as MySQL. But we need to store a key-value pair 
-#                to identify the user by id eg. (user_id, slotvalue)
-class ActionStoreUserName(Action):
+class ActionPrintTrainId(Action):
+    def name(self) -> Text:
+        return "action_print_train_id"
+
+    def run(self, dispatcher, tracker, domain):
+        number = tracker.get_slot("train_id")
+        if not number:
+            dispatcher.utter_message("Ich kenne deinen Zug noch nicht.")
+        else:
+            dispatcher.utter_message(' Dein Zug ist {}'.format(number))
+
+        return []
+    
+
+class ActionStoreTrainId(Action):
 
      def name(self) -> Text:
-         return "action_store_name"
+         return "action_store_train_id"
          
      def run(self, dispatcher, tracker, domain):
-        username = tracker.get_slot("username")
+        number = tracker.get_slot("train_id")
         print("Sender ID: ", tracker.sender_id)
 
         return []
 
-
-class ActionUserName(Action):
-
-     def name(self) -> Text:
-         return "action_get_name"
-
-     def run(self, dispatcher, tracker, domain):
-        username = tracker.get_slot("username")
-        if not username :
-            dispatcher.utter_message(" Du hast mir Deinen Namen nicht gesagt.")
-        else:
-            dispatcher.utter_message(' Du bist {}'.format(username))
-
-        return []
-
-class ActionPrintBahnData(Action):
-
-    def name(self) -> Text:
-        return "action_print_bahndata"
-
-
-    def run(self, dispatcher, tracker, domain):
-        """def get_train_details(train_number: int) -> dict:
-            url = f"https://bahn.expert/api/hafas/v2/details/{train_number}"
-            res = requests.get(url)
-            departure = res["departure"]
-            platform = departure["platform"]
-            scheduled_time = departure["scheduledTime"]
-            time = departure["time"]
-            delay = departure["delay"]
-            # print(platform, scheduled_time, time, delay)
-            
-            return res.json()"""
-        #bahndata = get_train_details(8000105)
-        bahndata = requests.get('https://google.com/')
-        dispatcher.utter_message('Die Antwort lautet {}'.format(bahndata))
-
-        return []
