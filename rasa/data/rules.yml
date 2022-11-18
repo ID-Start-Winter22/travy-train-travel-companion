@@ -1,7 +1,7 @@
 version: "3.0"
 
 rules:
-- rule: Get inital train data if the user provides a train-id
+- rule: Tell user the name of the train he/she takes.
   steps:
   - intent: get_train_id
   - action: action_print_train_id
@@ -10,3 +10,8 @@ rules:
   steps:
   - intent: check_status
   - action: utter_pong
+
+- rule: Get inital train data if the user provides a train-id
+  steps:
+  - intent: give_train_id
+  - action: action_store_train_data

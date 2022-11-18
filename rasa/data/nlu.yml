@@ -9,23 +9,20 @@ nlu:
     - Zug?
     - Zugnummer?
 
-- regex: train_id
-  examples: |
-    - ((ECE|ICE|EC|IC|RE|THA|RJ|FLX|HBX|WB|D|EN|NJ|DN|IRE|MEX|RE|FEX|RB|S)(\s|)(\d{1,5}))
-
-# - regex: train_id_txt
-#   examples: |
-#     - ((ECE|ICE|EC|IC|RE|THA|RJ|FLX|HBX|WB|D|EN|NJ|DN|IRE|MEX|RE|FEX|RB|S)(\s|)(\d{1,5}))
-
 - intent: give_train_id
   examples: |
     - Mein Zug hat die Nummer [IC1234](train_id).
-    - Ich möchte den Zug [ICE 1234](train_id) nehmen.
+    - Ich werde den Zug [ICE 1234](train_id) nehmen.
+    - bitte informiere mich über den Zug [RB16]!
+    - Ich nehme die [S8](train_id)
     - Zug [RE 1](train_id)
-    - Bitte den Zug [S8](train_id)
 
 - intent: check_status
   examples: |
     - Ping!
     - ping
     - pin!
+
+- regex: train_id
+  examples: |
+    - ((ECE|ICE|EC|IC|RE|THA|RJ|FLX|HBX|WB|D|EN|NJ|DN|IRE|MEX|RE|FEX|RB|S)(\s|)(\d{1,5}))
