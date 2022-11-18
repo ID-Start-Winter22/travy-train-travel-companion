@@ -14,42 +14,28 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 import requests
 
-class ActionPrintTraindata(Action):
 
+class ActionPrintTrainId(Action):
     def name(self) -> Text:
-        return "action_print_traindata"
-
+        return "action_print_train_id"
 
     def run(self, dispatcher, tracker, domain):
-        """def get_train_details(train_number: int) -> dict:
-            url = f"https://bahn.expert/api/hafas/v2/details/{train_number}"
-            res = requests.get(url)
-            departure = res["departure"]
-            platform = departure["platform"]
-            scheduled_time = departure["scheduledTime"]
-            time = departure["time"]
-            delay = departure["delay"]
-            # print(platform, scheduled_time, time, delay)
-            
-            return res.json()"""
-        #traindata = get_train_details(8000105)
-        #traindata = requests.get('https://google.com/')
-        #dispatcher.utter_message('Die Antwort lautet {}'.format(traindata))
         number = tracker.get_slot("train_id")
-        if not number :
+        if not number:
             dispatcher.utter_message("Ich kenne deinen Zug noch nicht.")
         else:
             dispatcher.utter_message(' Dein Zug ist {}'.format(number))
 
         return []
     
-class ActionStoreTraindata(Action):
+
+class ActionStoreTrainId(Action):
 
      def name(self) -> Text:
-         return "action_store_traindata"
+         return "action_store_train_id"
          
      def run(self, dispatcher, tracker, domain):
-        username = tracker.get_slot("train_id")
+        number = tracker.get_slot("train_id")
         print("Sender ID: ", tracker.sender_id)
 
         return []

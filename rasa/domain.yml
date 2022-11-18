@@ -1,12 +1,12 @@
 version: "3.0"
 
 intents:
-  - get_traindata
-  - give_traindata
+  - get_train_id
+  - give_train_id
   - check_status
   
 actions:
-  - action_print_traindata
+  - action_print_train_id
 
 entities:
   - train_id

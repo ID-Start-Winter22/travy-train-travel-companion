@@ -1,7 +1,7 @@
 version: "3.0"
 
 nlu:
-- intent: get_traindata
+- intent: get_train_id
   examples: |
     - Wie heißt mein Zug?
     - Welchen Zug nehme ich?
@@ -11,13 +11,18 @@ nlu:
 
 - regex: train_id
   examples: |
-    - /((ECE|ICE|EC|IC|RE|THA|RJ|FLX|HBX|WB|D|EN|NJ|DN|IRE|MEX|RE|FEX|RB|S)(\s|)(\d{1,5}))
+    - ((ECE|ICE|EC|IC|RE|THA|RJ|FLX|HBX|WB|D|EN|NJ|DN|IRE|MEX|RE|FEX|RB|S)(\s|)(\d{1,5}))
 
-- intent: give_traindata
+# - regex: train_id_txt
+#   examples: |
+#     - ((ECE|ICE|EC|IC|RE|THA|RJ|FLX|HBX|WB|D|EN|NJ|DN|IRE|MEX|RE|FEX|RB|S)(\s|)(\d{1,5}))
+
+- intent: give_train_id
   examples: |
-    - Mein Zug hat die Nummer [12345678](train_id).
-    - Ich möchte den Zug [12345678](train_id) nehmen.
-    - Zug [12345678](train_id)
+    - Mein Zug hat die Nummer [IC1234](train_id).
+    - Ich möchte den Zug [ICE 1234](train_id) nehmen.
+    - Zug [RE 1](train_id)
+    - Bitte den Zug [S8](train_id)
 
 - intent: check_status
   examples: |
