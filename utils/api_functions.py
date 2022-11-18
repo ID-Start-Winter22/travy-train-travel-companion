@@ -8,7 +8,17 @@ logging.basicConfig(format="%(asctime)s %(message)s")
 BASE_URL = "https://bahn.expert/api/hafas/v2"
 
 
+
 def get_train_data(train_id: str) -> dict:
+    res = requests.get(f"{BASE_URL}/details/{train_id}")
+    if res.status_code != 200:
+        logging.error("[ERROR] Couldn't retrieve train information from train id '{train_id}! Error code {response.status_code}.")
+        return {}
+
+    return res.json()
+
+
+def get_train_data_cleaned(train_id: str) -> dict:
     """ Fetches data from the 'https://bahn.expert/api/hafas/v2/details/{train-id}' endpoint and returns a cleaned json object.
 
         :arg str train_id: id of train from which to fetch data, e.g. "ICE123"
@@ -87,35 +97,7 @@ def get_train_data(train_id: str) -> dict:
     return response
 
 
-def get_station_arrival_data(station_id: str) -> dict:
-    response = requests.get(f"{BASE_URL}/arrivalStationBoard?station={station_id}")
 
-    if response.status_code != 200:
-        logging.error("[ERROR] Couldn't retrieve arrival information for station with id '{station_id}! Error code {response.status_code}.")
-        return {}
+# res = get_train_data("ICE62ßß1")
+# print(res)
 
-    response = response.json()
-
-    return response
-
-def get_station_departure_data(station_id: str) -> dict:
-    return {}
-
-
-def get_train_data_old(train_id: str) -> dict:
-    response = requests.get(f"{BASE_URL}/details/{train_id}")
-
-    if response.status_code != 200:
-        logging.error("[ERROR] Couldn't retrieve train information from train id '{train_id}! Error code {response.status_code}.")
-        return {}
-
-    return response.json()
-
-
-#res = get_train_data("ICE621")
-#print(res)
-
-res = get_station_arrival_data("8000105")
-print(res)
-
-write_json("./test.json", res)
