@@ -32,3 +32,4 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
 | get_times | Requests the arrival, departure and delay from the API |
 | get_platform_plan | Gets an image of the platform plan of the arrival/departure station |
 
+lynn test
