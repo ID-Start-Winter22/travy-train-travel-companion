@@ -23,6 +23,37 @@ nlu:
     - ping
     - pin!
 
+- intent: get_chatbot_information
+  examples: |
+    - Wer bist du?
+    - Was machst du?
+    - wer bist du
+    - hallo
+    - Hallo
+    - hi
+    - hey
+    - hello! 
+
+- intent: ask_mood
+  examples: |
+    - wie geht's dir?
+    - wie geht es dir
+    - Wie läuft's
+
+- intent: get_help
+  examples: |
+    - hilfe
+    - Hilfe!
+    - ich brauche Hilfe
+    - ich brauch hilfe!
+    - was kannst du?
+    - was machst du
+    - Was machst du?
+    - help
+
 - regex: train_id
   examples: |
     - ((ECE|ICE|EC|IC|RE|THA|RJ|FLX|HBX|WB|D|EN|NJ|DN|IRE|MEX|RE|FEX|RB|S)(\s|)(\d{1,5}))
+
+
+
