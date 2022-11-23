@@ -30,5 +30,4 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
 | find_train | Extracts the train number and requests data about it from the API | 
 | get_platform | Requests the platform number from the API |
 | get_times | Requests the arrival, departure and delay from the API |
-| get_platform_plan | Gets an image of the platform plan of the arrival/departure station |
-
+| get_platform_plan | Gets an image of the platform plan of the arrival/departure station 
