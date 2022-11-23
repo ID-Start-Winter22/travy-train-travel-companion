@@ -4,7 +4,7 @@ intents:
   - get_train_id
   - give_train_id
   - check_status
-  - get_chatbot_information
+  - greet
   - ask_mood
   - get_help
   
@@ -27,7 +27,7 @@ responses:
   utter_pong:
   - text: "Pong!"
 
-  utter_chatbot_information:
+  utter_greet:
   - text: |
       Hallo!
       Ich bin der Train Travel Companion!
@@ -39,10 +39,11 @@ responses:
   utter_help:
   - text: |
       Bevor du das nächste mal mit dem Zug fährst kannst du mir deine Zugnummer schreiben und ich werde dich auf deiner Reise begleiten! Ich kann dir mitteilen, ...
-      ... wenn sich dein Gleis ändert.
-      ... ob dein Zug sich verspätet.
-      ... ob dein Zug ausfällt.
-      ... wie du deinen Gleis findest.
+      ... wenn sich dein Gleis ändert,
+      ... ob sich dein Zug verspätet,
+      ... ob dein Zug ausfällt,
+      ... wie du deinen Gleis findest,
+      ... und vieles mehr!
       Wenn dich interessiert, was ich noch so kann oder vielleicht auch wie ich funktionere, schau gerne mal hier rein:
       https://github.com/ID-Start-Winter22/chat-team-11/wiki
 

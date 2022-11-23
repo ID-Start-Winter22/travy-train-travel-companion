@@ -16,17 +16,17 @@ rules:
   - intent: give_train_id
   - action: action_store_train_data
 
-- rule: Get chatbot information.
+- rule: Greet the user. 
   steps:
-  - intent: get_chatbot_information
-  - action: utter_chatbot_information
+  - intent: greet
+  - action: utter_greet
 
-- rule: Answer 'how are you?'
+- rule: Answer 'how are you?'.
   steps:
   - intent: ask_mood
   - action: utter_mood
 
-- rule: Give help
+- rule: Give help.
   steps:
   - intent: get_help
   - action: utter_help

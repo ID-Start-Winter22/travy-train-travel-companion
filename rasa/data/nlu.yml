@@ -23,10 +23,9 @@ nlu:
     - ping
     - pin!
 
-- intent: get_chatbot_information
+- intent: greet
   examples: |
     - Wer bist du?
-    - Was machst du?
     - wer bist du
     - hallo
     - Hallo
