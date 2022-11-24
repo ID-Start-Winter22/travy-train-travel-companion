@@ -9,7 +9,7 @@ The chatbot is built using the [Rasa](https://rasa.com/) framework.<br/>
 To get live data about the trains, the backend makes requests to the public [bahn.expert](https://docs.bahn.expert/) API.
 
 ## Who is it for?
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+Train Travel Compagnion is for everyone who wants to revieve relevant and concise information about his train rides. We mainly target younger people, who want to avoid long research.
 
 ---
 
