@@ -1,0 +1,15 @@
+{
+    "9f9efc54ed7f4af8945c38ba4b51acf0": {
+        "trainId": "EC115",
+        "from": "M\u00fcnster(Westf)Hbf",
+        "to": "Klagenfurt Hbf",
+        "departureTime": "2022-11-25T05:26:00.000Z",
+        "arrivalTime": "2022-11-25T18:16:00.000Z",
+        "platform": "12",
+        "actualDepartureTime": "2022-11-25T05:26:52.000Z",
+        "actualArrivalTime": "2022-11-25T18:16:00.000Z",
+        "departureDelay": 0,
+        "arrivalDelay": 0,
+        "cancelled": false
+    }
+}
