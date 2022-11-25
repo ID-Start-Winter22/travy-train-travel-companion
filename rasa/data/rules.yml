@@ -31,3 +31,10 @@ rules:
   - intent: get_help
   - action: utter_help
 
+- rule: Ask the user to rephrase whenever they send a message with low NLU confidence
+  steps:
+  - intent: nlu_fallback
+  - action: utter_failed
+
+
+

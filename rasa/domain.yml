@@ -11,6 +11,7 @@ intents:
 actions:
   - action_print_train_id
   - action_store_train_data
+  - utter_please_rephrase
 
 entities:
   - train_id
@@ -47,6 +48,8 @@ responses:
       Wenn dich interessiert, was ich noch so kann oder vielleicht auch wie ich funktionere, schau gerne mal hier rein:
       https://github.com/ID-Start-Winter22/chat-team-11/wiki
 
+  utter_failed:
+  - text: "Tut mir leid! Das hab ich leider nicht verstanden."
 
 session_config:
   session_expiration_time: 60
