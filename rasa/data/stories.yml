@@ -5,3 +5,4 @@ stories:
   steps:
   - intent: get_train_id
   - action: action_print_train_id
+
