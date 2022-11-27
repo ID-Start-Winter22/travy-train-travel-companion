@@ -1,25 +1,32 @@
 import json
 import requests
 import logging
+import json
 
 from api_functions import get_train_data, load_json, write_json
 
+logging.basicConfig(format="%(asctime)s %(message)s")
 
-def send_chatbot_message(conversation_id: str, intent_to_trigger: str, output_channel: str="latest") -> None:
+
+def trigger_chatbot_message(conversation_id: str, train_entity_type: str, train_entity_value: str, output_channel: str="latest") -> None:
     """ Triggers intent in order to automatically notify the user with the changed train data.
         :param str conversation_id: id of rasa conversation
-        :param str intent_to_trigger: intent which need to get triggered in order to send a message
         :param str output_channel: channel to which the message should get send, default: lastest channel
     """
 
     trigger_intent_endpoint = f"http://localhost:5005/conversations/{conversation_id}/trigger_intent?output_channel={output_channel}"
     body = {
-        "name": intent_to_trigger
+        "name": "notify_train_data_change",
+        "entities": {
+            "train_entity_type": train_entity_type,
+            "train_entity_value": train_entity_value
+        }
     }
     
-    res = requests.post(trigger_intent_endpoint, data=body)
+    res = requests.post(trigger_intent_endpoint, data=json.dumps(body))
+
     if res.status_code != 200:
-        logging.error("[ERROR] Couldn't notify user with conservation id '{conversation_id}! Error code {response.status_code}.")
+        logging.error(f"[ERROR] Couldn't notify user with conservation id '{conversation_id}! Error code {res.status_code}, reason: {res.reason}")
         return -1
 
 
@@ -29,6 +36,8 @@ def check_train_changes(user_data_path: str) -> None:
         if so, update the entries and notify the users.
         :param str user_data_path: path to the user data JSON file
     """
+
+    logging.info("[INFO] checking train data changes.")
 
     # read user data JSON file
     user_data = load_json(user_data_path)
@@ -46,11 +55,10 @@ def check_train_changes(user_data_path: str) -> None:
         new_train_data = get_train_data(train_id)
 
         # check if the train got cancelled
-        if new_train_data["cancelled"]:
+        if "cancelled" in new_train_data:
             current_train_data["cancelled"] = new_train_data["cancelled"]
 
-            message = f"Achtung! Dein Zug fällt aus!"
-            send(message)
+            trigger_chatbot_message(conversation_id, "cancellation", "")
             continue
 
         # check if the departure time changed
@@ -60,8 +68,8 @@ def check_train_changes(user_data_path: str) -> None:
             current_train_data["actualDepartureTime"] = new_departure_time
             current_train_data["departureDelay"] = departure_delay
 
-            message = f"Achtung! Dein Zug hat um {departure_delay} Minuten Verspätung!\nNeue Abfahrtszeit: {new_departure_time}."
-            send(message)
+            trigger_chatbot_message(conversation_id, "departure_delay", departure_delay)
+
 
         # check if the arrival time changed
         if new_train_data["arrival"]["time"] != current_train_data["actualArrivalTime"]:
@@ -70,15 +78,19 @@ def check_train_changes(user_data_path: str) -> None:
             current_train_data["actualArrivalTime"] = new_arrival_time
             current_train_data["arrivalDelay"] = arrival_delay
 
-            message = f"Achtung! Dein Zug kommt {arrival_delay} Minuten später an!\nNeue Ankunftszeit: {new_arrival_time}."
-            send(message)
+            trigger_chatbot_message(conversation_id, "arrival_delay", arrival_delay)
+
 
         # check if the platorm changed
         if new_train_data["departure"]["platform"] != current_train_data["platform"]:
             new_platform = new_train_data["departure"]["platform"]
-            current_train_data["platform"] = new_platform
+            # current_train_data["platform"] = new_platform
 
-            message = f"Achtung! Dein Gleis hat sich geändert.\nNeuer Gleis: {new_platform}."
-            send(message)
+            trigger_chatbot_message(conversation_id, "platform_change", new_platform)
+
+        # store updated user-train entry
+        write_json(user_data_path, conversation_id, current_train_data)
 
 
+
+check_train_changes("../data/user_data.json")
