@@ -63,11 +63,14 @@ class ActionStoreTrainData(Action):
         departure_delay, arrival_delay = "", ""
         if "delay" in train_data["departure"]:
             departure_delay = train_data["departure"]["delay"]
-            arrival_delay = train_data["arrival"]["delay"]
             if departure_delay > 0:
                 response_message += f" Abfahrtsverzögerung: {departure_delay} Minuten!\n"
+            
+        if "delay" in train_data["arrival"]:
+            arrival_delay = train_data["arrival"]["delay"]
             if arrival_delay > 0:
                 response_message += f" Ankunftsverzögerung: {arrival_delay} Minuten!\n"
+        
 
         # check if the train got cancelled
         cancelled = False
@@ -116,7 +119,7 @@ class ActionToTrigger(Action):
             dispatcher.utter_message(f"Achtung! Deine Zugreise verlängert sich um {train_entity_value} Minuten.\nNeue Ankunftszeit: 00:00")
 
         elif train_entity_type == "platform_change":
-            dispatcher.utter_message(f"Achtung! Dein Gleis hat sich geändert.\nNeuer Gleis: {train_entity_value}")
+            dispatcher.utter_message(f"Achtung! Dein Gleis hat sich geändert.\nNeues Gleis: {train_entity_value}")
 
         elif train_entity_type == "cancellation":
             dispatcher.utter_message(f"Achtung! Dein Zug fällt aus!")

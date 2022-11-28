@@ -84,7 +84,7 @@ def check_train_changes(user_data_path: str) -> None:
         # check if the platorm changed
         if new_train_data["departure"]["platform"] != current_train_data["platform"]:
             new_platform = new_train_data["departure"]["platform"]
-            # current_train_data["platform"] = new_platform
+            current_train_data["platform"] = new_platform
 
             trigger_chatbot_message(conversation_id, "platform_change", new_platform)
 
