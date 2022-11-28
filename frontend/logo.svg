@@ -1,0 +1,12 @@
+<svg width="200" height="232" viewBox="0 0 200 232" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 50C5 25.1472 25.1472 5 50 5H150C174.853 5 195 25.1472 195 50V217C195 222.523 190.523 227 185 227H15C9.47715 227 5 222.523 5 217V50Z" fill="white" stroke="white" stroke-width="10"/>
+<path d="M26 53C26 37.536 38.536 25 54 25H147C162.464 25 175 37.536 175 53V124C175 129.523 170.523 134 165 134H36C30.4772 134 26 129.523 26 124V53Z" fill="#5C17E8" stroke="#5C17E8" stroke-width="10"/>
+<rect x="25" y="161" width="32" height="32" rx="16" fill="#5C17E8" stroke="#5C17E8" stroke-width="8"/>
+<rect x="144" y="161" width="32" height="32" rx="16" fill="#5C17E8" stroke="#5C17E8" stroke-width="8"/>
+<mask id="path-5-inside-1_15_5" fill="white">
+<path d="M76 199C76 196.239 78.2386 194 81 194H121C123.761 194 126 196.239 126 199V220C126 222.761 123.761 225 121 225H96C84.9543 225 76 216.046 76 205V199Z"/>
+</mask>
+<path d="M76 199C76 196.239 78.2386 194 81 194H121C123.761 194 126 196.239 126 199V220C126 222.761 123.761 225 121 225H96C84.9543 225 76 216.046 76 205V199Z" fill="#5C17E8" stroke="#5C17E8" stroke-width="16" mask="url(#path-5-inside-1_15_5)"/>
+<ellipse cx="48.384" cy="162.5" rx="12.1945" ry="7.71755" transform="rotate(27.6876 48.384 162.5)" fill="white"/>
+<ellipse cx="167.384" cy="164.5" rx="12.1945" ry="7.71755" transform="rotate(27.6876 167.384 164.5)" fill="white"/>
+</svg>
