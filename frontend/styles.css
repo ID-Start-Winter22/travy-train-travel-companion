@@ -1,0 +1,157 @@
+/* CHAT WINDOW */
+
+.header-container {
+    position: absolute;
+    width: calc(100% - 2px);
+    height: 80px;
+    top: -70px;
+    left: 0px;
+    background-color: #ffffff;
+    /*background: linear-gradient(to bottom right, #6025ce 10%, #40cfa9);*/
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border: 1px solid #DDE2EE;
+    box-shadow: 0 9.5px 12.7px 0 rgb(0 0 0 / 5%);
+}
+
+.logo-image {
+    position: absolute;
+    top: 15px;
+    left: 17px;
+    height: 50px;
+}
+
+.logo-placeholder {
+    position: absolute;
+    top: 20px;
+    left: 22px;
+    height: 42px;
+    width: 42px;
+    border-radius: 100%;
+    background: linear-gradient(to bottom right, #5c17e8 30%, rgb(131, 73, 224));
+}
+
+.chatbot-title {
+    position: absolute;
+    left: 79px;
+    top: 3px;
+    font-family: 'Noto Sans';
+    font-weight: bold;
+    font-size: 20px;
+    color: rgb(16, 16, 16);
+}
+
+.chatbot-sub-title {
+    position: absolute;
+    left: 80px;
+    top: 34px;
+    font-family: 'Noto Sans';
+    font-weight: bold;
+    font-size: 15px;
+    color: #e93737;
+}
+
+.status-text {
+    position: absolute;
+    left: 95px;
+    top: 34px;
+    font-family: 'Noto Sans';
+    font-weight: bold;
+    font-size: 15px;
+    color: #adadad;
+}
+
+.status-indicator {
+    position: absolute;
+    left: 80px;
+    top: 51px;
+    width: 9px;
+    height: 9px;
+    border-radius: 100%;
+    background-color:#fd3535;
+}
+
+
+
+/* PAGE */
+.navigation-bar {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 70px;
+    width: 100%;
+    background-color: white;
+    border-bottom: 1px solid rgb(242, 242, 242);
+}
+
+.content-container {
+    position: absolute;
+    top: 71px;
+    left: 0px;
+    height: calc(100% - 60px);
+    width: 100%;
+    background-color: rgb(250, 250, 250);
+}
+
+.status-container {
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    width: 225px;
+    height: 120px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    border: 1px solid rgb(241, 241, 241);
+    border-bottom: 1px solid rgb(214, 214, 214);
+    box-shadow: 0 10px 25px -15px rgb(148 148 148);
+}
+
+.status-title {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    font-family: 'Noto Sans';
+    font-weight: bold;
+    font-size: 17px;
+    margin: 0px;
+    color: #252525;
+}
+
+.server-status-box {
+    position: relative;
+    padding-top: 0px;
+    top: 5px;
+    left: 15px;
+    height: 50px;
+    width: calc(100% - 20px);
+}
+
+.server-status-indicator {
+    position: absolute;
+    top: 16px;
+    left: 0px;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: red;
+}
+
+.server-status-title {
+    position: absolute;
+    left: 17px;
+    top: 10px;
+    font-family: 'Noto Sans';
+    font-size: 15px;
+    margin: 0px;
+    color: #252525;
+}
+
+.server-status-text {
+    position: absolute;
+    left: 17px;
+    top: 30px;
+    font-family: 'Noto Sans';
+    font-size: 15px;
+    margin: 0px;
+    color: #929292;
+}
