@@ -1,102 +1,68 @@
-/* CHAT WINDOW */
-
-.header-container {
-    position: absolute;
-    width: calc(100% - 2px);
-    height: 80px;
-    top: -70px;
-    left: 0px;
-    background-color: #ffffff;
-    /*background: linear-gradient(to bottom right, #6025ce 10%, #40cfa9);*/
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    border: 1px solid #DDE2EE;
-    box-shadow: 0 9.5px 12.7px 0 rgb(0 0 0 / 5%);
-}
-
-.logo-image {
-    position: absolute;
-    top: 15px;
-    left: 17px;
-    height: 50px;
-}
-
-.logo-placeholder {
-    position: absolute;
-    top: 20px;
-    left: 22px;
-    height: 42px;
-    width: 42px;
-    border-radius: 100%;
-    background: linear-gradient(to bottom right, #5c17e8 30%, rgb(131, 73, 224));
-}
-
-.chatbot-title {
-    position: absolute;
-    left: 79px;
-    top: 3px;
-    font-family: 'Noto Sans';
-    font-weight: bold;
-    font-size: 20px;
-    color: rgb(16, 16, 16);
-}
-
-.chatbot-sub-title {
-    position: absolute;
-    left: 80px;
-    top: 34px;
-    font-family: 'Noto Sans';
-    font-weight: bold;
-    font-size: 15px;
-    color: #e93737;
-}
-
-.status-text {
-    position: absolute;
-    left: 95px;
-    top: 34px;
-    font-family: 'Noto Sans';
-    font-weight: bold;
-    font-size: 15px;
-    color: #adadad;
-}
-
-.status-indicator {
-    position: absolute;
-    left: 80px;
-    top: 51px;
-    width: 9px;
-    height: 9px;
-    border-radius: 100%;
-    background-color:#fd3535;
-}
-
-
-
-/* PAGE */
+/* navigation bar */
 .navigation-bar {
     position: fixed;
     top: 0px;
     left: 0px;
-    height: 70px;
+    height: 80px;
     width: 100%;
     background-color: white;
     border-bottom: 1px solid rgb(242, 242, 242);
 }
 
-.content-container {
+.home-button {
     position: absolute;
-    top: 71px;
-    left: 0px;
-    height: calc(100% - 60px);
-    width: 100%;
-    background-color: rgb(250, 250, 250);
+    left: 185px;
+    top: 10px;
+    bottom: 10px;
+    width: 330px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    transition: 0.075s ease-in;
 }
 
+.home-button:hover {
+    transition: 0.075s ease-in;
+    background-color: #f1f1f1;
+}
+
+
+.navigation-bar-logo {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 5px;
+    left: 10px;
+}
+
+.navigation-bar-title {
+    position: absolute;
+    left: 75px;
+    top: 2px;
+    margin: 0px;
+    height: 60px;
+    line-height: 60px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 23px;
+}
+
+
+/* page body elements */
+.content-container {
+    position: absolute;
+    top: 81px;
+    left: 0px;
+    height: calc(100% - 81px);
+    width: 100%;
+    background-color: rgb(251, 251, 251);
+}
+
+/* status box elements */
 .status-container {
     position: absolute;
     bottom: 50px;
-    left: 50px;
+    left: 200px;
     width: 225px;
     height: 120px;
     background-color: rgb(255, 255, 255);
@@ -110,7 +76,7 @@
     position: absolute;
     left: 10px;
     top: 10px;
-    font-family: 'Noto Sans';
+    font-family: 'Nunito Sans', sans-serif;
     font-weight: bold;
     font-size: 17px;
     margin: 0px;
@@ -140,7 +106,7 @@
     position: absolute;
     left: 17px;
     top: 10px;
-    font-family: 'Noto Sans';
+    font-family: 'Nunito Sans', sans-serif;
     font-size: 15px;
     margin: 0px;
     color: #252525;
@@ -150,8 +116,106 @@
     position: absolute;
     left: 17px;
     top: 30px;
-    font-family: 'Noto Sans';
+    font-family: 'Nunito Sans', sans-serif;
     font-size: 15px;
     margin: 0px;
     color: #929292;
+}
+
+
+/* main content elements */
+.home-explanation-container {
+    position: absolute;
+    top: 150px;
+    left: 200px;
+    width: 600px;
+    height: 600px;
+}
+
+.home-explanation-title {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    margin: 0px;
+    font-size: 48px;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.home-explanation-text {
+    position: relative;
+    top: 10px;
+    left: 0px;
+    margin: 0px;
+    font-size: 35px;
+    font-weight: bold;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.add-chatbot-text {
+    position: relative;
+    top: 50px;
+    left: 0px;
+    margin: 0px;
+    font-size: 20px;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.whatsapp-number-container {
+    position: relative;
+    top: 60px;
+    left: 0px;
+    height: 40px;
+    width: 370px;
+    border: solid 3px #5c17e8;
+    border-radius: 5px;
+}
+
+.whatsapp-number-text {
+    position: absolute;
+    left: 15px;
+    top: 2px;
+    height: 40px;
+    margin: 0px;
+    line-height: 40px;
+    font-size: 20px;
+    font-family: 'Nunito Sans', sans-serif;
+    color: #5c17e8;
+}
+
+.whatsapp-number-copy-button {
+    position: absolute;
+    right: 3px;
+    top: 3px;
+    bottom: 3px;
+    width: 75px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    color: white;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: bold;
+    font-size: 17px;
+    background: linear-gradient(to bottom right, #5c17e8 30%, rgb(131, 73, 224));
+    transition: 0.075s ease-in;
+}
+
+.whatsapp-number-copy-button:hover {
+    transition: 0.075s ease-in;
+    box-shadow: 0 0 7px #5d17e8a2;
+}
+
+.whatsapp-number-copy-button:active {
+    transition: 0.075s ease-in;
+    transition: 0.1s ease-in;
+    transform: scale(0.95);
+}
+
+.chat-illustration {
+    position: absolute;
+    top: 150px;
+    left: 900px;
+    width: 475px;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    z-index: 10;
 }

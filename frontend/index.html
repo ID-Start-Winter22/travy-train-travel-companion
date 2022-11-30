@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="./styles.css">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
     <title>Train Travel Companion</title>
 </head>
 <body>
@@ -21,52 +23,29 @@
         data-default-open="true"
         data-primary-highlight="#5c17e8">
     </div>
-
-    <style>
-        .css-463jce {
-            display: none;
-        }
-
-        .css-1c77470 {
-            background-color: #f5f5f5;
-        }
-
-        .css-1c58232 {
-            background: linear-gradient(to bottom right, #5c17e8 30%, rgb(131, 73, 224));
-        }
-
-        .css-roj31g {
-            background: linear-gradient(to bottom right, #5c17e8 30%, rgb(131, 73, 224));
-        }
-
-        .css-1di2tiy {
-            background-color: white;
-        }
-
-        .css-roj31g {
-            border-radius: 20px 20px 4px 20px;
-            z-index: 2;
-        }
-
-        .css-1di2tiy {
-            border-radius: 20px 20px 20px 4px;
-        }
-
-        .sleepy-logo-image {
-            position: absolute;
-            left: 80px;
-            top: 175px;
-            height: 160px;
-            z-index: 1;
-        }
-
-    </style>
+    <link rel="stylesheet" href="./chatWidgetStyles.css">
 
     <div class="navigation-bar">
-        
+        <button class="home-button" onClick="window.location.reload();">
+            <img src="./logo.svg" class="navigation-bar-logo"/>
+            <h2 class="navigation-bar-title">Train Travel Companion</h2>
+        </button>
     </div>
 
     <div class="content-container">
+        <div class="home-explanation-container">
+            <h1 class="home-explanation-title">Dein Zugreisebegleiter -</h1>
+            <p class="home-explanation-text">Bleib während deiner Reise über alle Fahrtänderungen informiert!</p>
+            <p class="add-chatbot-text">Jetzt <b>kostenlos</b> auf WhatsApp hinzufügen:</p>
+
+            <div class="whatsapp-number-container">
+                <h1 class="whatsapp-number-text">coming soon...</h1>
+                <button class="whatsapp-number-copy-button" onClick="navigator.clipboard.writeText('coming soon...');">copy</button>
+            </div>
+        </div>
+
+        <img src="./undraw_chat.svg" class="chat-illustration"/>
+        
         <div class="status-container">
             <div class="server-status-box">
                 <div class="server-status-indicator" id="s1-indicator"></div>

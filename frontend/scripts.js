@@ -62,7 +62,7 @@ function checkStatus() {
     // stop this interval function if both servers are online
     if (document.getElementsByClassName("status-text")[0].innerText === "online" && 
     document.getElementById("s2-text").innerText === "online") {
-        clearInterval(t);
+        clearInterval(checkStatusInterval);
     }
 
     // handle rasa server status
@@ -109,5 +109,8 @@ function checkStatus() {
 checkStatus();
 
 // run status check function in intervall
-var t = setInterval(checkStatus, 5000);
+var checkStatusInterval = setInterval(checkStatus, 5000);
 
+// add shadow to chat widget (it has no css class therefore handled in js)
+var chatWidgetChildren = document.getElementsByClassName("css-1kgb40s")[0].childNodes;
+chatWidgetChildren[0].style.boxShadow = "0 10px 25px -15px rgb(148 148 148)";
