@@ -1,4 +1,3 @@
-<!-- NOTE: During deployment replace localhost with your hosts IP (if you do not use a reverse-proxy). -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,33 +51,31 @@
         </nav>
     </div>
 
-    <div class="page-content">
-        <div class="content-container">
-            <div class="home-explanation-container">
-                <h1 class="home-explanation-title">Dein Zugreise-Chatbot</h1>
-                <p class="home-explanation-text">Bleib während deiner Reise über alle Fahrtänderungen informiert!</p>
-                <p class="add-chatbot-text">Jetzt <b>kostenlos</b> auf WhatsApp hinzufügen:</p>
-    
-                <div class="whatsapp-number-container">
-                    <h1 class="whatsapp-number-text">coming soon...</h1>
-                    <button class="whatsapp-number-copy-button" onClick="navigator.clipboard.writeText('coming soon...');">copy</button>
-                </div>
+    <section style="height: calc(100% - 200px)">
+        <div class="home-explanation-container">
+            <h1 class="home-explanation-title">Dein Zugreise-Chatbot</h1>
+            <p class="home-explanation-text">Bleib während deiner Reise über alle Fahrtänderungen informiert!</p>
+            <p class="add-chatbot-text">Jetzt <b>kostenlos</b> auf WhatsApp hinzufügen:</p>
+
+            <div class="whatsapp-number-container">
+                <h1 class="whatsapp-number-text">coming soon...</h1>
+                <button class="whatsapp-number-copy-button" onClick="navigator.clipboard.writeText('coming soon...');">copy</button>
             </div>
-    
-            <img src="./images/undraw_chat.svg" class="chat-illustration"/>
-            
-            <div class="status-container">
-                <div class="server-status-box">
-                    <div class="server-status-indicator" id="s1-indicator"></div>
-                    <h1 class="server-status-title">rasa server</h1>
-                    <p class="server-status-text" id="s1-text">offline</p>
-                </div>
-                <div class="server-status-box">
-                    <div class="server-status-indicator" id="s2-indicator"></div>
-                    <h1 class="server-status-title">rasa action server</h1>
-                    <p class="server-status-text" id="s2-text">offline</p>
-                </div>
-            </div>
+        </div>
+        <img src="./images/undraw_chat.svg" class="chat-illustration"/>
+        <img src="./images/waves.svg" class="wave-illustration"/>
+    </section>
+
+    <div class="status-container">
+        <div class="server-status-box">
+            <div class="server-status-indicator" id="s1-indicator"></div>
+            <h1 class="server-status-title">rasa server</h1>
+            <p class="server-status-text" id="s1-text">offline</p>
+        </div>
+        <div class="server-status-box">
+            <div class="server-status-indicator" id="s2-indicator"></div>
+            <h1 class="server-status-title">rasa action server</h1>
+            <p class="server-status-text" id="s2-text">offline</p>
         </div>
     </div>
 
