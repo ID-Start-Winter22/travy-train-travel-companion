@@ -104,11 +104,10 @@
 .status-text {
     position: absolute;
     left: 95px;
-    top: 34px;
+    top: 30px;
     font-family: 'Nunito Sans', sans-serif;
-    font-weight: bold;
     font-size: 15px;
-    color: #adadad;
+    color: #929292;
 }
 
 .status-indicator {

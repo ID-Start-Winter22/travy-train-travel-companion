@@ -38,7 +38,7 @@ chatbotTitle.classList.add("chatbot-title");
 headerContainer.appendChild(chatbotTitle);
 
 // add server status text to header bar
-var statusText = document.createElement("h1");
+var statusText = document.createElement("p");
 statusText.innerText = "offline";
 statusText.classList.add("status-text");
 headerContainer.appendChild(statusText);

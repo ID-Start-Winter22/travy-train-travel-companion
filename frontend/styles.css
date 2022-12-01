@@ -11,10 +11,10 @@
 
 .home-button {
     position: absolute;
-    left: 185px;
+    left: 290px;
     top: 10px;
     bottom: 10px;
-    width: 330px;
+    width: 300px;
     background-color: rgb(255, 255, 255);
     border-radius: 5px;
     border: none;
@@ -30,40 +30,49 @@
 
 .navigation-bar-logo {
     position: absolute;
-    width: 50px;
-    height: 50px;
-    top: 5px;
+    width: 40px;
+    height: 40px;
+    top: 10px;
     left: 10px;
 }
 
 .navigation-bar-title {
     position: absolute;
-    left: 75px;
+    left: 65px;
     top: 2px;
     margin: 0px;
     height: 60px;
     line-height: 60px;
     font-family: 'Nunito Sans', sans-serif;
-    font-size: 23px;
+    font-size: 21px;
     color: #1a1a1a;
 }
 
 
 /* page body elements */
-.content-container {
+.page-content {
     position: absolute;
     top: 81px;
     left: 0px;
     height: calc(100% - 81px);
     width: 100%;
-    background-color: rgb(251, 251, 251);
+    /*background-color: rgb(251, 251, 251);*/
+    background: linear-gradient(to bottom right, rgb(251, 251, 251) 55%, rgba(131, 73, 224, 0.5));
+}
+
+.content-container {
+    position: absolute;
+    top: 0px;
+    left: 300px;
+    right: 300px;
+    height: 100%;
 }
 
 /* status box elements */
 .status-container {
-    position: absolute;
-    bottom: 50px;
-    left: 200px;
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
     width: 225px;
     height: 120px;
     background-color: rgb(255, 255, 255);
@@ -128,7 +137,7 @@
 .home-explanation-container {
     position: absolute;
     top: 150px;
-    left: 200px;
+    left: 0px;
     width: 600px;
     height: 100px;
 }
@@ -217,7 +226,7 @@
 .chat-illustration {
     position: absolute;
     top: 150px;
-    left: 900px;
+    right: 0px;
     width: 475px;
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
@@ -230,7 +239,7 @@
     top: 25px;
     bottom: 25px;
     display: block;
-    right: 185px;
+    right: 300px;
 }
 
 .navigation-item-list {
