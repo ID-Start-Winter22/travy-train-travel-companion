@@ -6,6 +6,7 @@ html {
 body {
     height: 100%;
     margin: 0;
+    /*background-color: #5d17e80a;*/
     /*background: linear-gradient(to bottom right, #ffffff 55%, #5d17e870);*/
 }
 
@@ -82,10 +83,10 @@ section {
 /* status box elements */
 .status-container {
     position: fixed;
-    bottom: 30px;
-    left: 30px;
-    width: 225px;
-    height: 120px;
+    bottom: 20px;
+    left: 20px;
+    width: 200px;
+    height: 110px;
     background-color: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(5px);
     border-radius: 5px;
@@ -97,7 +98,7 @@ section {
 .status-title {
     position: absolute;
     left: 10px;
-    top: 10px;
+    top: 2px;
     font-family: 'Nunito Sans', sans-serif;
     font-weight: bold;
     font-size: 17px;
@@ -107,8 +108,7 @@ section {
 
 .server-status-box {
     position: relative;
-    padding-top: 0px;
-    top: 5px;
+    top: 0px;
     left: 15px;
     height: 50px;
     width: calc(100% - 20px);
@@ -141,7 +141,7 @@ section {
     font-family: 'Nunito Sans', sans-serif;
     font-size: 15px;
     margin: 0px;
-    color: #686868;
+    color: #444444;
 }
 
 
