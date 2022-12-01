@@ -17,7 +17,7 @@
         id="rasa-chat-widget" 
         data-websocket-url="http://localhost:5005/"  
         data-height=580
-        data-avatar-url="./chatbot.png"
+        data-avatar-url="./images/logo.svg"
         data-avatar-background="#FFFFFF"
         data-primary="#5c17e8"
         data-default-open="true"
@@ -27,14 +27,34 @@
 
     <div class="navigation-bar">
         <button class="home-button" onClick="window.location.reload();">
-            <img src="./logo.svg" class="navigation-bar-logo"/>
+            <img src="./images/logo.svg" class="navigation-bar-logo"/>
             <h2 class="navigation-bar-title">Train Travel Companion</h2>
         </button>
+
+        <nav class="navigation-item-container">
+            <ul class="navigation-item-list">
+                <li>
+                    <a class="navigation-item">
+                        about
+                    </a>
+                </li>
+                <li>
+                    <a class="navigation-item">
+                        how it works
+                    </a>
+                </li>
+                <li>
+                    <a class="navigation-item" style="margin-right: 0px">
+                        GitHub
+                    </a>
+                </li>
+            </ul>
+        </nav>
     </div>
 
     <div class="content-container">
         <div class="home-explanation-container">
-            <h1 class="home-explanation-title">Dein Zugreisebegleiter -</h1>
+            <h1 class="home-explanation-title">Dein Zugreise-Chatbot</h1>
             <p class="home-explanation-text">Bleib während deiner Reise über alle Fahrtänderungen informiert!</p>
             <p class="add-chatbot-text">Jetzt <b>kostenlos</b> auf WhatsApp hinzufügen:</p>
 
@@ -44,7 +64,7 @@
             </div>
         </div>
 
-        <img src="./undraw_chat.svg" class="chat-illustration"/>
+        <img src="./images/undraw_chat.svg" class="chat-illustration"/>
         
         <div class="status-container">
             <div class="server-status-box">

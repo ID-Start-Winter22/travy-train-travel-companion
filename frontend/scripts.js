@@ -27,7 +27,7 @@ document.addEventListener("mousedown", function(event) {
 
 // add logo to header bar
 var logoImage = document.createElement("img");
-logoImage.src = "./logo.svg";
+logoImage.src = "./images/logo.svg";
 logoImage.classList.add("logo-image")
 headerContainer.appendChild(logoImage)
 
@@ -51,7 +51,7 @@ headerContainer.appendChild(statusInidcator);
 // add sleepy logo image indicating offline
 var emptyChatWindow = document.getElementsByClassName("css-1c77470")[0];
 var sleepyLogoImage = document.createElement("img");
-sleepyLogoImage.src = "./sleepy_logo.svg";
+sleepyLogoImage.src = "./images/sleepy_logo.svg";
 sleepyLogoImage.classList.add("sleepy-logo-image");
 emptyChatWindow.appendChild(sleepyLogoImage);
 

@@ -45,6 +45,7 @@
     line-height: 60px;
     font-family: 'Nunito Sans', sans-serif;
     font-size: 23px;
+    color: #1a1a1a;
 }
 
 
@@ -80,7 +81,7 @@
     font-weight: bold;
     font-size: 17px;
     margin: 0px;
-    color: #252525;
+    color: #1a1a1a;
 }
 
 .server-status-box {
@@ -99,7 +100,7 @@
     width: 10px;
     height: 10px;
     border-radius: 100%;
-    background-color: red;
+    background-color: #e93737;
 }
 
 .server-status-title {
@@ -109,7 +110,7 @@
     font-family: 'Nunito Sans', sans-serif;
     font-size: 15px;
     margin: 0px;
-    color: #252525;
+    color: #1a1a1a;
 }
 
 .server-status-text {
@@ -129,7 +130,7 @@
     top: 150px;
     left: 200px;
     width: 600px;
-    height: 600px;
+    height: 100px;
 }
 
 .home-explanation-title {
@@ -137,18 +138,20 @@
     top: 0px;
     left: 0px;
     margin: 0px;
-    font-size: 48px;
+    font-size: 55px;
     font-family: 'Nunito Sans', sans-serif;
+    color: #1a1a1a;
 }
 
 .home-explanation-text {
     position: relative;
-    top: 10px;
+    top: 7px;
     left: 0px;
     margin: 0px;
-    font-size: 35px;
+    font-size: 43px;
     font-weight: bold;
     font-family: 'Nunito Sans', sans-serif;
+    color: #1a1a1a;
 }
 
 .add-chatbot-text {
@@ -156,16 +159,17 @@
     top: 50px;
     left: 0px;
     margin: 0px;
-    font-size: 20px;
+    font-size: 18px;
     font-family: 'Nunito Sans', sans-serif;
+    color: #1a1a1a;
 }
 
 .whatsapp-number-container {
     position: relative;
     top: 60px;
     left: 0px;
-    height: 40px;
-    width: 370px;
+    height: 36px;
+    width: 335px;
     border: solid 3px #5c17e8;
     border-radius: 5px;
 }
@@ -173,11 +177,11 @@
 .whatsapp-number-text {
     position: absolute;
     left: 15px;
-    top: 2px;
-    height: 40px;
+    top: 0px;
+    height: 36px;
     margin: 0px;
-    line-height: 40px;
-    font-size: 20px;
+    line-height: 36px;
+    font-size: 18px;
     font-family: 'Nunito Sans', sans-serif;
     color: #5c17e8;
 }
@@ -218,4 +222,42 @@
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
     z-index: 10;
+}
+
+.navigation-item-container {
+    position: absolute;
+    height: 30px;
+    top: 25px;
+    bottom: 25px;
+    display: block;
+    right: 185px;
+}
+
+.navigation-item-list {
+    display: flex;
+    margin: 0px;
+    height: 30px;
+    align-items: center;
+    list-style-type: none;
+}
+
+.navigation-item {
+    display: flex;
+    align-items: center;
+    margin-right: 60px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 18px;
+    color: #1a1a1a;
+    transition: 0.05s ease-in;
+}
+
+.navigation-item:hover {
+    color: #5c17e8;
+    cursor: default;
+    transition: 0.05s ease-in;
+}
+
+.navigation-item:active {
+    transform: scale(0.98);
+    transition: 0.015s ease-in;
 }
