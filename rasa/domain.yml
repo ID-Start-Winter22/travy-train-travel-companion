@@ -7,14 +7,17 @@ intents:
   - greet
   - ask_mood
   - get_help
+  - notify_train_data_change
   
 actions:
   - action_print_train_id
   - action_store_train_data
-  - utter_please_rephrase
+  - action_train_data_change
 
 entities:
   - train_id
+  - train_entity_type
+  - train_entity_value
 
 slots:
   train_id:
@@ -23,6 +26,22 @@ slots:
     mappings:
     - type: from_entity
       entity: train_id
+
+  # stores the type of train data that changed (e.g. "platform", "departure_delay", ...)
+  train_entity_type:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: train_entity_type
+
+  # stores the value of train data that changed (e.g. "8", "2022-10-11T10:00:00T", ...)
+  train_entity_value:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: train_entity_value
 
 responses:
   utter_pong:
@@ -50,6 +69,7 @@ responses:
 
   utter_failed:
   - text: "Tut mir leid! Das hab ich leider nicht verstanden."
+
 
 session_config:
   session_expiration_time: 60

@@ -1,0 +1,120 @@
+/* pre-defined elements */
+.css-463jce {
+    display: none;
+}
+
+.css-1c77470 {
+    background-color: #F5F5F5;
+}
+
+.css-1c58232 {
+    background: linear-gradient(to bottom right, #5c17e8 30%, rgb(131, 73, 224));
+    border: 3px solid white;
+    transition: 0.1s ease-in;
+}
+
+.css-1c58232:hover {
+    transition: 0.1s ease-in;
+    box-shadow: 0 0 10px #5d17e8a2;
+}
+
+.css-1c58232:active {
+    transition: 0.1s ease-in;
+    transform: scale(0.95);
+}
+
+.css-roj31g {
+    background: linear-gradient(to bottom right, #5c17e8 30%, rgb(131, 73, 224));
+}
+
+.css-1di2tiy {
+    background-color: white;
+}
+
+.css-roj31g {
+    border-radius: 20px 20px 4px 20px;
+    z-index: 2;
+}
+
+.css-1di2tiy {
+    border-radius: 20px 20px 20px 4px;
+}
+
+.sleepy-logo-image {
+    position: absolute;
+    left: 80px;
+    top: 175px;
+    height: 160px;
+    z-index: 1;
+}
+
+/* additional elements */
+.header-container {
+    position: absolute;
+    width: calc(100% - 2px);
+    height: 80px;
+    top: -70px;
+    left: 0px;
+    background-color: #ffffff;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border: 1px solid #DDE2EE;
+    box-shadow: 0 9.5px 12.7px 0 rgb(0 0 0 / 5%);
+    z-index: 3;
+}
+
+.logo-image {
+    position: absolute;
+    top: 15px;
+    left: 17px;
+    height: 50px;
+}
+
+.logo-placeholder {
+    position: absolute;
+    top: 20px;
+    left: 22px;
+    height: 42px;
+    width: 42px;
+    border-radius: 100%;
+    background: linear-gradient(to bottom right, #5c17e8 30%, rgb(131, 73, 224));
+}
+
+.chatbot-title {
+    position: absolute;
+    left: 79px;
+    top: 3px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    color: #1a1a1a;
+}
+
+.chatbot-sub-title {
+    position: absolute;
+    left: 80px;
+    top: 34px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    color: #e93737;
+}
+
+.status-text {
+    position: absolute;
+    left: 95px;
+    top: 30px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 15px;
+    color: #929292;
+}
+
+.status-indicator {
+    position: absolute;
+    left: 80px;
+    top: 51px;
+    width: 9px;
+    height: 9px;
+    border-radius: 100%;
+    background-color:#fd3535;
+}
