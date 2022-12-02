@@ -50,6 +50,36 @@ nlu:
     - Was machst du?
     - help
 
+- intent: chitchat/say_goodbye
+  examples: |
+    - Tschüss!
+    - tschüss
+    - Bis bald
+    - Auf Wiedersehen
+    - Tschau
+
+- intent: chitchat/say_thank_you
+  examples: |
+    - Danke
+    - danke dir!
+    - dankeee
+    - Danke schön
+
+- intent: chitchat/say_you_are_amazing
+  examples: |
+    - Du bist toll!
+    - Du bist super!
+    - du bist mega
+    - du bist echt cool
+
+- intent: chitchat/ask_if_is_bot
+  examples: |
+    - Bist du ein bot?
+    - bist du ein bot
+    - bist du der Bahn bot?
+
+
+
 - regex: train_id
   examples: |
     - ((ECE|ICE|EC|IC|RE|THA|RJ|FLX|HBX|WB|D|EN|NJ|DN|IRE|MEX|RE|FEX|RB|S)(\s|)(\d{1,5}))

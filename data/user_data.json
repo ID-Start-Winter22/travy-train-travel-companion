@@ -11,5 +11,44 @@
         "departureDelay": 0,
         "arrivalDelay": 0,
         "cancelled": false
+    },
+    "e1b8db5425f84cd7aa52e09ea1ecc0db": {
+        "trainId": "ICE621",
+        "from": "Essen Hbf",
+        "to": "M\u00fcnchen Hbf",
+        "departureTime": "2022-11-25T07:39:00.000Z",
+        "arrivalTime": "2022-11-25T13:07:00.000Z",
+        "platform": "2",
+        "actualDepartureTime": "2022-11-25T07:45:14.000Z",
+        "actualArrivalTime": "2022-11-25T13:09:28.000Z",
+        "departureDelay": 6,
+        "arrivalDelay": 2,
+        "cancelled": false
+    },
+    "05e212eb2c194901a1da071946878fd2": {
+        "trainId": "ICE690",
+        "from": "M\u00fcnchen Hbf",
+        "to": "Berlin Gesundbrunnen",
+        "departureTime": "2022-11-26T07:27:00.000Z",
+        "arrivalTime": "2022-11-26T15:40:00.000Z",
+        "platform": "18",
+        "actualDepartureTime": "2022-11-26T07:27:00.000Z",
+        "actualArrivalTime": "2022-11-26T15:40:00.000Z",
+        "departureDelay": "",
+        "arrivalDelay": "",
+        "cancelled": false
+    },
+    "ca4522879f6e406e83e01428e08dd9dc": {
+        "trainId": "ICE698",
+        "from": "M\u00fcnchen Hbf",
+        "to": "Berlin Gesundbrunnen",
+        "departureTime": "2022-11-29T20:24:00.000Z",
+        "arrivalTime": "2022-11-30T08:18:00.000Z",
+        "platform": "15",
+        "actualDepartureTime": "2022-11-29T20:24:00.000Z",
+        "actualArrivalTime": "2022-11-30T08:18:00.000Z",
+        "departureDelay": "",
+        "arrivalDelay": "",
+        "cancelled": false
     }
 }

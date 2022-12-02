@@ -36,5 +36,9 @@ rules:
   - intent: nlu_fallback
   - action: utter_failed
 
+- rule: respond to chitchat
+  steps:
+  - intent: chitchat
+  - action: utter_chitchat
 
 
