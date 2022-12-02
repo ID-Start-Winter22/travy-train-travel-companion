@@ -36,6 +36,11 @@ rules:
   - intent: nlu_fallback
   - action: utter_failed
 
+- rule: Test trigger intent
+  steps:
+  - intent: notify_train_data_change
+  - action: action_train_data_change
+
 - rule: respond to chitchat
   steps:
   - intent: chitchat
