@@ -41,5 +41,9 @@ rules:
   - intent: notify_train_data_change
   - action: action_train_data_change
 
+- rule: respond to chitchat
+  steps:
+  - intent: chitchat
+  - action: utter_chitchat
 
 
