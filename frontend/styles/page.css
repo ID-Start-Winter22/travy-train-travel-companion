@@ -19,6 +19,16 @@ section {
 }
 
 
+.mobile-overlay {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: 19;
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
 /* navigation bar */
 .navigation-bar {
     position: fixed;
@@ -68,6 +78,10 @@ section {
     font-family: 'Nunito Sans', sans-serif;
     font-size: 21px;
     color: #1a1a1a;
+}
+
+.landing-section {
+    height: calc(100% - 200px);
 }
 
 
@@ -288,4 +302,22 @@ section {
     left: 0px;
     width: 100%;
     bottom: 0px;
+}
+
+
+.about-section {
+    background-color: #5c17e8;
+    align-items: center;
+}
+
+
+.about-title {
+    position: absolute;
+    width: 100%;
+    left: 0px;
+    top: 20px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 22px;
+    color: white;
+    text-align: center;
 }

@@ -1,27 +1,43 @@
 
 var chatWindow = document.getElementsByClassName("css-qpwdbp")[0];
 
+
 // add header bar to chat widget
 var headerContainer = document.createElement("div")
 headerContainer.classList.add("header-container")
 chatWindow.appendChild(headerContainer)
 
+
+// create overlay for mobile
+var mobileOverlay = document.createElement("div");
+mobileOverlay.classList.add("mobile-overlay");
+
+var body = document.body;
+
 // hide header bar when chat widget is closed via button
 var chatButton = document.getElementsByClassName("css-1c58232")[0];
+
 chatButton.onclick = function() {
     if (chatWindow.offsetHeight > 0) {
         headerContainer.style.display = "none";
+        body.style.overflowY = "scroll";
+        body.removeChild(mobileOverlay);
     }
     else {
         headerContainer.style.display = "inline";
+        body.appendChild(mobileOverlay);
+        body.style.overflowY = "hidden";
     }
 };
+
 
 // hide header bar when chat widget is closed via click outside
 document.addEventListener("mousedown", function(event) {
     var clickedOutside = !document.getElementsByClassName("css-1kgb40s")[0].contains(event.target);
     if (clickedOutside) {
         headerContainer.style.display = "none";
+        body.style.overflowY = "scroll";
+        body.removeChild(mobileOverlay);
     }
 });
 

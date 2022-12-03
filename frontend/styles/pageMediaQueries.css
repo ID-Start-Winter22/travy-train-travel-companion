@@ -1,5 +1,5 @@
 
-@media (max-width: 1570px) {
+@media (max-width: 1700px) {
     .home-button {
         left: 245px;
     }
@@ -52,6 +52,10 @@
 
 
 @media (max-width: 1200px) {
+    .landing-section {
+        height: calc(100% - 300px);
+    }
+
     .chat-illustration {
         width: 325px;
     }
@@ -66,6 +70,10 @@
 
     .home-explanation-text {
         font-size: 31px;
+    }
+
+    .status-container {
+        display: none;
     }
 }
 
@@ -88,6 +96,10 @@
 }
 
 @media (max-width: 850px) {
+    .landing-section {
+        height: calc(100% - 500px);
+    }
+
     .navigation-item-container {
         display: none;
     }
@@ -113,6 +125,13 @@
 }
 
 @media (max-width: 530px) {
+    .landing-section {
+        height: calc(100% - 325px);
+    }
+
+    .about-section {
+        padding-top: 0px;
+    }
 
     .home-button {
         left: 12px;
@@ -136,5 +155,23 @@
         right: 0px;
         width: auto;
     }
- 
+
+    .css-1kgb40s {
+        transform: scale(0.925);
+    }
+
+    .mobile-overlay {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    .css-1c58232 {
+        right: 0px;
+        bottom: 0px;
+    } 
+}
+
+@media (max-width: 500px) {
+    .css-2gik0r {
+        position: relative !important
+    }
 }
