@@ -1,0 +1,177 @@
+
+@media (max-width: 1700px) {
+    .home-button {
+        left: 245px;
+    }
+
+    .navigation-item-container {
+        right: 250px;
+    }
+
+    .chat-illustration {
+        top: 180px;
+        width: 390px;
+        right: 250px;
+    }
+
+    .home-explanation-container {
+        top: 200px;
+        width: 500px;
+        left: 250px;
+    }
+
+    .home-explanation-title {
+        font-size: 45px;
+    }
+
+    .home-explanation-text {
+        font-size: 35px;
+    }
+}
+
+@media (max-width: 1470px) {
+    .home-button {
+        left: 125px;
+    }
+
+    .navigation-item-container {
+        right: 130px;
+    }
+
+    .home-explanation-container {
+        top: 225px;
+        left: 130px;
+    }
+
+    .chat-illustration {
+        top: 225px;
+        width: 400px;
+        right: 130px;
+    }
+}
+
+
+@media (max-width: 1200px) {
+    .landing-section {
+        height: calc(100% - 300px);
+    }
+
+    .chat-illustration {
+        width: 325px;
+    }
+
+    .home-explanation-container {
+        width: 450px;
+    }
+
+    .home-explanation-title {
+        font-size: 40px;
+    }
+
+    .home-explanation-text {
+        font-size: 31px;
+    }
+
+    .status-container {
+        display: none;
+    }
+}
+
+@media (max-width: 1025px) {
+    .home-button {
+        left: 35px;
+    }
+
+    .navigation-item-container {
+        right: 40px;
+    }
+
+    .home-explanation-container {
+        left: 40px;
+    }
+
+    .chat-illustration {
+        right: 40px;
+    }
+}
+
+@media (max-width: 850px) {
+    .landing-section {
+        height: calc(100% - 500px);
+    }
+
+    .navigation-item-container {
+        display: none;
+    }
+
+    .chat-illustration {
+        display: none;
+    }
+
+    .home-explanation-container {
+        left: 75px;
+        right: 75px;
+        width: auto;
+        top: 140px;
+    }
+
+    .home-explanation-title {
+        font-size: 50px;
+    }
+
+    .home-explanation-text {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 530px) {
+    .landing-section {
+        height: calc(100% - 325px);
+    }
+
+    .about-section {
+        padding-top: 0px;
+    }
+
+    .home-button {
+        left: 12px;
+    }
+
+    .home-explanation-container {
+        top: 120px;
+        left: 40px;
+    }
+    .home-explanation-title {
+        font-size: 35px;
+    }
+
+    .home-explanation-text {
+        top: 25px;
+        font-size: 25px;
+    }
+
+    .whatsapp-number-container {
+        left: 0px;
+        right: 0px;
+        width: auto;
+    }
+
+    .css-1kgb40s {
+        transform: scale(0.925);
+    }
+
+    .mobile-overlay {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    .css-1c58232 {
+        right: 0px;
+        bottom: 0px;
+    } 
+}
+
+@media (max-width: 500px) {
+    .css-2gik0r {
+        position: relative !important
+    }
+}

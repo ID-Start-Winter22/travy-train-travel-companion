@@ -13,6 +13,10 @@
     transition: 0.1s ease-in;
 }
 
+.css-1kgb40s {
+    z-index: 20;
+}
+
 .css-1c58232:hover {
     transition: 0.1s ease-in;
     box-shadow: 0 0 10px #5d17e8a2;
