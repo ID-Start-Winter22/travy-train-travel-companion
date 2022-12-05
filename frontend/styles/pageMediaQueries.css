@@ -125,6 +125,34 @@
 }
 
 @media (max-width: 530px) {
+    .navigation-bar {
+        height: 65px;
+    }
+
+    .navigation-bar-logo {
+        width: 35px;
+        height: 35px;
+        top: 5px;
+        left: 5px;
+    }
+
+    .home-button {
+        width: 270px;
+    }
+
+    .navigation-bar-title {
+        line-height: 45px;
+        height: 45px;
+        left: 50px;
+        font-size: 15px;
+    }
+
+    .navigation-bar-subtitle {
+        line-height: 45px;
+        height: 45px;
+        font-size: 15px;
+    }
+
     .landing-section {
         height: calc(100% - 325px);
     }
@@ -173,5 +201,35 @@
 @media (max-width: 500px) {
     .css-2gik0r {
         position: relative !important
+    }
+}
+
+@media (max-width: 340px) {
+    .navigation-bar {
+        height: 50px;
+    }
+
+    .navigation-bar-logo {
+        width: 27px;
+        height: 27px;
+        top: 2px;
+        left: 2px;
+    }
+
+    .home-button {
+        width: 242px;
+    }
+
+    .navigation-bar-title {
+        line-height: 30px;
+        height: 30px;
+        left: 35px;
+        font-size: 14px;
+    }
+
+    .navigation-bar-subtitle {
+        line-height: 30px;
+        height: 30px;
+        font-size: 14px;
     }
 }
