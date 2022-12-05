@@ -7,14 +7,19 @@
     background-color: #F5F5F5;
 }
 
-.css-1c58232 {
-    background: linear-gradient(to bottom right, #5c17e8 30%, rgb(131, 73, 224));
-    border: 3px solid white;
-    transition: 0.1s ease-in;
+.css-vurnku {
+    box-shadow: none !important;
 }
 
 .css-1kgb40s {
     z-index: 20;
+}
+
+.css-1c58232 {
+    background: linear-gradient(to bottom right, #5c17e8 30%, rgb(131, 73, 224));
+    border: 3px solid white;
+    box-shadow: none;
+    transition: 0.1s ease-in;
 }
 
 .css-1c58232:hover {
@@ -88,7 +93,7 @@
     position: absolute;
     left: 79px;
     top: 3px;
-    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     font-weight: bold;
     font-size: 20px;
     color: #1a1a1a;
@@ -98,7 +103,7 @@
     position: absolute;
     left: 80px;
     top: 34px;
-    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     font-weight: bold;
     font-size: 15px;
     color: #e93737;
@@ -108,7 +113,7 @@
     position: absolute;
     left: 95px;
     top: 30px;
-    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     font-size: 15px;
     color: #929292;
 }

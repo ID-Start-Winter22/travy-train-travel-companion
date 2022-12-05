@@ -30,6 +30,7 @@ mobileOverlay.classList.add("mobile-overlay");
 var chatButton = document.getElementsByClassName("css-1c58232")[0];
 chatButton.onclick = function() {
     document.body.appendChild(mobileOverlay);
+    document.body.style.overflowY = "hidden";
 }
 
 

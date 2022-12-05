@@ -97,7 +97,7 @@
 
 @media (max-width: 850px) {
     .landing-section {
-        height: calc(100% - 500px);
+        height: calc(100% - 300px);
     }
 
     .navigation-item-container {
@@ -137,7 +137,7 @@
     }
 
     .home-button {
-        width: 270px;
+        width: 278px;
     }
 
     .navigation-bar-title {
@@ -217,7 +217,7 @@
     }
 
     .home-button {
-        width: 242px;
+        width: 248px;
     }
 
     .navigation-bar-title {
