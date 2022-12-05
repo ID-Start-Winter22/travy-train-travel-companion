@@ -34,19 +34,18 @@
 
 .css-roj31g {
     background: linear-gradient(to bottom right, #5c17e8 30%, rgb(131, 73, 224));
+    border-radius: 20px 20px 4px 20px;
+    z-index: 2;
 }
 
 .css-1di2tiy {
     background-color: white;
 }
 
-.css-roj31g {
-    border-radius: 20px 20px 4px 20px;
-    z-index: 2;
-}
 
 .css-1di2tiy {
     border-radius: 20px 20px 20px 4px;
+    z-index: 2;
 }
 
 .sleepy-logo-image {
