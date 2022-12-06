@@ -24,7 +24,6 @@ def trigger_chatbot_message(conversation_id: str, train_entity_type: str, train_
     }
     
     res = requests.post(trigger_intent_endpoint, data=json.dumps(body))
-
     if res.status_code != 200:
         logging.error(f"[ERROR] Couldn't notify user with conservation id '{conversation_id}! Error code {res.status_code}, reason: {res.reason}")
         return -1

@@ -44,7 +44,7 @@ class ActionStoreTrainData(Action):
 
         # if the train is not found, tell user
         if train_data == -1:
-            dispatcher.utter_message(f"Tut mir leid, ich konnte den Zug '{train_id}' nicht finden!")
+            dispatcher.utter_message(f"Tut mir leid, ich konnte den Zug {train_id} nicht finden!")
             return []
 
         response_message = f"Alles klar, ich informiere dich über den Zug '{train_data['train']['name']}'! Zugdaten:\n" \
@@ -129,6 +129,4 @@ class ActionToTrigger(Action):
             dispatcher.utter_message(f"**Achtung!** Dein Gleis hat sich geändert.\nNeues Gleis: {train_entity_value}.")
 
         elif train_entity_type == "cancellation":
-            dispatcher.utter_message(f"**Achtung!** Dein Zug fällt aus!")
-
-        # TODO convert delayed minutes into date time format
+            dispatcher.utter_message(f"**Achtung!** Dein Zug fällt aus!")            

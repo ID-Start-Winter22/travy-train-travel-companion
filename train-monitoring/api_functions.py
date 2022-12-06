@@ -27,13 +27,17 @@ def get_train_data(train_id: str) -> dict:
 
 
 def write_json(file_path: str, key: str, content: dict) -> None:
+    if key == None:
+        with open(file_path, "w") as f:
+            json.dump(content, f, indent=4)
+        return
+
     previous_content = {}
     if os.path.getsize(file_path) > 0:
         with open(file_path, "r") as f:
             previous_content = json.load(f)
 
     previous_content[key] = content
-
     with open(file_path, "w") as f:
         json.dump(previous_content, f, indent=4)
 
