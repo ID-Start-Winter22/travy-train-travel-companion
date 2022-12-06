@@ -57,6 +57,7 @@ nlu:
     - Bis bald
     - Auf Wiedersehen
     - Tschau
+    - Ciao!
 
 - intent: chitchat/say_thank_you
   examples: |
