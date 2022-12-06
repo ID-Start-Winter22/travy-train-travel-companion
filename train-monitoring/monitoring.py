@@ -94,39 +94,3 @@ def check_train_changes(user_data_path: str) -> None:
 
 
 check_train_changes("../data/user_data.json")
-
-from dateutil import parser
-from datetime import datetime, date
-import locale 
-
-locale.getlocale()
-("en_US", "UTF-8")
-
-locale.setlocale(locale.LC_TIME, 'de_DE')
-'de_DE'
-
-def departureAndArrivalTime(departureTime, arrivalTime):
-    departure = parser.parse(departureTime)
-    arrival = parser.parse(arrivalTime)
-
-    departureDate = departure.strftime("%Y-%m-%d")
-    arrivalDate = arrival.strftime("%Y-%m-%d")
-    today = date.today()
-    #today = "2022-11-23"
-    dateToday = today.strftime("%y-%m-%d")
-
-    if departureDate == today:
-        departureDayAndTime = departure.strftime("Abfahrt Heute um %-H:%M Uhr")
-        print(departureDayAndTime)
-    else:
-        departureDayAndTime = departure.strftime("Abfahrt %A um %-H:%M Uhr")
-        print(departureDayAndTime)
-    if arrivalDate == today:
-        arrivalDayAndTime = arrival.strftime("Ankunft Heute um %-H:%M Uhr")
-        print(arrivalDayAndTime)
-    else:
-        arrivalDayAndTime = arrival.strftime("Ankunft %A um %-H:%M Uhr")
-        print(arrivalDayAndTime)
-
-
-departureAndArrivalTime("2022-11-23T09:39:00.000Z", "2022-11-23T15:45:00.000Z")

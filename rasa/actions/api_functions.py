@@ -2,13 +2,17 @@ import requests
 import logging
 import json
 import os
+from dateutil import parser 
+from datetime import date, timedelta
+import locale 
 
+locale.getlocale()
+locale.setlocale(locale.LC_TIME, "de_DE.UTF-8")
 
 logging.basicConfig(format="%(asctime)s %(message)s")
 
 
 BASE_URL = "https://bahn.expert/api/journeys/v1"
-
 
 
 def get_train_data(train_id: str) -> dict:
@@ -36,41 +40,23 @@ def load_json(file_path: str) -> dict:
     with open(file_path, "r") as f:
         return json.load(f)
 
-# res = get_train_data("ICE62ßß1")
-# print(res)
 
-from dateutil import parser
-from datetime import datetime, date
-import locale 
+def prettify_time(time):
+    time = parser.parse(time)
 
-locale.getlocale()
-("en_US", "UTF-8")
-
-locale.setlocale(locale.LC_TIME, 'de_DE')
-'de_DE'
-
-def departureAndArrivalTime(departureTime, arrivalTime):
-    departure = parser.parse(departureTime)
-    arrival = parser.parse(arrivalTime)
-
-    departureDate = departure.strftime("%Y-%m-%d")
-    arrivalDate = arrival.strftime("%Y-%m-%d")
+    time_date = time.strftime("%Y-%m-%d")
     today = date.today()
-    #today = "2022-11-23"
-    dateToday = today.strftime("%y-%m-%d")
+    tomorrow = today + timedelta(days=1)
+    date_tomorrow = tomorrow.strftime("%Y-%m-%d")
+    date_today = today.strftime("%Y-%m-%d")
 
-    if departureDate == today:
-        departureDayAndTime = departure.strftime("Abfahrt Heute um %-H:%M Uhr")
-        print(departureDayAndTime)
-    else:
-        departureDayAndTime = departure.strftime("Abfahrt %A um %-H:%M Uhr")
-        print(departureDayAndTime)
-    if arrivalDate == today:
-        arrivalDayAndTime = arrival.strftime("Ankunft Heute um %-H:%M Uhr")
-        print(arrivalDayAndTime)
-    else:
-        arrivalDayAndTime = arrival.strftime("Ankunft %A um %-H:%M Uhr")
-        print(arrivalDayAndTime)
-
-
-departureAndArrivalTime("2022-11-23T09:39:00.000Z", "2022-11-23T15:45:00.000Z")
+    if time_date == date_today:
+        time_day_and_time = time.strftime("heute (%d.%m.%Y) um %-H:%M Uhr")
+        return time_day_and_time
+    elif time_date == date_tomorrow:
+        time_day_and_time = time.strftime("morgen (%d.%m.%Y) um %-H:%M Uhr")
+        return time_day_and_time
+    else:    
+        time_day_and_time = time.strftime("%A (%d.%m.%Y) um %-H:%M Uhr")
+        return time_day_and_time
+    
