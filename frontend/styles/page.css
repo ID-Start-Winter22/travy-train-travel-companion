@@ -251,7 +251,7 @@ section {
     font-family: 'Noto Sans', sans-serif;
     font-weight: bold;
     font-size: 17px;
-    background: linear-gradient(to bottom right, #5c17e8 30%, rgb(131, 73, 224));
+    background: linear-gradient(to bottom right, #5c17e8 30%, #8349e0);
     transition: 0.075s ease-in;
 }
 
