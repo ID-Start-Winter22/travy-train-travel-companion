@@ -31,17 +31,17 @@ rules:
   - intent: get_help
   - action: utter_help
 
-- rule: Ask the user to rephrase whenever they send a message with low NLU confidence
+- rule: Tell the user that it didn't understand if a user message has low NLU confidence.
   steps:
   - intent: nlu_fallback
   - action: utter_failed
 
-- rule: Test trigger intent
+- rule: Trigger intent for bot initiative.
   steps:
   - intent: notify_train_data_change
   - action: action_train_data_change
 
-- rule: respond to chitchat
+- rule: Respond to chitchat.
   steps:
   - intent: chitchat
   - action: utter_chitchat

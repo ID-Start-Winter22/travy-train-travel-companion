@@ -62,14 +62,16 @@ def check_train_changes(user_data_path: str) -> None:
             continue
 
         # check if the departure time changed
-        if new_train_data["departure"]["time"] != current_train_data["actualDepartureTime"]:
+        if new_train_data["departure"]["time"] != current_train_data["actualDepartureTime"]:    
             new_departure_time = new_train_data["departure"]["time"]
             departure_delay = new_train_data["departure"]["delay"]
             current_train_data["actualDepartureTime"] = new_departure_time
             current_train_data["departureDelay"] = departure_delay
 
-            trigger_chatbot_message(conversation_id, "departure_delay", departure_delay)
+            # combine delay in minutes with time into one string
+            departure_delay = f"{departure_delay};{new_departure_time}"
 
+            trigger_chatbot_message(conversation_id, "departure_delay", departure_delay)
 
         # check if the arrival time changed
         if new_train_data["arrival"]["time"] != current_train_data["actualArrivalTime"]:
@@ -77,6 +79,9 @@ def check_train_changes(user_data_path: str) -> None:
             arrival_delay = new_train_data["arrival"]["delay"]
             current_train_data["actualArrivalTime"] = new_arrival_time
             current_train_data["arrivalDelay"] = arrival_delay
+
+            # combine delay in minutes with time into one string
+            arrival_delay = f"{arrival_delay};{new_arrival_time}"
 
             trigger_chatbot_message(conversation_id, "arrival_delay", arrival_delay)
 
