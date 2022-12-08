@@ -318,11 +318,6 @@ section {
     margin-right: 7px;
 }
 
-.navigation-item-icon:hover {
-    color: red;
-}
-
-
 .wave-illustration {
     position: absolute;
     left: 0px;
