@@ -47,7 +47,7 @@ class ActionStoreTrainData(Action):
             dispatcher.utter_message(f"Tut mir leid, ich konnte den Zug {train_id} nicht finden!")
             return []
 
-        response_message = f"Alles klar, ich informiere dich über den Zug '{train_data['train']['name']}'! Zugdaten:\n" \
+        response_message = f"Alles klar, ich informiere dich über den Zug **{train_data['train']['name']}**! Zugdaten:\n" \
                             f" **Von:** {train_data['segmentStart']['title']}\n" \
                             f" **Nach:** {train_data['segmentDestination']['title']}\n" \
                             f" **Abfahrtszeit:** {prettify_time(train_data['departure']['scheduledTime'])}\n" \

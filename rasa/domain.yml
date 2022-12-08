@@ -51,7 +51,7 @@ responses:
   utter_greet:
   - text: |
       Hallo!
-      Ich bin der Train Travel Companion!
+      Ich bin Travy - dein Zugreise-Assistent!
       Gib mir deinen Zugnamen (zB. ICE 123) und ich informiere dich während deiner Zugreise über wichtige Informationen und Änderungen.
 
   utter_mood: 
