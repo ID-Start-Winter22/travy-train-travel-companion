@@ -52,7 +52,7 @@ responses:
   - text: |
       Hallo!
       Ich bin der Train Travel Companion!
-      Gib mir deinen Zugnamen (zB. ICE1234) und ich informiere dich während deiner Zugreise über wichtige Informationen und Änderungen.
+      Gib mir deinen Zugnamen (zB. ICE 123) und ich informiere dich während deiner Zugreise über wichtige Informationen und Änderungen.
 
   utter_mood: 
   - text: "Mir geht es gut! Danke!"

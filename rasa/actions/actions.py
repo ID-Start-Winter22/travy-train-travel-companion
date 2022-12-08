@@ -77,12 +77,12 @@ class ActionStoreTrainData(Action):
         if "delay" in train_data["departure"]:
             departure_delay = train_data["departure"]["delay"]
             if departure_delay > 0:
-                about_changes_message += f"**Abfahrtsverzögerung:** {departure_delay} Minuten! Neue Abfahrtszeit {prettify_time(train_data['departure']['time'])}.\n"
+                about_changes_message += f"**Abfahrtsverzögerung:** {departure_delay} Minuten! Neue Abfahrtszeit: {prettify_time(train_data['departure']['time'])}.\n"
             
         if "delay" in train_data["arrival"]:
             arrival_delay = train_data["arrival"]["delay"]
             if arrival_delay > 0:
-                about_changes_message += f"**Ankunftsverzögerung:** {arrival_delay} Minuten! Neue Ankunftszeit {prettify_time(train_data['arrival']['time'])}.\n"
+                about_changes_message += f"**Ankunftsverzögerung:** {arrival_delay} Minuten! Neue Ankunftszeit: {prettify_time(train_data['arrival']['time'])}.\n"
         
         if len(about_changes_message) > 0:
             dispatcher.utter_message(about_changes_message)

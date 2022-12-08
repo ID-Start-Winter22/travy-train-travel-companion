@@ -45,7 +45,7 @@ def load_json(file_path: str) -> dict:
         return json.load(f)
 
 
-def prettify_time(time):
+def prettify_time(time: str) -> str:
     time = parser.parse(time)
 
     time_date = time.strftime("%Y-%m-%d")
@@ -55,12 +55,12 @@ def prettify_time(time):
     date_today = today.strftime("%Y-%m-%d")
 
     if time_date == date_today:
-        time_day_and_time = time.strftime("heute (%d.%m.%Y) um %-H:%M Uhr")
+        time_day_and_time = time.strftime("Heute (%d.%m.%Y) um %H:%M Uhr")
         return time_day_and_time
     elif time_date == date_tomorrow:
-        time_day_and_time = time.strftime("morgen (%d.%m.%Y) um %-H:%M Uhr")
+        time_day_and_time = time.strftime("Morgen (%d.%m.%Y) um %H:%M Uhr")
         return time_day_and_time
     else:    
-        time_day_and_time = time.strftime("%A (%d.%m.%Y) um %-H:%M Uhr")
+        time_day_and_time = time.strftime("%A (%d.%m.%Y) um %H:%M Uhr")
         return time_day_and_time
     
