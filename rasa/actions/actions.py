@@ -32,7 +32,7 @@ class ActionStoreTrainData(Action):
         latest_message = current_state["latest_message"]["text"]
         
         # find the train id provided by the user using regex, if not found stop function
-        regex_result = re.findall("((ECE|ICE|EC|IC|RE|THA|RJ|FLX|HBX|WB|D|EN|NJ|DN|IRE|MEX|RE|FEX|RB|S)(\s|)(\d{1,5}))", latest_message)
+        regex_result = re.findall("((ECE|ICE|EC|IC|RE|THA|RJ|FLX|HBX|WB|D|EN|NJ|DN|IRE|MEX|RE|FEX|RB|S)(\s|)(\d{1,5}))", latest_message.upper())
         if len(regex_result) > 0:
             train_id = regex_result[0][0]
         else:
@@ -47,7 +47,7 @@ class ActionStoreTrainData(Action):
             dispatcher.utter_message(f"Tut mir leid, ich konnte den Zug {train_id} nicht finden!")
             return []
 
-        response_message = f"Alles klar, ich informiere dich über den Zug '{train_data['train']['name']}'! Zugdaten:\n" \
+        response_message = f"Alles klar, ich informiere dich über den Zug **{train_data['train']['name']}**! Zugdaten:\n" \
                             f" **Von:** {train_data['segmentStart']['title']}\n" \
                             f" **Nach:** {train_data['segmentDestination']['title']}\n" \
                             f" **Abfahrtszeit:** {prettify_time(train_data['departure']['scheduledTime'])}\n" \

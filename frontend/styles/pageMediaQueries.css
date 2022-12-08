@@ -56,6 +56,10 @@
         height: calc(100% - 300px);
     }
 
+    .navigation-item {
+        margin-right: 35px;
+    }
+
     .chat-illustration {
         width: 325px;
     }

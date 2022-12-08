@@ -91,10 +91,10 @@
 .chatbot-title {
     position: absolute;
     left: 79px;
-    top: 3px;
+    top: -2px;
     font-family: 'Noto Sans', sans-serif;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 22px;
     color: #1a1a1a;
 }
 
@@ -120,7 +120,7 @@
 .status-indicator {
     position: absolute;
     left: 80px;
-    top: 51px;
+    top: 52px;
     width: 9px;
     height: 9px;
     border-radius: 100%;

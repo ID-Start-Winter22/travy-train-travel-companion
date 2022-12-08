@@ -221,7 +221,7 @@ section {
     top: 60px;
     left: 0px;
     height: 36px;
-    width: 352px;
+    width: 345px;
     border: solid 3px #5c17e8;
     border-radius: 5px;
 }
@@ -244,6 +244,7 @@ section {
     top: 3px;
     bottom: 3px;
     width: 75px;
+    padding-top: 0px;
     border-radius: 5px;
     outline: none;
     border: none;
@@ -310,6 +311,11 @@ section {
 .navigation-item:active {
     transform: scale(0.98);
     transition: 0.015s ease-in;
+}
+
+.navigation-item-icon {
+    width: 19px;
+    margin-right: 7px;
 }
 
 .wave-illustration {
