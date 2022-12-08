@@ -27,6 +27,8 @@ nlu:
   examples: |
     - Wer bist du?
     - wer bist du
+    - Bist du ein bot?
+    - bist du ein bot
     - hallo
     - Hallo
     - hi
@@ -58,6 +60,7 @@ nlu:
     - Auf Wiedersehen
     - Tschau
     - Ciao!
+    - bye
 
 - intent: chitchat/say_thank_you
   examples: |
@@ -72,13 +75,6 @@ nlu:
     - Du bist super!
     - du bist mega
     - du bist echt cool
-
-- intent: chitchat/ask_if_is_bot
-  examples: |
-    - Bist du ein bot?
-    - bist du ein bot
-    - bist du der Bahn bot?
-
 
 
 - regex: train_id
