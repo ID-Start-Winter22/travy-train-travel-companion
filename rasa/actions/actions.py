@@ -87,7 +87,7 @@ class ActionStoreTrainData(Action):
         if len(about_changes_message) > 0:
             dispatcher.utter_message(about_changes_message)
 
-        # collect all important data from reuqest body
+        # collect all important data from request body
         cleaned_train_data = {
             "trainId": train_id,
             "from": train_data["segmentStart"]["title"],
