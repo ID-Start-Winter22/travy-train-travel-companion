@@ -1,0 +1,85 @@
+version: "3.0"
+
+nlu:
+- intent: get_train_id
+  examples: |
+    - Wie heißt mein Zug?
+    - Welchen Zug nehme ich?
+    - Nenne mir die Nummer meines Zuges.
+    - Zug?
+    - Zugnummer?
+
+- intent: give_train_id
+  examples: |
+    - Mein Zug hat die Nummer [IC1234](train_id).
+    - Ich werde den Zug [ICE 1234](train_id) nehmen.
+    - bitte informiere mich über den Zug [RB16]!
+    - Ich nehme die [S8](train_id)
+    - Zug [RE 1](train_id)
+
+- intent: check_status
+  examples: |
+    - Ping!
+    - ping
+    - pin!
+
+- intent: greet
+  examples: |
+    - Wer bist du?
+    - wer bist du
+    - Bist du ein bot?
+    - bist du ein bot
+    - hallo
+    - Hallo
+    - hi
+    - hey
+    - hello! 
+
+- intent: ask_mood
+  examples: |
+    - wie geht's dir?
+    - wie geht es dir
+    - Wie läuft's
+
+- intent: get_help
+  examples: |
+    - hilfe
+    - Hilfe!
+    - ich brauche Hilfe
+    - ich brauch hilfe!
+    - was kannst du?
+    - was machst du
+    - Was machst du?
+    - help
+
+- intent: chitchat/say_goodbye
+  examples: |
+    - Tschüss!
+    - tschüss
+    - Bis bald
+    - Auf Wiedersehen
+    - Tschau
+    - Ciao!
+    - bye
+
+- intent: chitchat/say_thank_you
+  examples: |
+    - Danke
+    - danke dir!
+    - dankeee
+    - Danke schön
+
+- intent: chitchat/say_you_are_amazing
+  examples: |
+    - Du bist toll!
+    - Du bist super!
+    - du bist mega
+    - du bist echt cool
+
+
+- regex: train_id
+  examples: |
+    - ((ECE|ICE|EC|IC|RE|THA|RJ|FLX|HBX|WB|D|EN|NJ|DN|IRE|MEX|RE|FEX|RB|S)(\s|)(\d{1,5}))
+
+
+

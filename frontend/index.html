@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="./styles/page.css">
+    <link rel="stylesheet" href="./styles/pageMediaQueries.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Travy - dein Zugreise-Assistent</title>
+</head>
+<body>
+    <div 
+        id="rasa-chat-widget" 
+        data-websocket-url="http://localhost:5005/"  
+        data-height=580
+        data-avatar-url="./images/logo.svg"
+        data-avatar-background="#FFFFFF"
+        data-primary="#5c17e8"
+        data-default-open="false"
+        data-primary-highlight="#5c17e8">
+    </div>
+    <link rel="stylesheet" href="./styles/widgetStyles.css">
+
+    <div class="navigation-bar">
+        <button class="home-button" onClick="window.location.href = '/'">
+            <img src="./images/logo.svg" class="navigation-bar-logo"/>
+            <h2 class="navigation-bar-title">Travy</h2>
+            <p class="navigation-bar-subtitle">- dein Zugreise-Assistent</p>
+        </button>
+
+        <nav class="navigation-item-container">
+            <ul class="navigation-item-list">
+                <li>
+                    <a class="navigation-item" onClick="window.location.href='/#soon-section'">
+                        <img src="./images/project-icon.svg" class="navigation-item-icon"/>
+                        Projekt
+                    </a>
+                </li>
+                <li>
+                    <a class="navigation-item" onClick="window.location.href='/#soon-section'">
+                        <img src="./images/features-icon.svg" class="navigation-item-icon"/>
+                        Features
+                    </a>
+                </li>
+                <li>
+                    <a class="navigation-item" style="margin-right: 0px" onClick="window.location.href='/#soon-section'">
+                        <img src="./images/github-icon.svg" class="navigation-item-icon"/>
+                        GitHub
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <section class="landing-section">
+        <div class="home-explanation-container">
+            <h1 class="home-explanation-title">Dein Zugreise-Assistent</h1>
+            <h1 class="home-explanation-text">Bleib während deiner Reise über alle Fahrtänderungen informiert!</h1>
+            <p class="add-chatbot-text">Jetzt <b>kostenlos</b> zu WhatsApp hinzufügen:</p>
+
+            <div class="whatsapp-number-container">
+                <h1 class="whatsapp-number-text">coming soon...</h1>
+                <button class="whatsapp-number-copy-button" onClick="navigator.clipboard.writeText('coming soon...');">copy</button>
+            </div>
+        </div>
+        <img src="./images/undraw_chat.svg" class="chat-illustration"/>
+        <img src="./images/waves.svg" class="wave-illustration"/>
+    </section>
+
+    <section id="soon-section" class="about-section">
+        <h1 class="about-title">more coming soon...</h1>
+    </section>
+
+    <div class="status-container">
+        <div class="server-status-box">
+            <div class="server-status-indicator" id="s1-indicator"></div>
+            <h1 class="server-status-title">rasa server</h1>
+            <p class="server-status-text" id="s1-text">offline</p>
+        </div>
+        <div class="server-status-box">
+            <div class="server-status-indicator" id="s2-indicator"></div>
+            <h1 class="server-status-title">rasa action server</h1>
+            <p class="server-status-text" id="s2-text">offline</p>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/@rasahq/rasa-chat" type="application/javascript"></script>
+    <script src="./scripts.js" type="application/javascript"></script>
+</body>
+</html>

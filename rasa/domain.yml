@@ -1,0 +1,93 @@
+version: "3.0"
+
+intents:
+  - get_train_id
+  - give_train_id
+  - check_status
+  - greet
+  - ask_mood
+  - get_help
+  - notify_train_data_change
+  - chitchat
+  
+actions:
+  - action_print_train_id
+  - action_store_train_data
+  - action_train_data_change
+
+entities:
+  - train_id
+  - train_entity_type
+  - train_entity_value
+
+slots:
+  train_id:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: train_id
+
+  # stores the type of train data that changed (e.g. "platform", "departure_delay", ...)
+  train_entity_type:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: train_entity_type
+
+  # stores the value of train data that changed (e.g. "8", "2022-10-11T10:00:00T", ...)
+  train_entity_value:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: train_entity_value
+
+responses:
+  utter_pong:
+  - text: "Pong!"
+
+  utter_greet:
+  - text: |
+      Hallo!
+      Ich bin Travy - dein Zugreise-Assistent!
+      Gib mir deinen Zugnamen (zB. ICE 123) und ich informiere dich während deiner Zugreise über wichtige Informationen und Änderungen.
+
+  utter_mood: 
+  - text: "Mir geht es gut! Danke!"
+
+  utter_help:
+  - text: |
+      Bevor du das nächste mal mit dem Zug fährst kannst du mir deine Zugnummer schreiben und ich werde dich auf deiner Reise begleiten! Ich kann dir mitteilen, ...
+      ... wenn sich dein Gleis ändert,
+      ... ob sich dein Zug verspätet,
+      ... ob dein Zug ausfällt,
+      ... wie du deinen Gleis findest,
+      ... und vieles mehr!
+      Wenn dich interessiert, was ich noch so kann oder vielleicht auch wie ich funktionere, schau gerne mal hier rein:
+      https://github.com/ID-Start-Winter22/chat-team-11/wiki
+
+  utter_failed:
+  - text: "Tut mir leid! Das hab ich leider nicht verstanden."
+
+  utter_chitchat/say_goodbye:
+  - text: Tschüss, bis zum nächsten Mal! :)
+  - text: Ich hoffe du hattest eine schöne Fahrt und bist bald!
+
+  utter_chitchat/say_thank_you:
+  - text: Gern geschehen!
+  - text: Kein Problem!
+  - text: Mach ich doch gerne!
+  - text: Bitte!
+
+  utter_chitchat/say_you_are_amazing:
+  - text: Danke! Du bist auch super!
+  - text: Danke! Das ist aber nett von dir!
+  - text: Danke, ich weiß ;)
+
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
