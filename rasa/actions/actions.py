@@ -35,117 +35,12 @@ class ActionStoreTrainData(Action):
         # find the train id provided by the user using regex, if not found stop function
         regex_result = re.findall("((ECE|ICE|EC|IC|RE|THA|RJ|FLX|HBX|WB|D|EN|NJ|DN|IRE|MEX|RE|FEX|RB|S)(\s|)(\d{1,5}))", latest_message.upper())
         special_trains = {"train":["RE", "RB", "S"], 
-                          "Baden-Württemberg":{
-                            "RB":{},
-                            "RE":{},
-                            "S":{}
-                          },
-                          "Bayern":{
-                            "RB":{
-                                "11":{"train_nr",["Fürth", "Zirndorf", "Cadolzburg"]},
-                                "12":{"train_nr",["Fürth", "Zirndorf", "Cadolzburg"]},
-                                "13":{"train_nr",["Fürth", "Zirndorf", "Cadolzburg"]},
-                                "18":{"train_nr",["Fürth", "Zirndorf", "Cadolzburg"]},
-                                "13":{"train_nr",["Fürth", "Zirndorf", "Cadolzburg"]},
-                                "14":{"train_nr",["Fürth", "Zirndorf", "Cadolzburg"]},
-                                "15":{"train_nr",["Fürth", "Zirndorf", "Cadolzburg"]},
-                                "16":{"train_nr",["Fürth", "Zirndorf", "Cadolzburg"]},
-                                "17":{"train_nr",["Fürth", "Zirndorf", "Cadolzburg"]},
-                                "11":{"train_nr",["Fürth", "Zirndorf", "Cadolzburg"]},
-                                "11":{"train_nr",["Fürth", "Zirndorf", "Cadolzburg"]},
-                                "11":{"train_nr",["Fürth", "Zirndorf", "Cadolzburg"]}
-                            },
-                            "RE":{
-                                "10":{"train_nr",["Fürth", "Zirndorf", "Cadolzburg"]},
-                                "14":{"train_nr",["Fürth", "Zirndorf", "Cadolzburg"]},
-                                "49":{"train_nr",["Fürth", "Zirndorf", "Cadolzburg"]},
-                                "19":{"train_nr",["Fürth", "Zirndorf", "Cadolzburg"]},
-                                "1":{"train_nr",["Fürth", "Zirndorf", "Cadolzburg"]},
-                                "16":{"train_nr",["Fürth", "Zirndorf", "Cadolzburg"]},
-                                "18":{"train_nr",["Fürth", "Zirndorf", "Cadolzburg"]},
-                                "2":{"train_nr",["Fürth", "Zirndorf", "Cadolzburg"]},
-                                "20":{"train_nr",["Fürth", "Zirndorf", "Cadolzburg"]},
-                                "22":{"train_nr",["Fürth", "Zirndorf", "Cadolzburg"]},
-                                "23":{"train_nr",["Fürth", "Zirndorf", "Cadolzburg"]},
-                                "25":{"train_nr",["Fürth", "Zirndorf", "Cadolzburg"]}
-                            },
-                            "S":{}
-                          },
-                          "Berlin":{
-                            "RB":{},
-                            "RE":{},
-                            "S":{}
-                          },
-                          "Brandenburg":{
-                            "RB":{},
-                            "RE":{},
-                            "S":{}
-                          },
-                          "Bremen":{
-                            "RB":{},
-                            "RE":{},
-                            "S":{}
-                          },
-                          "Hamburg":{
-                            "RB":{},
-                            "RE":{},
-                            "S":{}
-                          },
-                          "Hessen":{
-                            "RB":{},
-                            "RE":{},
-                            "S":{}
-                          },
-                          "Mecklenburg-Vorpommern":{
-                            "RB":{},
-                            "RE":{},
-                            "S":{}
-                          },
-                          "Niedersachsen":{
-                            "RB":{},
-                            "RE":{},
-                            "S":{}
-                          },
-                          "Nordrhein-Westfalen":{
-                            "RB":{},
-                            "RE":{},
-                            "S":{}
-                          },
-                          "Rheinland-Pfalz":{
-                            "RB":{},
-                            "RE":{},
-                            "S":{}
-                          },
-                          "Saarland":{
-                            "RB":{},
-                            "RE":{},
-                            "S":{}
-                          },
-                          "Sachsen":{
-                            "RB":{},
-                            "RE":{},
-                            "S":{}
-                          },
-                          "Sachsen-Anhalt":{
-                            "RB":{},
-                            "RE":{},
-                            "S":{}
-                          },
-                          "Schleswig-Holstein":{
-                            "RB":{},
-                            "RE":{},
-                            "S":{}
-                          },
-                          "Thüringen":{
-                            "RB":{},
-                            "RE":{},
-                            "S":{}
-                          }
                          }
         if len(regex_result) > 0:
             if regex_result[0][1] in special_trains["train"]:
-                print(f"This is the special train: {regex_result[0][1]}")
-            train_id = regex_result[0][0]
+                dispatcher.utter_message(f"{regex_result[0][0]} ist eine Zuglinie. Zur Zeit habe ich dazu leider keine Informationen.")
+                return []
+            else: train_id = regex_result[0][0]
         else:
             dispatcher.utter_message("Tut mit leid, ich habe nicht verstanden welchen Zug du nehmen möchtest!")
             return []
