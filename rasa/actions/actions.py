@@ -3,6 +3,7 @@ from pyparsing import nestedExpr
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 import re
+import json
 
 from .api_functions import get_train_data, write_json, prettify_time
 
@@ -33,7 +34,65 @@ class ActionStoreTrainData(Action):
         
         # find the train id provided by the user using regex, if not found stop function
         regex_result = re.findall("((ECE|ICE|EC|IC|RE|THA|RJ|FLX|HBX|WB|D|EN|NJ|DN|IRE|MEX|RE|FEX|RB|S)(\s|)(\d{1,5}))", latest_message.upper())
+        special_trains = {"train":["RE", "RB", "S"], 
+                          "RE":{
+                              "Baden-Württemberg":{},
+                              "Bayern":{},
+                              "Berlin":{},
+                              "Brandenburg":{},
+                              "Bremen":{},
+                              "Hamburg":{},
+                              "Hessen":{},
+                              "Mecklenburg-Vorpommern":{},
+                              "Niedersachsen":{},
+                              "Nordrhein-Westfalen":{},
+                              "Rheinland-Pfalz":{},
+                              "Saarland":{},
+                              "Sachsen":{},
+                              "Sachsen-Anhalt":{},
+                              "Schleswig-Holstein":{},
+                              "Thüringen":{},
+                              }, 
+                          "RB":{
+                              "Baden-Württemberg":{},
+                              "Bayern":{},
+                              "Berlin":{},
+                              "Brandenburg":{},
+                              "Bremen":{},
+                              "Hamburg":{},
+                              "Hessen":{},
+                              "Mecklenburg-Vorpommern":{},
+                              "Niedersachsen":{},
+                              "Nordrhein-Westfalen":{},
+                              "Rheinland-Pfalz":{},
+                              "Saarland":{},
+                              "Sachsen":{},
+                              "Sachsen-Anhalt":{},
+                              "Schleswig-Holstein":{},
+                              "Thüringen":{},
+                              },
+                          "S":{
+                              "Baden-Württemberg":{},
+                              "Bayern":{},
+                              "Berlin":{},
+                              "Brandenburg":{},
+                              "Bremen":{},
+                              "Hamburg":{},
+                              "Hessen":{},
+                              "Mecklenburg-Vorpommern":{},
+                              "Niedersachsen":{},
+                              "Nordrhein-Westfalen":{},
+                              "Rheinland-Pfalz":{},
+                              "Saarland":{},
+                              "Sachsen":{},
+                              "Sachsen-Anhalt":{},
+                              "Schleswig-Holstein":{},
+                              "Thüringen":{},
+                              }
+                          }
         if len(regex_result) > 0:
+            if regex_result[0][1] in special_trains["train"]:
+                print(f"This is the special train: {regex_result[0][1]}")
             train_id = regex_result[0][0]
         else:
             dispatcher.utter_message("Tut mit leid, ich habe nicht verstanden welchen Zug du nehmen möchtest!")

@@ -9,3 +9,4 @@ sudo cp -r * /var/www/html/
 cd /var/www/html/
 sudo sed -i -e "s/localhost/34.251.35.212/g" index.html
 sudo sed -i -e "s/localhost/34.251.35.212/g" scripts.js
+sudo systemctl restart apache2
