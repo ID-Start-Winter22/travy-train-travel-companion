@@ -21,10 +21,10 @@ rules:
   - intent: greet
   - action: utter_greet
 
-- rule: Answer 'how are you?'.
-  steps:
-  - intent: ask_mood
-  - action: utter_mood
+#- rule: Answer 'how are you?'.
+#  steps:
+#  - intent: ask_mood
+#  - action: utter_mood
 
 - rule: Give help.
   steps:
