@@ -11,5 +11,18 @@
         "departureDelay": 0,
         "arrivalDelay": "",
         "cancelled": false
+    },
+    "c28ab0bff9a24aa18a25f0f6ceb79561": {
+        "trainId": "RE1",
+        "from": "Schm\u00f6lln(Th\u00fcr)",
+        "to": "Glauchau(Sachs)",
+        "departureTime": "2022-12-13T08:22:00.000Z",
+        "arrivalTime": "2022-12-13T08:58:00.000Z",
+        "platform": "",
+        "actualDepartureTime": "2022-12-13T08:22:00.000Z",
+        "actualArrivalTime": "2022-12-13T08:58:00.000Z",
+        "departureDelay": "",
+        "arrivalDelay": "",
+        "cancelled": false
     }
 }

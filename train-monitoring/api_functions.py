@@ -12,7 +12,8 @@ locale.setlocale(locale.LC_TIME, "de_DE.UTF-8")
 logging.basicConfig(format="%(asctime)s %(message)s")
 
 
-BASE_URL = "https://bahn.expert/api/journeys/v1"
+# old endpoint: BASE_URL = "https://bahn.expert/api/journeys/v1"
+BASE_URL = "https://bahn.expert/api/hafas/v2"
 
 
 def get_train_data(train_id: str) -> dict:
