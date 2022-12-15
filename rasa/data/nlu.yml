@@ -40,6 +40,26 @@ nlu:
     - wie geht's dir?
     - wie geht es dir
     - Wie läuft's
+    - wie gehts
+
+- intent: answer_good_mood
+  examples: |
+    - Gut!
+    - Super, danke!
+    - Toll!
+    - Mir gehts gut
+    - Alles bestens
+    - good
+    - Auch gut
+
+- intent: answer_bad_mood
+  examples: |
+    - Schlecht!
+    - Nicht so gut
+    - Beschissen
+    - Kacke
+    - Bad!
+    - Scheisse  
 
 - intent: get_help
   examples: |
@@ -68,6 +88,7 @@ nlu:
     - danke dir!
     - dankeee
     - Danke schön
+    - thanks
 
 - intent: chitchat/say_you_are_amazing
   examples: |
