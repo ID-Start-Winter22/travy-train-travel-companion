@@ -11,6 +11,7 @@ intents:
   - get_help
   - notify_train_data_change
   - chitchat
+  - get_platform_plan
   
 actions:
   - action_print_train_id
@@ -99,6 +100,10 @@ responses:
   utter_chitchat/say_you_are_amazing:
   - text: Danke! Du bist auch super!
   - text: Danke! Das ist aber nett von dir!
+
+  utter_platform_plan:
+  - text: "Hier ist der Gleisplan vom Münchner HBF:"
+    image: https://images.gutefrage.net/media/fragen/bilder/wo-befindet-sich-im-muenchener-hbf-das-gleis-10-fluegelbahnhof/0_big.jpg?v=1478258160000
 
 
 

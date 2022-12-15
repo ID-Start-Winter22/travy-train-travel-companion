@@ -97,6 +97,13 @@ nlu:
     - du bist mega
     - du bist echt cool
 
+- intent: get_platform_plan
+  examples: |
+    - Kannst du mir den Gleisplan von München schicken?
+    - Kannst du mir den Gleisplan von München schicken?
+    - Wo finde ich meinen Gleis in München?
+    - ich finde meinen Gleis am Münchner HBF nicht!
+    - wie komme ich zu Gleis 10 am Münchner HBF?
 
 - regex: train_id
   examples: |
