@@ -46,4 +46,9 @@ rules:
   - intent: chitchat
   - action: utter_chitchat
 
+- rule: Send image of Munich platform plan
+  steps:
+  - intent: get_platform_plan
+  - action: utter_platform_plan
+
 
