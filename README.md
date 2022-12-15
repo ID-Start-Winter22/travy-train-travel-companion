@@ -1,4 +1,11 @@
-# 🚆 Train Travel Companion 🤖
+<br/>
+
+<p align="center">
+  <img src="https://github.com/ID-Start-Winter22/chat-team-11/blob/theodor/assets/logo_banner.svg" width="150px" margin="20px"/>
+</p>
+
+
+# 🚆 Travy - Train Travel Companion 🤖
 
 # 📑 About:
 ## Description:
@@ -19,15 +26,3 @@ Train Travel Compagnion is for everyone who wants to revieve relevant and concis
 | Lynn Starke | lstarke@hm.edu | 
 | Markus Schnugg | schnugg@hm.edu |
 | Theodor Peifer | theodor.peifer@hm.edu |
-
----
-
-# 🦾 Abilities:
-
-## Intents:
-| intent | description |
-| :------------- |:------------- |
-| find_train | Extracts the train number and requests data about it from the API | 
-| get_platform | Requests the platform number from the API |
-| get_times | Requests the arrival, departure and delay from the API |
-| get_platform_plan | Gets an image of the platform plan of the arrival/departure station 

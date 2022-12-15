@@ -1,0 +1,344 @@
+
+html {
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    /*background-color: #5d17e80a;*/
+    /*background: linear-gradient(to bottom right, #ffffff 55%, #5d17e870);*/
+}
+
+section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 400px;
+    padding: 100px 20vw;
+}
+
+
+.mobile-overlay {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: 19;
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+/* navigation bar */
+.navigation-bar {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 80px;
+    width: 100%;
+    background-color: white;
+    border-bottom: 1px solid rgb(242, 242, 242);
+    z-index: 15;
+}
+
+.home-button {
+    position: absolute;
+    left: 290px;
+    top: 10px;
+    bottom: 10px;
+    width: 380px;
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+    border: none;
+    outline: none;
+    transition: 0.075s ease-in;
+}
+
+.home-button:hover {
+    transition: 0.075s ease-in;
+    background-color: #f1f1f1;
+}
+
+
+.navigation-bar-logo {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 10px;
+    left: 10px;
+}
+
+.navigation-bar-title {
+    position: absolute;
+    left: 65px;
+    top: 0px;
+    margin: 0px;
+    height: 60px;
+    line-height: 60px;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 21px;
+    font-weight: 800;
+    color: #1a1a1a;
+}
+
+.navigation-bar-subtitle {
+    position: absolute;
+    right: 10px;
+    top: 0px;
+    margin: 0px;
+    height: 60px;
+    line-height: 60px;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 21px;
+    color: #1a1a1a;
+}
+
+.landing-section {
+    height: calc(100% - 200px);
+}
+
+
+/* page body elements */
+.content-container {
+    position: absolute;
+    top: 30px;
+    left: 300px;
+    right: 300px;
+    height: 100%;
+}
+
+/* status box elements */
+.status-container {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 200px;
+    height: 110px;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    border-radius: 5px;
+    /*border: 1px solid rgb(241, 241, 241);
+    border-bottom: 1px solid rgb(214, 214, 214);*/
+    box-shadow: 0 10px 25px -15px rgb(148 148 148);
+}
+
+.status-title {
+    position: absolute;
+    left: 10px;
+    top: 2px;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: bold;
+    font-size: 17px;
+    margin: 0px;
+    color: #1a1a1a;
+}
+
+.server-status-box {
+    position: relative;
+    top: 0px;
+    left: 15px;
+    height: 50px;
+    width: calc(100% - 20px);
+}
+
+.server-status-indicator {
+    position: absolute;
+    top: 16px;
+    left: 0px;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: #e93737;
+}
+
+.server-status-title {
+    position: absolute;
+    left: 17px;
+    top: 10px;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 15px;
+    margin: 0px;
+    color: #1a1a1a;
+}
+
+.server-status-text {
+    position: absolute;
+    left: 17px;
+    top: 30px;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 15px;
+    margin: 0px;
+    color: #444444;
+}
+
+
+/* main content elements */
+.home-explanation-container {
+    position: absolute;
+    top: 175px;
+    left: 300px;
+    width: 600px;
+    height: 100px;
+}
+
+.home-explanation-title {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    margin: 0px;
+    width: 650px;
+    max-width: calc(100vw - 100px);
+    font-size: 48px;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 900;
+    color: #1a1a1a;
+}
+
+.home-explanation-text {
+    position: relative;
+    top: 7px;
+    left: 0px;
+    margin: 0px;
+    font-size: 40px;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 800;
+    color: #1a1a1a;
+}
+
+.add-chatbot-text {
+    position: relative;
+    top: 50px;
+    left: 0px;
+    margin: 0px;
+    font-size: 18px;
+    font-family: 'Noto Sans', sans-serif;
+    color: #1a1a1a;
+}
+
+.whatsapp-number-container {
+    position: relative;
+    top: 60px;
+    left: 0px;
+    height: 36px;
+    width: 345px;
+    border: solid 3px #5c17e8;
+    border-radius: 5px;
+}
+
+.whatsapp-number-text {
+    position: absolute;
+    left: 15px;
+    top: 0px;
+    height: 36px;
+    margin: 0px;
+    line-height: 36px;
+    font-size: 18px;
+    font-family: 'Noto Sans', sans-serif;
+    color: #5c17e8;
+}
+
+.whatsapp-number-copy-button {
+    position: absolute;
+    right: 3px;
+    top: 3px;
+    bottom: 3px;
+    width: 75px;
+    padding-top: 0px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    color: white;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: bold;
+    font-size: 17px;
+    background: linear-gradient(to bottom right, #5c17e8 30%, #8349e0);
+    transition: 0.075s ease-in;
+}
+
+.whatsapp-number-copy-button:hover {
+    transition: 0.075s ease-in;
+    box-shadow: 0 0 7px #5d17e8a2;
+}
+
+.whatsapp-number-copy-button:active {
+    transition: 0.075s ease-in;
+    transition: 0.1s ease-in;
+    transform: scale(0.95);
+}
+
+.chat-illustration {
+    position: absolute;
+    top: 175px;
+    right: 290px;
+    width: 400px;
+    z-index: 10;
+}
+
+.navigation-item-container {
+    position: absolute;
+    height: 30px;
+    top: 25px;
+    bottom: 25px;
+    display: block;
+    right: 300px;
+}
+
+.navigation-item-list {
+    display: flex;
+    margin: 0px;
+    height: 30px;
+    align-items: center;
+    list-style-type: none;
+}
+
+.navigation-item {
+    display: flex;
+    align-items: center;
+    margin-right: 50px;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 16px;
+    color: #1a1a1a;
+    transition: 0.05s ease-in;
+}
+
+.navigation-item:hover {
+    color: #5c17e8;
+    cursor: default;
+    transition: 0.05s ease-in;
+}
+
+.navigation-item:active {
+    transform: scale(0.98);
+    transition: 0.015s ease-in;
+}
+
+.navigation-item-icon {
+    width: 19px;
+    margin-right: 7px;
+}
+
+.wave-illustration {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    bottom: 0px;
+}
+
+
+.about-section {
+    background-color: #5c17e8;
+    align-items: center;
+}
+
+
+.about-title {
+    position: absolute;
+    width: 100%;
+    left: 0px;
+    top: 20px;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 22px;
+    color: white;
+    text-align: center;
+}

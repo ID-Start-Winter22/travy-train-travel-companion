@@ -19,8 +19,7 @@ BASE_URL = "https://bahn.expert/api/hafas/v2"
 def get_train_data(train_id: str) -> dict:
     res = requests.get(f"{BASE_URL}/details/{train_id}")
     if res.status_code != 200:
-        print(res.reason)
-        logging.error(f"[ERROR] Couldn't retrieve train information from train id '{train_id}! Error code {res.status_code}.")
+        logging.error("[ERROR] Couldn't retrieve train information from train id '{train_id}! Error code {response.status_code}.")
         return -1
 
     return res.json()
@@ -65,4 +64,3 @@ def prettify_time(time: str) -> str:
     else:    
         time_day_and_time = time.strftime("%A (%d.%m.%Y) um %H:%M Uhr")
         return time_day_and_time
-    

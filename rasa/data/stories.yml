@@ -5,3 +5,17 @@ stories:
   steps:
   - intent: get_train_id
   - action: action_print_train_id
+
+- story: ask good mood
+  steps:
+  - intent: ask_mood
+  - action: utter_mood
+  - intent: answer_good_mood
+  - action: utter_reaction_good_mood
+
+- story: ask bad mood
+  steps:
+  - intent: ask_mood
+  - action: utter_mood
+  - intent: answer_bad_mood
+  - action: utter_reaction_bad_mood

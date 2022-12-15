@@ -27,6 +27,8 @@ nlu:
   examples: |
     - Wer bist du?
     - wer bist du
+    - Bist du ein bot?
+    - bist du ein bot
     - hallo
     - Hallo
     - hi
@@ -38,6 +40,26 @@ nlu:
     - wie geht's dir?
     - wie geht es dir
     - Wie läuft's
+    - wie gehts
+
+- intent: answer_good_mood
+  examples: |
+    - Gut!
+    - Super, danke!
+    - Toll!
+    - Mir gehts gut
+    - Alles bestens
+    - good
+    - Auch gut
+
+- intent: answer_bad_mood
+  examples: |
+    - Schlecht!
+    - Nicht so gut
+    - Beschissen
+    - Kacke
+    - Bad!
+    - Scheisse  
 
 - intent: get_help
   examples: |
@@ -49,6 +71,39 @@ nlu:
     - was machst du
     - Was machst du?
     - help
+
+- intent: chitchat/say_goodbye
+  examples: |
+    - Tschüss!
+    - tschüss
+    - Bis bald
+    - Auf Wiedersehen
+    - Tschau
+    - Ciao!
+    - bye
+
+- intent: chitchat/say_thank_you
+  examples: |
+    - Danke
+    - danke dir!
+    - dankeee
+    - Danke schön
+    - thanks
+
+- intent: chitchat/say_you_are_amazing
+  examples: |
+    - Du bist toll!
+    - Du bist super!
+    - du bist mega
+    - du bist echt cool
+
+- intent: get_platform_plan
+  examples: |
+    - Kannst du mir den Gleisplan von München schicken?
+    - Kannst du mir den Gleisplan von München schicken?
+    - Wo finde ich meinen Gleis in München?
+    - ich finde meinen Gleis am Münchner HBF nicht!
+    - wie komme ich zu Gleis 10 am Münchner HBF?
 
 - regex: train_id
   examples: |
