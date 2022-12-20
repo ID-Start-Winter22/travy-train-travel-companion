@@ -16,7 +16,7 @@ section {
     display: flex;
     flex-direction: column;
     min-height: 400px;
-    padding: 100px 20vw;
+    padding: 100px 15vw;
 }
 
 
@@ -325,20 +325,18 @@ section {
     bottom: 0px;
 }
 
-
-.about-section {
-    background-color: #5c17e8;
-    align-items: center;
+/* footer section */
+.footer-section {
+    min-height: 200px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    height: 300px;
+    background-color: #1a1a1a;
 }
 
-
-.about-title {
+.footer-wave-illustration {
     position: absolute;
-    width: 100%;
     left: 0px;
-    top: 20px;
-    font-family: 'Noto Sans', sans-serif;
-    font-size: 22px;
-    color: white;
-    text-align: center;
+    width: 100%;
+    bottom: 0px;
 }
