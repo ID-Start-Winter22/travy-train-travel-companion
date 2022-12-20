@@ -328,10 +328,11 @@ section {
 /* footer section */
 .footer-section {
     min-height: 200px;
-    padding-top: 25px;
+    padding-top: 15px;
     padding-bottom: 25px;
-    height: 300px;
+    height: 200px;
     background-color: #1a1a1a;
+    align-items: center;
 }
 
 .footer-wave-illustration {
@@ -339,4 +340,51 @@ section {
     left: 0px;
     width: 100%;
     bottom: 0px;
+    z-index: 5;
+}
+
+.footer-logo {
+    width: 45px;
+    transition: 0.075s ease-in;
+}
+
+.footer-logo:active {
+    transform: scale(0.95);
+    transition: 0.075s ease-in;
+}
+
+.footer-title {
+    position: relative;
+    color: white;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 18px;
+}
+
+.footer-link {
+    position: relative;
+    margin-top: 20px;
+    width: 85px;
+    height: 25px;
+    cursor: default;
+    transition: 0.075s ease-in;
+}
+
+.footer-link:active {
+    transform: scale(0.95);
+    transition: 0.075s ease-in;
+}
+
+.footer-link-logo {
+    position: absolute;
+    width: 22px;
+    left: 0px;
+}
+
+.footer-link-text {
+    position: absolute;
+    color: white;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 15px;
+    right: 0px;
+    margin: 0px;
 }

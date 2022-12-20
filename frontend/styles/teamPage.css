@@ -133,6 +133,7 @@
     border: 1px solid rgb(210, 210, 210);
     border-radius: 7px;
     transition: 0.075s ease-in;
+    z-index: 10;
 }
 
 .project-list-item:hover {

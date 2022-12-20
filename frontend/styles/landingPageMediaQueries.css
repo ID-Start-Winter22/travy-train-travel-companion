@@ -237,3 +237,10 @@
         font-size: 14px;
     }
 }
+
+
+@media (max-width: 750px) {
+    .footer-section {
+        padding-top: 50px;
+    }
+}
