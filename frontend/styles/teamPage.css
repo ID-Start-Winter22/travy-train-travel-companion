@@ -23,7 +23,7 @@
     display: flex;
     justify-content: space-between;
     min-width: 100px;
-    margin-top: -10px;
+    margin-top: 50px;
 }
 
 .team-list-item {
@@ -33,12 +33,25 @@
 }
 
 .team-image {
-    height: 300px;
+    height: 225px;
 }
+
+/*#team-image-1 {
+    transform: scale(0.9);
+}
+
+#team-image-1 {
+    transform: scale(0.95);
+}
+
+
+#team-image-3 {
+    transform: scale(1.1);
+}*/
 
 .team-profile-name {
     position: absolute;
-    margin-bottom: -25px;
+    margin-bottom: -60px;
     width: calc(100% - 10px);
     left: 0px;
     bottom: 20px;
@@ -50,7 +63,7 @@
 
 .socials-button-container {
     position: absolute;
-    margin-bottom: -62px;
+    margin-bottom: -90px;
     width: 100%;
     height: 25px;
     left: 0px;
