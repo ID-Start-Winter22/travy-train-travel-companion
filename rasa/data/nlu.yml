@@ -109,5 +109,19 @@ nlu:
   examples: |
     - ((ECE|ICE|EC|IC|RE|THA|RJ|FLX|HBX|WB|D|EN|NJ|DN|IRE|MEX|RE|FEX|RB|S)(\s|)(\d{1,5}))
 
+- intent: give_departure_station
+  examples: |
+    - [München HBF](departure_station)
+    - [Frankfurt Hauptbahnhof](departure_station)
+    - [Ingolstadt](departure_station)
+    - [Tübingen Hbf](departure_station)
 
+
+#- intent: give_arrival_station
+#  examples: |
+#    - [München HBF](arrival_station)
+#    - [Frankfurt Hauptbahnhof](arrival_station)
+#    - [Ingolstadt Hbf](arrival_station)
+#    - [Tübingen Hbf](arrival_station)
+#    - [Tübingen](arrival_station)
 

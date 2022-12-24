@@ -2,9 +2,11 @@ import requests
 import logging
 import json
 import os
-from dateutil import parser 
+from dateutil import parser
 from datetime import date, timedelta
-import locale 
+import locale
+from fuzzywuzzy import fuzz
+
 
 locale.getlocale()
 locale.setlocale(locale.LC_TIME, "de_DE.UTF-8")
@@ -66,3 +68,36 @@ def prettify_time(time: str) -> str:
         time_day_and_time = time.strftime("%A (%d.%m.%Y) um %H:%M Uhr")
         return time_day_and_time
     
+
+def get_station_from_message(train_stops: dict, message: str) -> list[str]:
+    station_scores = {}
+    for stop in train_stops:
+        station_name = stop["station"]["title"]
+        fuzzy_score = fuzz.partial_ratio(station_name, message)
+        station_scores[station_name] = fuzzy_score
+
+    return [(k, v) for k, v in station_scores.items() if v == max(station_scores.values())]
+
+
+
+def get_start_stop_stations(train_data: dict, start_station: str, stop_station: str) -> list[str]:
+    all_fuzzy_scores_start, all_fuzzy_scores_stop = {}, {}
+    for stop in train_data["stops"]:
+        station_name = stop["station"]["title"]
+        fuzzy_score_start = fuzz.partial_ratio(station_name, start_station)
+        fuzzy_score_stop = fuzz.partial_ratio(station_name, stop_station)
+
+        all_fuzzy_scores_start[station_name] = fuzzy_score_start
+        all_fuzzy_scores_stop[station_name] = fuzzy_score_stop
+
+    max_start = [(k, v) for k, v in all_fuzzy_scores_start.items() if v == max(all_fuzzy_scores_start.values())]
+    max_stop = [(k, v) for k, v in all_fuzzy_scores_stop.items() if v == max(all_fuzzy_scores_stop.values())]
+
+    return max_start, max_stop
+
+
+"""train_data = get_train_data("ICE123")
+# start_station, stop_station = get_start_stop_stations(train_data, "Arnhem", "Frankfurt")
+station = get_station_from_message(train_data, "dfgdgdf Frankfurt gdfgdfg d gfflgdgfdg flughafen dfg dg dfgdf")
+print(station)
+"""

@@ -11,20 +11,21 @@ rules:
   - intent: check_status
   - action: utter_pong
 
+# no need for this since anymore, gonnda delete soon
+#- rule: Get inital train data if the user provides a train-id.
+#  steps:
+#  - intent: give_train_id
+#  - action: action_store_train_data
+
 - rule: Get inital train data if the user provides a train-id.
   steps:
   - intent: give_train_id
-  - action: action_store_train_data
+  - action: action_read_train_id
 
 - rule: Greet the user. 
   steps:
   - intent: greet
   - action: utter_greet
-
-#- rule: Answer 'how are you?'.
-#  steps:
-#  - intent: ask_mood
-#  - action: utter_mood
 
 - rule: Give help.
   steps:
