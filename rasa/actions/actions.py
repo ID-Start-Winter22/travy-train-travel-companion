@@ -78,11 +78,12 @@ class ActionReadTrainId(Action):
             "departureDelay": "",
             "arrivalDelay": "",
             "cancelled": cancelled,
+            "stopStationNames": list(map(lambda station: station["station"]["title"], train_data["stops"])),
             "stops": train_data["stops"]
         }
 
         # store user and train data
-        write_json("../data/new_user_data.json", tracker.sender_id, initial_train_data)
+        write_json("../data/user_data.json", tracker.sender_id, initial_train_data)
 
         return [FollowupAction("stations_form")]
 
@@ -92,54 +93,21 @@ class ValidateStationsForm(FormValidationAction):
     def name(self) -> Text:
         return "validate_stations_form"
 
-    def validate_departure_station(self, slot_value: Any, dispatcher: CollectingDispatcher, tracker: Tracker, domain) -> Dict[Text, Any]:
-        train_data = load_json("../data/new_user_data.json")[tracker.sender_id]
-        departure_station_name = get_station_from_message(train_data["stops"], slot_value)[0][0]
-        stop_data = list(filter(lambda station: station["station"]["title"] == departure_station_name, train_data["stops"]))[0]
-
-        train_data["from"] = departure_station_name
-        train_data["departureTime"] = stop_data["departure"]["scheduledTime"]
-        train_data["actualDepartureTime"] = stop_data["departure"]["time"]
-
-        if "platform" in stop_data["departure"]:
-            train_data["platform"] = stop_data["departure"]["platform"]
-
-        if "delay" in stop_data["departure"]:
-            train_data["departureDelay"] = stop_data["departure"]["delay"]
-
-        write_json("../data/new_user_data.json", tracker.sender_id, train_data)
-
-        return { "departure_station": slot_value }
-
-    def validate_arrival_station(self, slot_value: Any, dispatcher: CollectingDispatcher, tracker: Tracker, domain) -> Dict[Text, Any]:
-        train_data = load_json("../data/new_user_data.json")[tracker.sender_id]
-        arrival_station_name = get_station_from_message(train_data["stops"], slot_value)[0][0]
-        stop_data = list(filter(lambda station: station["station"]["title"] == arrival_station_name, train_data["stops"]))[0]
-
-        train_data["to"] = arrival_station_name
-        train_data["arrivalTime"] = stop_data["arrival"]["scheduledTime"]
-        train_data["actualArrivalTime"] = stop_data["arrival"]["time"]
-
-        if "delay" in stop_data["arrival"]:
-            train_data["arrivalDelay"] = stop_data["arrival"]["delay"]
-
-        # save initial train information
-        write_json("../data/new_user_data.json", tracker.sender_id, train_data)
-
+    def confirm_train_data(self, train_data: dict, dispatcher) -> None:
         response_message = f"Alles klar, ich informiere dich über den Zug **{train_data['trainId']}**! Zugdaten:\n" \
                         f" **Von:** {train_data['from']}\n" \
                         f" **Nach:** {train_data['to']}\n" \
                         f" **Abfahrtszeit:** {prettify_time(train_data['departureTime'])}\n" \
                         f" **Ankunftszeit:** {prettify_time(train_data['arrivalTime'])}\n" \
-                        f" **Glies:** {train_data['platform']}\n"
+                        f" **Gleis:** {train_data['platform']}\n"
 
         # answer user
         dispatcher.utter_message(response_message)
 
         # check if the train got cancelled and notify the user
         if train_data["cancelled"]:
-            dispatcher.utter_message(f"Oje! Dein Zug {train_data['trainId']} fällt aus!")
-            return []
+            dispatcher.utter_message(f"**Achtung!** Der Zug {train_data['trainId']} fällt aus!")
+            return
 
         about_changes_message = ""
 
@@ -158,6 +126,103 @@ class ValidateStationsForm(FormValidationAction):
         
         if len(about_changes_message) > 0:
                 dispatcher.utter_message(about_changes_message)
+
+
+    def validate_departure_station(self, slot_value: Any, dispatcher: CollectingDispatcher, tracker: Tracker, domain) -> Dict[Text, Any]:
+        train_data = load_json("../data/user_data.json")[tracker.sender_id]
+
+        # get list of the possible station names and confidences the user could have meant (optimal only one station in list)
+        departure_station_name = get_station_from_message(train_data["stops"], slot_value, threshold=0.65)
+
+        # if it's -1 it means that the station name the user provided hasn't been found
+        if departure_station_name == -1:
+            dispatcher.utter_message(f"Hm, ich habe keine Station mit den Namen '{slot_value}' gefunden!.")
+            return { "departure_station": None }
+
+        # if more than one station was found, ask the user to specify which one s/he meant
+        if len(departure_station_name) > 1:
+            dispatcher.utter_message(f"Ich habe {len(departure_station_name)} ähnliche Stationen gefunden:\n \
+                                    {', '.join([station_name[0] for station_name in departure_station_name])}.\n \
+                                    Bitte sag mir den genaueren Namen der Station!")
+            return { "departure_station": None }
+        
+        # get the station the user wanted
+        departure_station_name = departure_station_name[0][0]
+
+        # check if the station where the user wants to enter the train is the endstation and tell the user that it's not possible
+        if train_data["stopStationNames"].index(departure_station_name) == len(train_data["stopStationNames"]) - 1:
+            dispatcher.utter_message(f"Hm, die Station {departure_station_name} ist die Endstation, also kannst du dort nicht einsteigen.")
+            return { "departure_station": None }
+
+        # get the data about the station
+        stop_data = list(filter(lambda station: station["station"]["title"] == departure_station_name, train_data["stops"]))[0]
+        train_data["from"] = departure_station_name
+        train_data["departureTime"] = stop_data["departure"]["scheduledTime"]
+        train_data["actualDepartureTime"] = stop_data["departure"]["time"]
+
+        if "platform" in stop_data["departure"]:
+            train_data["platform"] = stop_data["departure"]["platform"]
+
+        if "delay" in stop_data["departure"]:
+            train_data["departureDelay"] = stop_data["departure"]["delay"]
+
+        if "cancelled" in stop_data["departure"]:
+            train_data["cancelled"] = stop_data["departure"]["cancelled"]
+
+        write_json("../data/user_data.json", tracker.sender_id, train_data)
+
+        return { "departure_station": slot_value }
+
+    def validate_arrival_station(self, slot_value: Any, dispatcher: CollectingDispatcher, tracker: Tracker, domain) -> Dict[Text, Any]:
+        train_data = load_json("../data/user_data.json")[tracker.sender_id]
+    
+        # get list of the possible station names and confidences the user could have meant (optimal only one station in list)
+        arrival_station_name = get_station_from_message(train_data["stops"], slot_value, threshold=0.65)
+
+        # if it's -1 it means that the station name the user provided hasn't been found
+        if arrival_station_name == -1:
+            dispatcher.utter_message(f"Hm, ich habe keine Station mit den Namen '{slot_value}' gefunden!.")
+            return { "arrival_station": None }
+
+        # if more than one station was found, ask the user to specify which one s/he meant
+        if len(arrival_station_name) > 1:
+            dispatcher.utter_message(f"Ich habe {len(arrival_station_name)} ähnliche Stationen gefunden:\n \
+                                    {', '.join([station_name[0] for station_name in arrival_station_name])}\n \
+                                    Bitte sag mir den genaueren Namen der Station!")
+            return { "arrival_station": None }
+        
+        # get the station the user wanted
+        arrival_station_name = arrival_station_name[0][0]
+
+        # check if the station where the user wants to leave the train is the start-station and tell the user that it's not possible
+        if train_data["stopStationNames"].index(arrival_station_name) == 0:
+            dispatcher.utter_message(f"Hm, die Station {arrival_station_name} ist die erste Station des Zuges, also kannst du dort nicht aussteigen.")
+            return { "arrival_station": None }
+
+        # check if the station where the user wants to leave the train is the same as the one s/he wants to enter and tell the user that it's not possible
+        if train_data["stopStationNames"].index(arrival_station_name) == train_data["stopStationNames"].index(train_data["from"]):
+            dispatcher.utter_message(f"Hm, du kannst nicht in der selben Station ein- und aussteigen!")
+            return { "arrival_station": None }
+
+        # check if the station where the user wants to leave the train is before the station s/he wants to enter and tell the user that it's not possible
+        if train_data["stopStationNames"].index(arrival_station_name) < train_data["stopStationNames"].index(train_data["from"]):
+            dispatcher.utter_message(f"Hm, die Station in der du aussteigen willst liegt vor der Station in der du einsteigst. Bitte gib die Stationen in richtiger Reihenfolge an!")
+            return { "arrival_station": None }
+
+        # get the data about the station
+        stop_data = list(filter(lambda station: station["station"]["title"] == arrival_station_name, train_data["stops"]))[0]
+        train_data["to"] = arrival_station_name
+        train_data["arrivalTime"] = stop_data["arrival"]["scheduledTime"]
+        train_data["actualArrivalTime"] = stop_data["arrival"]["time"]
+
+        if "delay" in stop_data["arrival"]:
+            train_data["arrivalDelay"] = stop_data["arrival"]["delay"]
+
+        # save initial train information
+        write_json("../data/user_data.json", tracker.sender_id, train_data)
+
+        # if everything was successful, send message to the user confirming the train data
+        self.confirm_train_data(train_data, dispatcher)
 
         return { "arrival_station": slot_value }
 
@@ -294,7 +359,7 @@ class ActionReadStation(Action):
         current_state = tracker.current_state()
         latest_message = current_state["latest_message"]["text"]
         
-        train_data = load_json("../data/new_user_data.json")[tracker.sender_id]
+        train_data = load_json("../data/user_data.json")[tracker.sender_id]
         station_name = get_station_from_message(train_data["stops"], latest_message)[0]
         stop_data = filter(lambda station: station["station"]["title"] == station_name, train_data["stops"])
 
@@ -309,7 +374,7 @@ class ActionReadStation(Action):
             if "delay" in train_data["arrival"]:
                 train_data["departureDelay"] = stop_data["departure"]["delay"]
 
-            write_json("../data/new_user_data.json", tracker.sender_id, train_data)
+            write_json("../data/user_data.json", tracker.sender_id, train_data)
 
             dispatcher.utter_message("Und wo steigst du aus?")
         else:            
@@ -320,7 +385,7 @@ class ActionReadStation(Action):
             if "delay" in train_data["arrival"]:
                 train_data["arrivalDelay"] = stop_data["arrival"]["delay"]
 
-            write_json("../data/new_user_data.json", tracker.sender_id, train_data)
+            write_json("../data/user_data.json", tracker.sender_id, train_data)
 
             response_message = f"Alles klar, ich informiere dich über den Zug **{train_data['trainId']}**! Zugdaten:\n" \
                             f" **Von:** {train_data['from']}\n" \
@@ -365,7 +430,7 @@ class ActionReadStations(Action):
         # latest_message = current_state["latest_message"]["text"]
         dispatcher.utter_message("Got it!")
 
-        train_data = load_json("../data/new_user_data.json")[tracker.sender_id]
+        train_data = load_json("../data/user_data.json")[tracker.sender_id]
 
         # set departure information
         given_departure_station_name = tracker.get_slot("departure_station")
@@ -397,7 +462,7 @@ class ActionReadStations(Action):
             train_data["arrivalDelay"] = stop_data["arrival"]["delay"]
 
         # save initial train information
-        write_json("../data/new_user_data.json", tracker.sender_id, train_data)
+        write_json("../data/user_data.json", tracker.sender_id, train_data)
 
         response_message = f"Alles klar, ich informiere dich über den Zug **{train_data['trainId']}**! Zugdaten:\n" \
                         f" **Von:** {train_data['from']}\n" \

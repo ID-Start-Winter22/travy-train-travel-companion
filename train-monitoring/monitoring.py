@@ -53,17 +53,21 @@ def check_train_changes(user_data_path: str) -> None:
         # get data from train id
         new_train_data = get_train_data(train_id)
 
+        # get data about the departure and arrival station
+        departure_station = list(filter(lambda station: station["station"]["title"] == current_train_data["from"], new_train_data["stops"]))[0]
+        arrival_station = list(filter(lambda station: station["station"]["title"] == current_train_data["to"], new_train_data["stops"]))[0]
+
         # check if the train got cancelled
-        if "cancelled" in new_train_data:
-            current_train_data["cancelled"] = new_train_data["cancelled"]
+        if "cancelled" in departure_station:
+            current_train_data["cancelled"] = departure_station["cancelled"]
 
             trigger_chatbot_message(conversation_id, "cancellation", "")
             continue
 
         # check if the departure time changed
-        if new_train_data["departure"]["time"] != current_train_data["actualDepartureTime"]:    
-            new_departure_time = new_train_data["departure"]["time"]
-            departure_delay = new_train_data["departure"]["delay"]
+        if departure_station["departure"]["time"] != current_train_data["actualDepartureTime"]:    
+            new_departure_time = departure_station["departure"]["time"]
+            departure_delay = departure_station["departure"]["delay"]
             current_train_data["actualDepartureTime"] = new_departure_time
             current_train_data["departureDelay"] = departure_delay
 
@@ -72,10 +76,14 @@ def check_train_changes(user_data_path: str) -> None:
 
             trigger_chatbot_message(conversation_id, "departure_delay", departure_delay)
 
+        print(arrival_station["arrival"]["time"], current_train_data["actualArrivalTime"])
+
+
         # check if the arrival time changed
-        if new_train_data["arrival"]["time"] != current_train_data["actualArrivalTime"]:
-            new_arrival_time = new_train_data["arrival"]["time"]
-            arrival_delay = new_train_data["arrival"]["delay"]
+        if arrival_station["arrival"]["time"] != current_train_data["actualArrivalTime"]:
+            print("jir")
+            new_arrival_time = arrival_station["arrival"]["time"]
+            arrival_delay = arrival_station["arrival"]["delay"]
             current_train_data["actualArrivalTime"] = new_arrival_time
             current_train_data["arrivalDelay"] = arrival_delay
 
@@ -86,8 +94,8 @@ def check_train_changes(user_data_path: str) -> None:
 
 
         # check if the platorm changed
-        if new_train_data["departure"]["platform"] != current_train_data["platform"]:
-            new_platform = new_train_data["departure"]["platform"]
+        if departure_station["departure"]["platform"] != current_train_data["platform"]:
+            new_platform = departure_station["departure"]["platform"]
             current_train_data["platform"] = new_platform
 
             trigger_chatbot_message(conversation_id, "platform_change", new_platform)

@@ -69,12 +69,19 @@ def prettify_time(time: str) -> str:
         return time_day_and_time
     
 
-def get_station_from_message(train_stops: dict, message: str) -> list[str]:
-    station_scores = {}
+def get_station_from_message(train_stops: dict, message: str, threshold: float) -> list[str]:
+    found, station_scores = False, {}
     for stop in train_stops:
         station_name = stop["station"]["title"]
         fuzzy_score = fuzz.partial_ratio(station_name, message)
+
+        if fuzzy_score > threshold * 100:
+            found = True
+
         station_scores[station_name] = fuzzy_score
+
+    if not found:
+        return -1
 
     return [(k, v) for k, v in station_scores.items() if v == max(station_scores.values())]
 
