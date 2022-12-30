@@ -46,4 +46,8 @@ rules:
   - intent: chitchat
   - action: utter_chitchat
 
-
+- rule: welcome user
+  conversation_start: true
+  steps:
+  - intent: welcome_message
+  - action: utter_welcome
