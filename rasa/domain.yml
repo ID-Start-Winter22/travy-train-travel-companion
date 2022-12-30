@@ -9,6 +9,7 @@ intents:
   - get_help
   - notify_train_data_change
   - chitchat
+  - welcome_message
   
 actions:
   - action_print_train_id
@@ -50,10 +51,9 @@ responses:
 
   utter_greet:
   - text: |
-      Hallo!
-      Ich bin der Train Travel Companion!
-      Gib mir deinen Zugnamen (zB. ICE1234) und ich informiere dich während deiner Zugreise über wichtige Informationen und Änderungen.
-
+      Ich bin Travy - dein Zugreise-Assistent!
+      Gib mir deinen Zugnamen (zB. ICE 123) und ich informiere dich während deiner Zugreise über wichtige Informationen und Änderungen.
+  
   utter_mood: 
   - text: "Mir geht es gut! Danke!"
 
@@ -70,6 +70,11 @@ responses:
 
   utter_failed:
   - text: "Tut mir leid! Das hab ich leider nicht verstanden."
+
+  utter_welcome:
+  - text: |
+      Ich bin Travy - dein Zugreise-Assistent! 
+      Gib mir deinen Zugnamen (zB. ICE 123) und ich informiere dich während deiner Zugreise über wichtige Informationen und Änderungen.
 
   utter_chitchat/say_goodbye:
   - text: Tschüss, bis zum nächsten Mal! :)
