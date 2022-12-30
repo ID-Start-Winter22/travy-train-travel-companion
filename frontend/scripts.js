@@ -30,6 +30,7 @@ mobileOverlay.classList.add("mobile-overlay");
 var chatButton = document.getElementsByClassName("css-1c58232")[0];
 chatButton.onclick = function() {
     document.body.appendChild(mobileOverlay);
+    document.body.style.overflowY = "hidden";
 }
 
 
@@ -79,7 +80,7 @@ waitForElement(".css-qpwdbp").then((chatWindow) => {
 
     // add title to header bar
     var chatbotTitle = document.createElement("h1");
-    chatbotTitle.innerText = "Train Travel Companion";
+    chatbotTitle.innerText = "Travy";
     chatbotTitle.classList.add("chatbot-title");
     headerContainer.appendChild(chatbotTitle);
 
@@ -100,6 +101,11 @@ waitForElement(".css-qpwdbp").then((chatWindow) => {
     sleepyLogoImage.src = "./images/sleepy_logo.svg";
     sleepyLogoImage.classList.add("sleepy-logo-image");
     emptyChatWindow.appendChild(sleepyLogoImage);
+
+    // center placeholder of chat input field which is for some reason not centered
+    var typeInstructionText = document.getElementsByClassName("noBorder variant--default css-1fzv815")[0];
+    typeInstructionText.placeholder = "Schreibe hier deine Nachricht..."
+    typeInstructionText.rows = 1;
 
     fetch("http://localhost:5005", { mode: "no-cors" })
     .then(response => {
@@ -176,3 +182,4 @@ var checkStatusInterval = setInterval(checkStatus, 5000);
 // add shadow to chat widget (it has no css class therefore handled in js)
 var chatWidgetChildren = document.getElementsByClassName("css-1kgb40s")[0].childNodes;
 chatWidgetChildren[0].style.boxShadow = "0 10px 25px -15px rgb(148 148 148)";
+

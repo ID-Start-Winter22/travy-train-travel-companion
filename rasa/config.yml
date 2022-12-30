@@ -68,10 +68,6 @@ pipeline:
     threshold: 0.95
 
 policies:
-- name: RulePolicy
-  core_fallback_threshold: 0.3
-  core_fallback_action_name: "action_default_fallback"
-  enable_fallback_prediction: true
 # # No configuration for policies was provided. The following default policies were used to train your model.
 # # If you'd like to customize them, uncomment and adjust the policies.
 # # See https://rasa.com/docs/rasa/policies for more information.

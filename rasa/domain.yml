@@ -6,10 +6,12 @@ intents:
   - check_status
   - greet
   - ask_mood
+  - answer_good_mood
+  - answer_bad_mood
   - get_help
   - notify_train_data_change
   - chitchat
-  - welcome_message
+  - get_platform_plan
   
 actions:
   - action_print_train_id
@@ -51,12 +53,26 @@ responses:
 
   utter_greet:
   - text: |
+      Hallo!
       Ich bin Travy - dein Zugreise-Assistent!
       Gib mir deinen Zugnamen (zB. ICE 123) und ich informiere dich während deiner Zugreise über wichtige Informationen und Änderungen.
-  
-  utter_mood: 
-  - text: "Mir geht es gut! Danke!"
 
+  utter_mood: 
+  - text: "Mir geht es gut, Danke! Und dir?"
+  - text: "Super und dir?"
+  - text: "Mir geht es gut, danke der Nachfrage! Und dir?"
+  - text: "Alles gut! Und wie geht's dir?"
+
+  utter_reaction_good_mood:
+  - text: "Das freut mich!"
+  - text: "Toll!"
+  - text: "Hör sich gut an!"
+
+  utter_reaction_bad_mood:
+  - text: "Das tut mir Leid!"
+  - text: "Kopf hoch!"
+  - text: "Das wird schon wieder..."
+  
   utter_help:
   - text: |
       Bevor du das nächste mal mit dem Zug fährst kannst du mir deine Zugnummer schreiben und ich werde dich auf deiner Reise begleiten! Ich kann dir mitteilen, ...
@@ -77,7 +93,7 @@ responses:
       Gib mir deinen Zugnamen (zB. ICE 123) und ich informiere dich während deiner Zugreise über wichtige Informationen und Änderungen.
 
   utter_chitchat/say_goodbye:
-  - text: Tschüss, bis zum nächsten Mal! :)
+  - text: Tschüss, bis zum nächsten Mal!
   - text: Ich hoffe du hattest eine schöne Fahrt und bist bald!
 
   utter_chitchat/say_thank_you:
@@ -89,7 +105,10 @@ responses:
   utter_chitchat/say_you_are_amazing:
   - text: Danke! Du bist auch super!
   - text: Danke! Das ist aber nett von dir!
-  - text: Danke, ich weiß ;)
+
+  utter_platform_plan:
+  - text: "Hier ist der Gleisplan vom Münchner HBF:"
+    image: https://images.gutefrage.net/media/fragen/bilder/wo-befindet-sich-im-muenchener-hbf-das-gleis-10-fluegelbahnhof/0_big.jpg?v=1478258160000
 
 
 

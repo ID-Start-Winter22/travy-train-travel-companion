@@ -16,7 +16,7 @@ section {
     display: flex;
     flex-direction: column;
     min-height: 400px;
-    padding: 100px 20vw;
+    padding: 100px 15vw;
 }
 
 
@@ -47,9 +47,9 @@ section {
     left: 290px;
     top: 10px;
     bottom: 10px;
-    width: 300px;
-    background-color: rgb(255, 255, 255);
+    width: 380px;
     border-radius: 5px;
+    background-color: rgb(255, 255, 255);
     border: none;
     outline: none;
     transition: 0.075s ease-in;
@@ -72,11 +72,24 @@ section {
 .navigation-bar-title {
     position: absolute;
     left: 65px;
-    top: 2px;
+    top: 0px;
     margin: 0px;
     height: 60px;
     line-height: 60px;
-    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 21px;
+    font-weight: 800;
+    color: #1a1a1a;
+}
+
+.navigation-bar-subtitle {
+    position: absolute;
+    right: 10px;
+    top: 0px;
+    margin: 0px;
+    height: 60px;
+    line-height: 60px;
+    font-family: 'Noto Sans', sans-serif;
     font-size: 21px;
     color: #1a1a1a;
 }
@@ -114,7 +127,7 @@ section {
     position: absolute;
     left: 10px;
     top: 2px;
-    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     font-weight: bold;
     font-size: 17px;
     margin: 0px;
@@ -143,7 +156,7 @@ section {
     position: absolute;
     left: 17px;
     top: 10px;
-    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     font-size: 15px;
     margin: 0px;
     color: #1a1a1a;
@@ -153,7 +166,7 @@ section {
     position: absolute;
     left: 17px;
     top: 30px;
-    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     font-size: 15px;
     margin: 0px;
     color: #444444;
@@ -174,8 +187,11 @@ section {
     top: 0px;
     left: 0px;
     margin: 0px;
-    font-size: 55px;
-    font-family: 'Nunito Sans', sans-serif;
+    width: 650px;
+    max-width: calc(100vw - 100px);
+    font-size: 48px;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 900;
     color: #1a1a1a;
 }
 
@@ -184,9 +200,9 @@ section {
     top: 7px;
     left: 0px;
     margin: 0px;
-    font-size: 43px;
-    font-weight: bold;
-    font-family: 'Nunito Sans', sans-serif;
+    font-size: 40px;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 800;
     color: #1a1a1a;
 }
 
@@ -196,7 +212,7 @@ section {
     left: 0px;
     margin: 0px;
     font-size: 18px;
-    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     color: #1a1a1a;
 }
 
@@ -205,7 +221,7 @@ section {
     top: 60px;
     left: 0px;
     height: 36px;
-    width: 335px;
+    width: 345px;
     border: solid 3px #5c17e8;
     border-radius: 5px;
 }
@@ -218,7 +234,7 @@ section {
     margin: 0px;
     line-height: 36px;
     font-size: 18px;
-    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     color: #5c17e8;
 }
 
@@ -228,14 +244,15 @@ section {
     top: 3px;
     bottom: 3px;
     width: 75px;
+    padding-top: 0px;
     border-radius: 5px;
     outline: none;
     border: none;
     color: white;
-    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     font-weight: bold;
     font-size: 17px;
-    background: linear-gradient(to bottom right, #5c17e8 30%, rgb(131, 73, 224));
+    background: linear-gradient(to bottom right, #5c17e8 30%, #8349e0);
     transition: 0.075s ease-in;
 }
 
@@ -253,10 +270,8 @@ section {
 .chat-illustration {
     position: absolute;
     top: 175px;
-    right: 300px;
-    width: 475px;
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
+    right: 290px;
+    width: 400px;
     z-index: 10;
 }
 
@@ -280,9 +295,9 @@ section {
 .navigation-item {
     display: flex;
     align-items: center;
-    margin-right: 60px;
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: 18px;
+    margin-right: 50px;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 16px;
     color: #1a1a1a;
     transition: 0.05s ease-in;
 }
@@ -298,6 +313,11 @@ section {
     transition: 0.015s ease-in;
 }
 
+.navigation-item-icon {
+    width: 19px;
+    margin-right: 7px;
+}
+
 .wave-illustration {
     position: absolute;
     left: 0px;
@@ -305,20 +325,66 @@ section {
     bottom: 0px;
 }
 
-
-.about-section {
-    background-color: #5c17e8;
+/* footer section */
+.footer-section {
+    min-height: 200px;
+    padding-top: 15px;
+    padding-bottom: 25px;
+    height: 200px;
+    background-color: #1a1a1a;
     align-items: center;
 }
 
-
-.about-title {
+.footer-wave-illustration {
     position: absolute;
-    width: 100%;
     left: 0px;
-    top: 20px;
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: 22px;
+    width: 100%;
+    bottom: 0px;
+    z-index: 5;
+}
+
+.footer-logo {
+    width: 45px;
+    transition: 0.075s ease-in;
+}
+
+.footer-logo:active {
+    transform: scale(0.95);
+    transition: 0.075s ease-in;
+}
+
+.footer-title {
+    position: relative;
     color: white;
-    text-align: center;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 18px;
+}
+
+.footer-link {
+    position: relative;
+    margin-top: 20px;
+    width: 85px;
+    height: 25px;
+    cursor: default;
+    transition: 0.075s ease-in;
+}
+
+.footer-link:active {
+    transform: scale(0.95);
+    transition: 0.075s ease-in;
+}
+
+.footer-link-logo {
+    position: absolute;
+    width: 22px;
+    left: 0px;
+}
+
+.footer-link-text {
+    position: absolute;
+    color: white;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 15px;
+    right: 0px;
+    margin: 0px;
 }
