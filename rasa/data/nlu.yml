@@ -104,6 +104,7 @@ nlu:
     - Wo finde ich meinen Gleis in München?
     - ich finde meinen Gleis am Münchner HBF nicht!
     - wie komme ich zu Gleis 10 am Münchner HBF?
+  
 
 - regex: train_id
   examples: |

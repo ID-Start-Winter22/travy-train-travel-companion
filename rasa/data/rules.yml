@@ -51,4 +51,10 @@ rules:
   - intent: get_platform_plan
   - action: utter_platform_plan
 
+- rule: Send welcome message
+  steps:
+  - intent: get_started
+  - action: utter_welcome_message
+
+
 

@@ -25,7 +25,44 @@
         data-default-open="false"
         data-primary-highlight="#5c17e8">
     </div>
-    <link rel="stylesheet" href="./styles/widgetStyles.css">
+
+    <div id="webchat" />
+    <script src="https://storage.googleapis.com/mrbot-cdn/webchat-latest.js"></script>
+    // Or you can replace latest with a specific version
+    <script>
+      WebChat.default.init({
+        selector: "#webchat",
+        initPayload: "/get_started",
+        customData: { "language": "en" }, 
+        socketUrl: "http://localhost:5002", //You rasa core url with cors access enabled.
+        socketPath: "/socket.io/",
+        title: "Title",
+        subtitle: "Subtitle",
+        params: { "storage": "session" }
+      })
+    </script>
+
+    <script>!(function () {
+        let e = document.createElement("script"),
+          t = document.head || document.getElementsByTagName("head")[0];
+        (e.src =
+          "https://cdn.jsdelivr.net/npm/rasa-webchat@1.1.1/lib/index.js"),
+          (e.async = !0),
+          (e.onload = () => {
+            window.WebChat.default(
+              {
+                customData: { language: "en" },
+                initPayload: "/hello", 
+                socketUrl: "https://bf-botfront.development.agents.botfront.cloud",
+              },
+              null
+            );
+          }),
+          t.insertBefore(e, t.firstChild);
+      })();
+      </script>
+
+    <script src="https://unpkg.com/@rasahq/rasa-chat" type="application/javascript"></script>
 
     <div class="navigation-bar">
         <button class="home-button" onClick="window.location.href = '/'">
