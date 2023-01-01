@@ -52,4 +52,9 @@ rules:
   - intent: get_platform_plan
   - action: utter_platform_plan
 
+- rule: React to abort action.
+  steps:
+  - intent: abort
+  - action: utter_react_to_abort
+
 

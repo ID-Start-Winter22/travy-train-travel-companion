@@ -15,6 +15,7 @@ intents:
   - give_departure_station
   - give_arrival_station
   - give_arrival_stations
+  - abort
   
 actions:
   - action_print_train_id
@@ -145,6 +146,10 @@ responses:
 
   utter_ask_arrival_station:
   - text: In welcher Station steigst du aus?
+
+  utter_react_to_abort:
+  - text: Oh, okay!
+  - text: Oje, alles klar!
 
 session_config:
   session_expiration_time: 60

@@ -85,7 +85,7 @@ class ActionReadTrainId(Action):
         # store user and train data
         write_json("../data/user_data.json", tracker.sender_id, initial_train_data)
 
-        return [FollowupAction("stations_form")]
+        return [SlotSet("departure_station", None), SlotSet("arrival_station", None), FollowupAction("stations_form")]
 
 
 
@@ -129,6 +129,9 @@ class ValidateStationsForm(FormValidationAction):
 
 
     def validate_departure_station(self, slot_value: Any, dispatcher: CollectingDispatcher, tracker: Tracker, domain) -> Dict[Text, Any]:
+        if slot_value == None:
+            return { "departure_station": None }
+
         train_data = load_json("../data/user_data.json")[tracker.sender_id]
 
         # get list of the possible station names and confidences the user could have meant (optimal only one station in list)
@@ -136,6 +139,12 @@ class ValidateStationsForm(FormValidationAction):
 
         # if it's -1 it means that the station name the user provided hasn't been found
         if departure_station_name == -1:
+
+            # check if the user wanted to stop the process
+            if tracker.latest_message['intent'].get('name') == "abort":
+                dispatcher.utter_message(f"Okay! Du kannst gerne noch einmal versuchen mir deinen Zug mitzuteilen!")
+                return { "requested_slot": None }
+
             dispatcher.utter_message(f"Hm, ich habe keine Station mit den Namen '{slot_value}' gefunden!.")
             return { "departure_station": None }
 
@@ -174,6 +183,9 @@ class ValidateStationsForm(FormValidationAction):
         return { "departure_station": slot_value }
 
     def validate_arrival_station(self, slot_value: Any, dispatcher: CollectingDispatcher, tracker: Tracker, domain) -> Dict[Text, Any]:
+        if slot_value == None:
+            return { "departure_station": None }
+
         train_data = load_json("../data/user_data.json")[tracker.sender_id]
     
         # get list of the possible station names and confidences the user could have meant (optimal only one station in list)
@@ -181,7 +193,13 @@ class ValidateStationsForm(FormValidationAction):
 
         # if it's -1 it means that the station name the user provided hasn't been found
         if arrival_station_name == -1:
-            dispatcher.utter_message(f"Hm, ich habe keine Station mit den Namen '{slot_value}' gefunden!.")
+
+            # check if the user wanted to stop the process
+            if tracker.latest_message['intent'].get('name') == "abort":
+                dispatcher.utter_message(f"Okay! Du kannst gerne noch einmal versuchen mir deinen Zug mitzuteilen!")
+                return { "requested_slot": None }
+
+            dispatcher.utter_message(f"Hm, ich habe keine Station mit den Namen '{slot_value}' gefunden!")
             return { "arrival_station": None }
 
         # if more than one station was found, ask the user to specify which one s/he meant
@@ -225,7 +243,6 @@ class ValidateStationsForm(FormValidationAction):
         self.confirm_train_data(train_data, dispatcher)
 
         return { "arrival_station": slot_value }
-
 
 
 

@@ -76,8 +76,6 @@ def check_train_changes(user_data_path: str) -> None:
 
             trigger_chatbot_message(conversation_id, "departure_delay", departure_delay)
 
-        print(arrival_station["arrival"]["time"], current_train_data["actualArrivalTime"])
-
 
         # check if the arrival time changed
         if arrival_station["arrival"]["time"] != current_train_data["actualArrivalTime"]:
