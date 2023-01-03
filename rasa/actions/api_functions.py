@@ -78,19 +78,15 @@ def get_station_from_message(train_stops: dict, message: str, threshold: float) 
         pattern = re.compile("Hauptbahnhof", re.IGNORECASE)
         message = pattern.sub("Hbf", message)
         
-        #station_name.replace("Hauptbahnhof", "Hbf")
-        #message.replace("Hauptbahnhof", "Hbf")
-
         # calculate similarity score
         fuzzy_score = fuzz.token_set_ratio(message, station_name)
-        #if message.lower() in station_name.lower():
-        #   fuzzy_score += 25
+
 
         if fuzzy_score > threshold * 100:
             found = True
 
         station_scores[station_name] = fuzzy_score
-    print(station_scores)
+
     if not found:
         return -1
 
