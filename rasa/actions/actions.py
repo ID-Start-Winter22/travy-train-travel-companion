@@ -34,10 +34,9 @@ class ActionStoreTrainData(Action):
         
         # find the train id provided by the user using regex, if not found stop function
         regex_result = re.findall("((ECE|ICE|EC|IC|RE|THA|RJ|FLX|HBX|WB|D|EN|NJ|DN|IRE|MEX|RE|FEX|RB|S)(\s|)(\d{1,5}))", latest_message.upper())
-        special_trains = {"train":["RE", "RB", "S"], 
-                         }
+        special_trains = ["RE", "RB", "S"]
         if len(regex_result) > 0:
-            if regex_result[0][1] in special_trains["train"]:
+            if regex_result[0][1] in special_trains:
                 dispatcher.utter_message(f"{regex_result[0][0]} ist eine Zuglinie. Zur Zeit habe ich dazu leider keine Informationen.")
                 return []
             else: train_id = regex_result[0][0]
