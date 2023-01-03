@@ -135,7 +135,7 @@ class ValidateStationsForm(FormValidationAction):
         train_data = load_json("../data/user_data.json")[tracker.sender_id]
 
         # get list of the possible station names and confidences the user could have meant (optimal only one station in list)
-        departure_station_name = get_station_from_message(train_data["stops"], slot_value, threshold=0.65)
+        departure_station_name = get_station_from_message(train_data["stops"], slot_value, threshold=0.6)
 
         # if it's -1 it means that the station name the user provided hasn't been found
         if departure_station_name == -1:
@@ -189,8 +189,8 @@ class ValidateStationsForm(FormValidationAction):
         train_data = load_json("../data/user_data.json")[tracker.sender_id]
     
         # get list of the possible station names and confidences the user could have meant (optimal only one station in list)
-        arrival_station_name = get_station_from_message(train_data["stops"], slot_value, threshold=0.65)
-
+        arrival_station_name = get_station_from_message(train_data["stops"], slot_value, threshold=0.6)
+    
         # if it's -1 it means that the station name the user provided hasn't been found
         if arrival_station_name == -1:
 
