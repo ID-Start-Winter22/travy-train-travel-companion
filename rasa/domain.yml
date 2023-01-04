@@ -12,11 +12,18 @@ intents:
   - notify_train_data_change
   - chitchat
   - get_platform_plan
+  - give_departure_station
+  - give_arrival_station
+  - give_arrival_stations
+  - abort
   
 actions:
   - action_print_train_id
   - action_store_train_data
   - action_train_data_change
+  - action_read_train_id
+  - action_read_stations
+  - validate_stations_form
 
 entities:
   - train_id
@@ -24,12 +31,33 @@ entities:
   - train_entity_value
 
 slots:
+  # stores the train id given by the user
   train_id:
     type: text
     influence_conversation: true
     mappings:
     - type: from_entity
       entity: train_id
+
+  # stores the departue station given by the user
+  departure_station:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: stations_form
+        requested_slot: departure_station
+  
+  # stores the arrival station given by the user
+  arrival_station:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: stations_form
+        requested_slot: arrival_station
 
   # stores the type of train data that changed (e.g. "platform", "departure_delay", ...)
   train_entity_type:
@@ -46,6 +74,14 @@ slots:
     mappings:
     - type: from_entity
       entity: train_entity_value
+
+
+forms:
+  stations_form:
+    required_slots:
+      - departure_station
+      - arrival_station
+      
 
 responses:
   utter_pong:
@@ -105,7 +141,15 @@ responses:
   - text: "Hier ist der Gleisplan vom Münchner HBF:"
     image: https://images.gutefrage.net/media/fragen/bilder/wo-befindet-sich-im-muenchener-hbf-das-gleis-10-fluegelbahnhof/0_big.jpg?v=1478258160000
 
+  utter_ask_departure_station:
+  - text: In welcher Station steigst du ein?
 
+  utter_ask_arrival_station:
+  - text: In welcher Station steigst du aus?
+
+  utter_react_to_abort:
+  - text: Oh, okay!
+  - text: Oje, alles klar!
 
 session_config:
   session_expiration_time: 60
