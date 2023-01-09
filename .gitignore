@@ -139,3 +139,4 @@ dmypy.json
 # Pyre type checker
 .pyre/
 scripts/wikiscrape.py
+data/user_data.json
