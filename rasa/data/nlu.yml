@@ -114,6 +114,27 @@ nlu:
     - das war falsch
     - neu anfangen
     - aufhören!
+
+- intent: which_train_stations
+  examples: |
+    - Welche Haltestellen gibt es?
+    - Wo hält der Zug?
+    - An welchen Stationen hält der Zug?
+    - Welche Stationen gibt es?
+
+# - intent: which_trainstations_in
+#   examples: |
+#     - Wo kann ich einsteigen?
+#     - Welche Ausstiegsmöglichkeiten gibt es?
+#     - An welchen Stationen kann ich austeigen?
+
+# - intent: which_trainstations_out
+#   examples: |
+#     - Wo kann ich aussteigen?
+#     - Welche Ausstiegsmöglichkeiten gibt es?
+#     - An welchen Stationen kann ich austeigen?
+
+
     
 
 - regex: train_id

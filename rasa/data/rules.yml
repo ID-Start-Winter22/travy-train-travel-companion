@@ -57,4 +57,9 @@ rules:
   - intent: abort
   - action: utter_react_to_abort
 
+- rule: List all the train Stations
+  steps:
+  - intent: which_train_stations
+  - action: action_return_stations
+
 

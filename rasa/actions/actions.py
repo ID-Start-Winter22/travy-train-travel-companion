@@ -87,6 +87,23 @@ class ActionReadTrainId(Action):
 
         return [SlotSet("departure_station", None), SlotSet("arrival_station", None), FollowupAction("stations_form")]
 
+class ActionReturnStations(Action):
+    def name(self) -> Text:
+        return "action_return_stations"
+
+    def run(self, dispatcher, tracker, domain):
+        train_data = load_json("../data/user_data.json")
+        if tracker.sender_id not in train_data:
+            response_message = "Du hast noch keinen Zug gewählt, daher habe ich noch keine Stationen."
+        else:
+            response_message = "Folgende Stationen gibt es auf der Strecke:\n"
+            response_message += ", ".join(train_data[tracker.sender_id]["stopStationNames"])
+
+        dispatcher.utter_message(response_message)
+        return []
+   
+    pass
+
 
 
 class ValidateStationsForm(FormValidationAction):
@@ -128,8 +145,16 @@ class ValidateStationsForm(FormValidationAction):
                 dispatcher.utter_message(about_changes_message)
 
 
+
     def validate_departure_station(self, slot_value: Any, dispatcher: CollectingDispatcher, tracker: Tracker, domain) -> Dict[Text, Any]:
         if slot_value == None:
+            return { "departure_station": None }
+
+        if tracker.latest_message['intent'].get('name') == "which_train_stations":
+            response_message = "Folgende Stationen gibt es auf der Strecke:\n"
+            train_data = load_json("../data/user_data.json")[tracker.sender_id]
+            response_message += ", ".join(train_data["stopStationNames"])
+            dispatcher.utter_message(response_message)
             return { "departure_station": None }
 
         train_data = load_json("../data/user_data.json")[tracker.sender_id]
@@ -185,6 +210,13 @@ class ValidateStationsForm(FormValidationAction):
     def validate_arrival_station(self, slot_value: Any, dispatcher: CollectingDispatcher, tracker: Tracker, domain) -> Dict[Text, Any]:
         if slot_value == None:
             return { "departure_station": None }
+
+        if tracker.latest_message['intent'].get('name') == "which_train_stations":
+            response_message = "Folgende Stationen gibt es auf der Strecke:\n"
+            train_data = load_json("../data/user_data.json")[tracker.sender_id]
+            response_message += ", ".join(train_data["stopStationNames"])
+            dispatcher.utter_message(response_message)
+            return { "arrival_station": None }
 
         train_data = load_json("../data/user_data.json")[tracker.sender_id]
     
