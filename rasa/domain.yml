@@ -16,6 +16,7 @@ intents:
   - give_arrival_station
   - give_arrival_stations
   - abort
+  - which_train_stations
   
 actions:
   - action_print_train_id
@@ -24,6 +25,7 @@ actions:
   - action_read_train_id
   - action_read_stations
   - validate_stations_form
+  - action_return_stations
 
 entities:
   - train_id
