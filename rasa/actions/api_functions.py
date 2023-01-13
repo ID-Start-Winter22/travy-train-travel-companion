@@ -51,10 +51,10 @@ def load_json(file_path: str) -> dict:
 
 
 def prettify_time(time: str) -> str:
-    time = parser.parse(time)
+    time = parser.parse(time) + timedelta(hours=1)
 
     time_date = time.strftime("%Y-%m-%d")
-    today = date.today()
+    today = date.today() 
     tomorrow = today + timedelta(days=1)
     date_tomorrow = tomorrow.strftime("%Y-%m-%d")
     date_today = today.strftime("%Y-%m-%d")
@@ -70,7 +70,7 @@ def prettify_time(time: str) -> str:
         return time_day_and_time
     
 
-def get_station_from_message(train_stops: dict, message: str, threshold: float) -> list[str]:
+def get_station_from_message(train_stops: dict, message: str, threshold: float) -> list:
     found, station_scores = False, {}
     for stop in train_stops:
         station_name = stop["station"]["title"]
@@ -80,8 +80,6 @@ def get_station_from_message(train_stops: dict, message: str, threshold: float) 
         
         # calculate similarity score
         fuzzy_score = fuzz.token_set_ratio(message, station_name)
-
-
         if fuzzy_score > threshold * 100:
             found = True
 
@@ -94,7 +92,7 @@ def get_station_from_message(train_stops: dict, message: str, threshold: float) 
 
 
 
-def get_start_stop_stations(train_data: dict, start_station: str, stop_station: str) -> list[str]:
+def get_start_stop_stations(train_data: dict, start_station: str, stop_station: str) -> list:
     all_fuzzy_scores_start, all_fuzzy_scores_stop = {}, {}
     for stop in train_data["stops"]:
         station_name = stop["station"]["title"]
@@ -108,6 +106,7 @@ def get_start_stop_stations(train_data: dict, start_station: str, stop_station: 
     max_stop = [(k, v) for k, v in all_fuzzy_scores_stop.items() if v == max(all_fuzzy_scores_stop.values())]
 
     return max_start, max_stop
+
 
 
 """train_data = get_train_data("ICE123")

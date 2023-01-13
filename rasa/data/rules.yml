@@ -62,4 +62,20 @@ rules:
   - intent: which_train_stations
   - action: action_return_stations
 
+- rule: Get the platform
+  steps:
+  - intent: get_platform
+  - action: action_give_platform
+
+- rule: Get the arrival time
+  steps:
+  - intent: get_arrival_time
+  - action: action_give_arrival_time
+
+- rule: Get the departure time
+  steps:
+  - intent: get_departure_time
+  - action: action_give_departure_time
+
+
 
