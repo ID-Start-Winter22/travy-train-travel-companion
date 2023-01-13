@@ -16,6 +16,11 @@ nlu:
     - bitte informiere mich über den Zug [RB16]!
     - Ich nehme die [S8](train_id)
     - Zug [RE 1](train_id)
+    - ice621
+    - ice 123
+    - Ice 621
+    - Ice612
+    - Mein Zug hat die Nummer [ice 1234](train_id).
 
 - intent: check_status
   examples: |
@@ -121,6 +126,36 @@ nlu:
     - Wo hält der Zug?
     - An welchen Stationen hält der Zug?
     - Welche Stationen gibt es?
+  
+- intent: get_platform
+  examples: |
+    - Zu welchem Gleis muss ich?
+    - Wo muss ich nochmal hin?
+    - Was ist mein Gleis?
+    - Kannst du mir nochmal mein Gleis sagen?
+    - Sag mir bitte mein Gleis
+    - Gleis?
+
+- intent: get_arrival_time
+  examples: |
+    - Wann kommt mein Zug an?
+    - Wann kommt mein Zug nochmal an
+    - Ankuft?
+    - wann kommt mein zug an
+    - Wann ist die Ankunft
+    - Um wie viel Uhr komme ich an?
+    - wann ist meine ankunft
+
+
+- intent: get_departure_time
+  examples: |
+    - Wann fährt mein Zug ab?
+    - Wann fahr ich ab?
+    - Wann fahr ich
+    - Um wie viel Uhr fahre ich ab
+    - wann ist meine abfahrt
+    - Abfahrt?
+    - Wann ist die Abfahrt?
 
 # - intent: which_trainstations_in
 #   examples: |

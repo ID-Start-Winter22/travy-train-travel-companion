@@ -301,6 +301,57 @@ class ActionToTrigger(Action):
             dispatcher.utter_message(f"**Achtung!** Dein Zug fällt aus!")
 
 
+
+
+class ActionGivePlatform(Action):
+    def name(self) -> Text:
+        return "action_give_platform"
+
+    def run(self, dispatcher, tracker, domain):
+        train_data = load_json("../data/user_data.json")
+    
+        if tracker.sender_id not in train_data:
+            response_message = "Bitte sag mir zuerst welchen Zug du nimmst!"
+        else:
+            response_message = f"Dein Zug fährt bei Gleis **{train_data[tracker.sender_id]['platform']}** ab."
+
+        dispatcher.utter_message(response_message)
+        return []
+
+
+
+class ActionGiveArrivalTime(Action):
+    def name(self) -> Text:
+        return "action_give_arrival_time"
+
+    def run(self, dispatcher, tracker, domain):
+        train_data = load_json("../data/user_data.json")
+    
+        if tracker.sender_id not in train_data:
+            response_message = "Bitte sag mir zuerst welchen Zug du nimmst!"
+        else:
+            response_message = f"Dein Zug kommt {prettify_time(train_data[tracker.sender_id]['actualArrivalTime'])} an."
+
+        dispatcher.utter_message(response_message)
+        return []
+
+
+
+class ActionGiveDepartureTime(Action):
+    def name(self) -> Text:
+        return "action_give_departure_time"
+
+    def run(self, dispatcher, tracker, domain):
+        train_data = load_json("../data/user_data.json")
+    
+        if tracker.sender_id not in train_data:
+            response_message = "Bitte sag mir zuerst welchen Zug du nimmst!"
+        else:
+            response_message = f"Dein Zug fährt {prettify_time(train_data[tracker.sender_id]['actualDepartureTime'])} ab."
+
+        dispatcher.utter_message(response_message)
+        return []
+
  
 """
 class ActionStoreTrainData(Action):

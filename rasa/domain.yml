@@ -17,6 +17,9 @@ intents:
   - give_arrival_stations
   - abort
   - which_train_stations
+  - get_platform
+  - get_arrival_time
+  - get_departure_time
   
 actions:
   - action_print_train_id
@@ -26,6 +29,9 @@ actions:
   - action_read_stations
   - validate_stations_form
   - action_return_stations
+  - action_give_platform
+  - action_give_arrival_time
+  - action_give_departure_time
 
 entities:
   - train_id
@@ -152,6 +158,8 @@ responses:
   utter_react_to_abort:
   - text: Oh, okay!
   - text: Oje, alles klar!
+
+  
 
 session_config:
   session_expiration_time: 60
