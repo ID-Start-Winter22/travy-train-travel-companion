@@ -136,7 +136,7 @@
     justify-content: space-between;
     min-width: 100px;
     margin-top: 70px;
-    margin-bottom: 300px;
+    margin-bottom: 75px;
 }
 
 .project-list-item {
@@ -179,4 +179,73 @@
     top: 180px;
     font-family: 'Noto Sans', sans-serif;
     font-size: 16px;
+}
+
+.chatbot-story-container {
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+.toggle-story-button {
+    position: relative;
+    width: 240px;
+    left: calc(50% - 120px);
+    height: 45px;
+    background-color: transparent;
+    border: 3px solid #5c17e8;
+    border-radius: 5px;
+    outline: none;
+    color: #5c17e8;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 900;
+}
+
+.toggle-story-button:hover {
+    transition: 0.04s ease-in;
+    box-shadow: 0 0 7px #5d17e8a2;
+}
+
+.toggle-story-button:active {
+    transition: 0.05s ease-in;
+    transform: scale(0.985);
+}
+
+.toggle-arrow {
+    position: absolute;
+    left: 4px;
+    width: 35px;
+    top: 2px;
+    transform: rotate(270deg);
+}
+
+.chatbot-story-title {
+    display: table-cell;
+    top: 0px;
+    line-height: 100%;
+    height: 100%;
+    right: 5px;
+    font-size: 14px;
+    margin: 0px;
+    vertical-align: middle;
+    padding-left: 35px;
+}
+
+.story-container {
+    position: relative;
+    height: 0px;
+    width: 100%;
+    visibility: hidden;
+    margin-top: 25px;
+    border: 1px solid rgb(210, 210, 210);
+    border-radius: 7px;
+    z-index: 10;
+}
+
+.story-text {
+    position: relative;
+    padding: 20px;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 15px;
+    margin: 0px;
 }

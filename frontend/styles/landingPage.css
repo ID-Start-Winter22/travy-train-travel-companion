@@ -7,8 +7,6 @@ html {
 body {
     height: 100%;
     margin: 0;
-    /*background-color: #5d17e80a;*/
-    /*background: linear-gradient(to bottom right, #ffffff 55%, #5d17e870);*/
 }
 
 section {
@@ -118,8 +116,7 @@ section {
     background-color: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(5px);
     border-radius: 5px;
-    /*border: 1px solid rgb(241, 241, 241);
-    border-bottom: 1px solid rgb(214, 214, 214);*/
+    z-index: 10;
     box-shadow: 0 10px 25px -15px rgb(148 148 148);
 }
 

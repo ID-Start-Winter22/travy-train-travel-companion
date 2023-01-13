@@ -145,6 +145,10 @@
     .project-list-item {
         height: 275px;
     }
+
+    .chatbot-story-container {
+        margin-bottom: 5px;
+    }
 }
 
 
@@ -161,6 +165,6 @@
 
 @media (max-width: 970px) {
     .project-container {
-        margin-bottom: 150px;
+        margin-bottom: 75px;
     }
 }
