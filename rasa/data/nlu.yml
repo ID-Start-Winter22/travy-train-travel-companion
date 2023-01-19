@@ -105,7 +105,8 @@ nlu:
     - tschüss bro
     - danke, ciao!
     - bis dann
-    
+    - Bis bald
+    - Auf wiedersehen
 
 - intent: chitchat/say_thank_you
   examples: |
