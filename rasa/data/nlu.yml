@@ -18,9 +18,17 @@ nlu:
     - Zug [RE 1](train_id)
     - ice621
     - ice 123
-    - Ice 621
+    - Ice 621xs
     - Ice612
     - Mein Zug hat die Nummer [ice 1234](train_id).
+    - Ich werde mit dem ICE123 fahren und würde mich freuen, wenn du mich begleitest
+    - Ich fahr mit dem ice621 kannst du mir informationen dazu geben?
+    - kannst du mich auf meine Reise mit dem ICE621 begleiten?
+    - ich fahre mit den ice612 und möchste, dass du mich über wichtige Fahrtänderungen informierst
+    - mein zug ist der icE123 gibt es irgendwelche Neuigkeiten?
+    - ICE123 gibt's updates?
+    - ICE123 gibt es Änderungen?
+
 
 - intent: check_status
   examples: |
@@ -39,6 +47,11 @@ nlu:
     - hi
     - hey
     - hello! 
+    - hey bro
+    - hey yo
+    - was geht
+    
+
 
 - intent: ask_mood
   examples: |
@@ -46,6 +59,9 @@ nlu:
     - wie geht es dir
     - Wie läuft's
     - wie gehts
+    - wassup
+    - how is it going
+    - how's it going?
 
 - intent: answer_good_mood
   examples: |
@@ -81,11 +97,15 @@ nlu:
   examples: |
     - Tschüss!
     - tschüss
-    - Bis bald
-    - Auf Wiedersehen
     - Tschau
     - Ciao!
     - bye
+    - bye bro
+    - bis zum nächsten mal
+    - tschüss bro
+    - danke, ciao!
+    - bis dann
+    
 
 - intent: chitchat/say_thank_you
   examples: |
@@ -94,6 +114,17 @@ nlu:
     - dankeee
     - Danke schön
     - thanks
+    - Vielen Dank
+    - Danke bro
+    - ayo thanks
+    - thanks man
+    - Danke dir trotzdem, du warst eine große Hilfe
+    - danke trotzdem
+    - danke dir trotzdem
+    - sehr nett von dir
+    - super! danke!
+    - ayo danke
+    
 
 - intent: chitchat/say_you_are_amazing
   examples: |
@@ -101,6 +132,27 @@ nlu:
     - Du bist super!
     - du bist mega
     - du bist echt cool
+
+- intent: chitchat/confirmation
+  examples: |
+    - Okay
+    - Alright
+    - supi
+    - super
+    - toll
+
+- intent: chitchat/negative_confirmation
+  examples: |
+    - Scheiße
+    - Come on
+    - Manno
+    - Oh je
+    - Och man
+    - Du bist dumm
+    - Jetzt schaffe ich meinen Zug nicht mehr
+    - Scheiße, jetzt schaff ich meinen Zug nicht mehr
+    - Verdammt
+    - Verdammte scheiße
 
 - intent: get_platform_plan
   examples: |

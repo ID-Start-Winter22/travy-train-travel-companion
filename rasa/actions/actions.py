@@ -46,7 +46,7 @@ class ActionReadTrainId(Action):
             else:
                 train_id = regex_result[0][0]
         else:
-            dispatcher.utter_message("Tut mit leid, ich habe nicht verstanden welchen Zug du nehmen möchtest!")
+            dispatcher.utter_message("Ups! Diesen Zug konnte ich leider nicht finden...")
             return []
 
         # fetch data from bahn.expert given the train id
@@ -54,7 +54,7 @@ class ActionReadTrainId(Action):
 
         # if the train is not found, tell user
         if train_data == -1:
-            dispatcher.utter_message(f"Tut mir leid, ich konnte den Zug {train_id} nicht finden!")
+            dispatcher.utter_message(f"Ups! Diesen Zug konnte ich leider nicht finden...")
             return []
 
         # check if train is already cancelled
@@ -123,7 +123,7 @@ class ValidateStationsForm(FormValidationAction):
 
         # check if the train got cancelled and notify the user
         if train_data["cancelled"]:
-            dispatcher.utter_message(f"**Achtung!** Der Zug {train_data['trainId']} fällt aus!")
+            dispatcher.utter_message(f"**Achtung!** Dein Zug {train_data['trainId']} fällt aus!")
             return
 
         about_changes_message = ""
