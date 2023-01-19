@@ -47,7 +47,7 @@ def load_json(file_path: str) -> dict:
 
 
 def prettify_time(time: str) -> str:
-    time = parser.parse(time)
+    time = parser.parse(time) + timedelta(hours=1)
 
     time_date = time.strftime("%Y-%m-%d")
     today = date.today()

@@ -16,6 +16,19 @@ nlu:
     - bitte informiere mich über den Zug [RB16]!
     - Ich nehme die [S8](train_id)
     - Zug [RE 1](train_id)
+    - ice621
+    - ice 123
+    - Ice 621xs
+    - Ice612
+    - Mein Zug hat die Nummer [ice 1234](train_id).
+    - Ich werde mit dem ICE123 fahren und würde mich freuen, wenn du mich begleitest
+    - Ich fahr mit dem ice621 kannst du mir informationen dazu geben?
+    - kannst du mich auf meine Reise mit dem ICE621 begleiten?
+    - ich fahre mit den ice612 und möchste, dass du mich über wichtige Fahrtänderungen informierst
+    - mein zug ist der icE123 gibt es irgendwelche Neuigkeiten?
+    - ICE123 gibt's updates?
+    - ICE123 gibt es Änderungen?
+
 
 - intent: check_status
   examples: |
@@ -34,6 +47,11 @@ nlu:
     - hi
     - hey
     - hello! 
+    - hey bro
+    - hey yo
+    - was geht
+    
+
 
 - intent: ask_mood
   examples: |
@@ -41,6 +59,9 @@ nlu:
     - wie geht es dir
     - Wie läuft's
     - wie gehts
+    - wassup
+    - how is it going
+    - how's it going?
 
 - intent: answer_good_mood
   examples: |
@@ -76,11 +97,16 @@ nlu:
   examples: |
     - Tschüss!
     - tschüss
-    - Bis bald
-    - Auf Wiedersehen
     - Tschau
     - Ciao!
     - bye
+    - bye bro
+    - bis zum nächsten mal
+    - tschüss bro
+    - danke, ciao!
+    - bis dann
+    - Bis bald
+    - Auf wiedersehen
 
 - intent: chitchat/say_thank_you
   examples: |
@@ -89,6 +115,17 @@ nlu:
     - dankeee
     - Danke schön
     - thanks
+    - Vielen Dank
+    - Danke bro
+    - ayo thanks
+    - thanks man
+    - Danke dir trotzdem, du warst eine große Hilfe
+    - danke trotzdem
+    - danke dir trotzdem
+    - sehr nett von dir
+    - super! danke!
+    - ayo danke
+    
 
 - intent: chitchat/say_you_are_amazing
   examples: |
@@ -96,6 +133,27 @@ nlu:
     - Du bist super!
     - du bist mega
     - du bist echt cool
+
+- intent: chitchat/confirmation
+  examples: |
+    - Okay
+    - Alright
+    - supi
+    - super
+    - toll
+
+- intent: chitchat/negative_confirmation
+  examples: |
+    - Scheiße
+    - Come on
+    - Manno
+    - Oh je
+    - Och man
+    - Du bist dumm
+    - Jetzt schaffe ich meinen Zug nicht mehr
+    - Scheiße, jetzt schaff ich meinen Zug nicht mehr
+    - Verdammt
+    - Verdammte scheiße
 
 - intent: get_platform_plan
   examples: |
@@ -105,9 +163,85 @@ nlu:
     - ich finde meinen Gleis am Münchner HBF nicht!
     - wie komme ich zu Gleis 10 am Münchner HBF?
 
+- intent: abort
+  examples: |
+    - stopp
+    - Stop!
+    - abbruch!
+    - nochmal von vorne
+    - das war falsch
+    - neu anfangen
+    - aufhören!
+
+- intent: which_train_stations
+  examples: |
+    - Welche Haltestellen gibt es?
+    - Wo hält der Zug?
+    - An welchen Stationen hält der Zug?
+    - Welche Stationen gibt es?
+  
+- intent: get_platform
+  examples: |
+    - Zu welchem Gleis muss ich?
+    - Wo muss ich nochmal hin?
+    - Was ist mein Gleis?
+    - Kannst du mir nochmal mein Gleis sagen?
+    - Sag mir bitte mein Gleis
+    - Gleis?
+
+- intent: get_arrival_time
+  examples: |
+    - Wann kommt mein Zug an?
+    - Wann kommt mein Zug nochmal an
+    - Ankuft?
+    - wann kommt mein zug an
+    - Wann ist die Ankunft
+    - Um wie viel Uhr komme ich an?
+    - wann ist meine ankunft
+
+
+- intent: get_departure_time
+  examples: |
+    - Wann fährt mein Zug ab?
+    - Wann fahr ich ab?
+    - Wann fahr ich
+    - Um wie viel Uhr fahre ich ab
+    - wann ist meine abfahrt
+    - Abfahrt?
+    - Wann ist die Abfahrt?
+
+# - intent: which_trainstations_in
+#   examples: |
+#     - Wo kann ich einsteigen?
+#     - Welche Ausstiegsmöglichkeiten gibt es?
+#     - An welchen Stationen kann ich austeigen?
+
+# - intent: which_trainstations_out
+#   examples: |
+#     - Wo kann ich aussteigen?
+#     - Welche Ausstiegsmöglichkeiten gibt es?
+#     - An welchen Stationen kann ich austeigen?
+
+
+    
+
 - regex: train_id
   examples: |
     - ((ECE|ICE|EC|IC|RE|THA|RJ|FLX|HBX|WB|D|EN|NJ|DN|IRE|MEX|RE|FEX|RB|S)(\s|)(\d{1,5}))
 
+# - intent: give_departure_station
+#   examples: |
+#     - [München HBF](departure_station)
+#     - [Frankfurt Hauptbahnhof](departure_station)
+#     - [Ingolstadt](departure_station)
+#     - [Tübingen Hbf](departure_station)
 
+
+#- intent: give_arrival_station
+#  examples: |
+#    - [München HBF](arrival_station)
+#    - [Frankfurt Hauptbahnhof](arrival_station)
+#    - [Ingolstadt Hbf](arrival_station)
+#    - [Tübingen Hbf](arrival_station)
+#    - [Tübingen](arrival_station)
 

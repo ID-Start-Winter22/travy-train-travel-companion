@@ -5,10 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="./styles/page.css">
-    <link rel="stylesheet" href="./styles/pageMediaQueries.css">
+    <link rel="stylesheet" href="./styles/landingPage.css">
+    <link rel="stylesheet" href="./styles/landingPageMediaQueries.css">
+    <link rel="stylesheet" href="./styles/teamPage.css">
+    <link rel="stylesheet" href="./styles/teamPageMediaQueries.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <title>Travy - dein Zugreise-Assistent</title>
@@ -36,19 +37,19 @@
         <nav class="navigation-item-container">
             <ul class="navigation-item-list">
                 <li>
-                    <a class="navigation-item" onClick="window.location.href='/#soon-section'">
+                    <a class="navigation-item" onClick="window.location.href='/#team-section'">
                         <img src="./images/project-icon.svg" class="navigation-item-icon"/>
+                        Team
+                    </a>
+                </li>
+                <li>
+                    <a class="navigation-item" onClick="window.location.href='/#project-section'">
+                        <img src="./images/features-icon.svg" class="navigation-item-icon"/>
                         Projekt
                     </a>
                 </li>
                 <li>
-                    <a class="navigation-item" onClick="window.location.href='/#soon-section'">
-                        <img src="./images/features-icon.svg" class="navigation-item-icon"/>
-                        Features
-                    </a>
-                </li>
-                <li>
-                    <a class="navigation-item" style="margin-right: 0px" onClick="window.location.href='/#soon-section'">
+                    <a class="navigation-item" style="margin-right: 0px" onclick="location.href='https://github.com/ID-Start-Winter22/chat-team-11'">
                         <img src="./images/github-icon.svg" class="navigation-item-icon"/>
                         GitHub
                     </a>
@@ -59,7 +60,7 @@
 
     <section class="landing-section">
         <div class="home-explanation-container">
-            <h1 class="home-explanation-title">Dein Zugreise-Assistent</h1>
+            <h1 class="home-explanation-title">Dein Zugreise-Assistent:</h1>
             <h1 class="home-explanation-text">Bleib während deiner Reise über alle Fahrtänderungen informiert!</h1>
             <p class="add-chatbot-text">Jetzt <b>kostenlos</b> zu WhatsApp hinzufügen:</p>
 
@@ -72,8 +73,114 @@
         <img src="./images/waves.svg" class="wave-illustration"/>
     </section>
 
-    <section id="soon-section" class="about-section">
-        <h1 class="about-title">more coming soon...</h1>
+    <section id="team-section" class="team-section">
+        <h1 class="team-title">unser Team</h1>
+        <div class="team-container">
+            <!-- team profile 1 -->
+            <div class="team-list-item">
+                <img src="./images/profile-theo.png" class="team-image" id="team-image-1"/>
+                <h1 class="team-profile-name">Theodor</h1>
+                <div class="socials-button-container">
+                    <a class="github-profle-button" onclick="location.href='https://github.com/theopfr'">
+                        <img src="./images/github-icon-white.png" class="team-github"/>
+                    </a>
+                    <a class="linkedin-profle-button" onclick="location.href='https://www.linkedin.com/in/theodor-peifer-ab6b77190/'">
+                        <img src="./images/linkedin-icon-white.png" class="team-linkedin"/>
+                    </a>
+                </div>
+            </div>
+            <!-- team profile 2 -->
+            <div class="team-list-item">
+                <img src="./images/profile-lynn.png" class="team-image" id="team-image-2"/>
+                <h1 class="team-profile-name">Lynn</h1>
+                <div class="socials-button-container">
+                    <a class="github-profle-button" onclick="location.href='https://github.com/lynnstarke'">
+                        <img src="./images/github-icon-white.png" class="team-github"/>
+                    </a>
+                    <a class="linkedin-profle-button" onclick="location.href='https://www.linkedin.com/in/lynnstarke/'">
+                        <img src="./images/linkedin-icon-white.png" class="team-linkedin"/>
+                    </a>
+                </div>
+            </div>
+            <!-- team profile 3 -->
+            <div class="team-list-item">
+                <img src="./images/profile-markus.png" class="team-image" id="team-image-3"/>
+                <h1 class="team-profile-name">Markus</h1>
+                <div class="socials-button-container">
+                    <a class="github-profle-button" onclick="location.href='https://github.com/cma5'">
+                        <img src="./images/github-icon-white.png" class="team-github"/>
+                    </a>
+                    <a class="linkedin-profle-button" onclick="location.href='https://www.linkedin.com/in/markus-schnugg-9a9582155/'">
+                        <img src="./images/linkedin-icon-white.png" class="team-linkedin"/>
+                    </a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section id="project-section" class="project-section">
+        <h1 class="project-title">über Travy</h1>
+        <div class="project-container">
+            <!-- project item 1 -->
+            <div class="project-list-item">
+                <img src="./images/bot-who-icon.svg" class="project-icon"/>
+                <h1 class="project-item-title">Wer ist Travy?</h1>
+                <p class="project-item-text">
+                    Travy ist ein Chatbot, der dir Live-Updates zu deiner Zugreise gibt.
+                    Schreibe ihm einfach welchen Zug du nimmst und wo du 
+                    ein- und aussteigst und Travy sorgt dafür, dass du keine 
+                    Zugänderungen mehr verpasst!
+                </p>
+            </div>
+            <!-- project item 2 -->
+            <div class="project-list-item">
+                <img src="./images/for-who-icon.svg" class="project-icon"/>
+                <h1 class="project-item-title">Für wen ist Travy?</h1>
+                <p class="project-item-text">
+                    Travy ist für alle, die relevante und kompakte Informationen 
+                    über ihre Zugreisen erhalten möchten. Wir richten uns vor allem 
+                    an jüngere Leute, die lange Recherchen vermeiden wollen.
+                </p>
+            </div>
+            <!-- project item 3 -->
+            <div class="project-list-item">
+                <img src="./images/how-it-works-icon.svg" class="project-icon"/>
+                <h1 class="project-item-title">Wie funktioniert Travy?</h1>
+                <p class="project-item-text">
+                    Travy ist mit dem <a href="https://rasa.com/">Rasa Chatbot Framework</a> gebaut und
+                    nutzt die <a href="https://bahn.expert/">bahn.expert</a> API, um sich akutelle Zugdaten zu holen.
+                    Du findest den Code auf unserer <a href="https://github.com/ID-Start-Winter22/chat-team-11">GitHub</a> Seite!
+                </p>
+            </div>
+        </div>
+
+        <div class="chatbot-story-container">
+            <button class="toggle-story-button">
+                <img src="./images/toggle-arrow.svg" class="toggle-arrow"/>
+                <h1 class="chatbot-story-title">Travys fiktive Geschichte</h1>
+            </button>
+            <div class="story-container">
+                <p class="story-text">Travy ist ein sehr eifriger Zug. Er wollte schon von klein auf ein richtiger Personenzug werden, wie seine Eltern. Deshalb arbeitete er hart und schloss die Zugschule als bester Zug ab. Jetzt durfte er endlich Zugfahrer werden und Menschen chauffieren. 
+                    <br/><br/>
+                    Ihm gefiel sein Beruf sehr, doch über die Jahre, in denen er als Personenzug arbeitete, bemerkte er, dass für die Reisenden nicht immer alles glatt lief. Leute vergaßen regelmäßig, aus dem Zug auszusteigen, weil sie so beschäftigt waren, in ihr Handy zu schauen. Zuginformationen wurden den Passagieren zu spät angezeigt und Passagiere mussten ständig Apps wechseln, um aktuelle Informationen zu erhalten.
+                    <br/>
+                    Er beschloss, die Situation selbst in die Hand zu nehmen und ließ sich ein System programmieren, mit dem er mit allen Passagieren und Bahn- Interessierten chatten konnte.
+                    <br/><br/>
+                    Mit diesem direkten Sprachrohr kann Travy seinen Kunden jetzt den besten Service bieten. Beispielsweise kann er dir aktuelle Informationen zu deiner Zugverbindung geben. Das macht ihn und hoffentlich auch dich als Passagier sehr glücklich.
+                </p>
+            </div>
+        </div>
+        <img src="./images/footer-wave.svg" class="footer-wave-illustration"/>
+    </section>
+
+    <section id="footer-section" class="footer-section">
+        <img src="./images/logo-white.svg" class="footer-logo" onClick="window.location.href = '/'"/>
+        <p class="footer-title"><b>Travy</b> - dein Zugreise-Assistent</p>
+        <div class="footer-link" onclick="location.href='https://github.com/ID-Start-Winter22/chat-team-11'">
+            <img src="./images/github-icon-white.png" class="footer-link-logo"/>
+            <p class="footer-link-text">GitHub</p>
+        </div>
     </section>
 
     <div class="status-container">

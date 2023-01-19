@@ -1,0 +1,170 @@
+
+@media (max-width: 1260px) {
+    .team-image {
+        height: 190px;
+    }
+
+    .team-profile-name {
+        font-size: 16px;
+    }
+
+    .team-section {
+        min-height: 325px;
+    }
+
+    .project-list-item {
+        width: 230px;
+    }
+
+    .project-icon {
+        width: 70px;
+        left: calc(50% - 35px);
+        top: 30px;
+    }
+
+    .project-item-title {
+        font-size: 16px;
+    }
+
+    .project-item-text {
+        font-size: 15px;
+    }
+    
+}
+
+
+@media (max-width: 970px) {
+    .team-section {
+        min-height: 250px;
+    }
+
+    .team-image {
+        height: 150px;
+    }
+
+    .team-profile-name {
+        font-size: 15px;
+    }
+
+    .team-github {
+        width: 16px;
+    }
+    
+    .team-linkedin {
+        width: 15px;
+    }
+
+    .team-container {
+        margin-top: 10px;
+    }
+
+    .github-profle-button {
+        left: calc(46% - 18px);
+    }
+    
+    .linkedin-profle-button {
+        left: calc(46% + 9px);
+    }
+}
+
+
+@media (max-width: 1040px) {
+    .project-container {
+        flex-direction: column;
+        gap: 60px;
+        align-items: stretch;
+    }
+
+    .project-list-item {
+        width: auto;
+        height: 200px;
+    }
+
+    .project-icon {
+        width: 35px;
+        left: 20px;
+        top: 20px;
+    }
+
+    .project-item-title {
+        top: 13px;
+        left: 75px;
+        width: auto;
+        text-align: left;
+    }
+
+    .project-item-text {
+        top: 55px;
+    }
+}
+
+@media (max-width: 530px) {
+    .project-container {
+        margin-top: 150px;
+    }
+
+    .project-item-title {
+        font-size: 15px;
+    }
+}
+
+
+@media (max-width: 460px) {
+    .project-container {
+        margin-top: 150px;
+    }
+}
+
+
+@media (max-width: 750px) {
+    .team-section {
+        height: fit-content;
+    }
+
+    .team-container {
+        flex-direction: column;
+        align-items: stretch;
+        align-items: center;
+        gap: 100px;
+        justify-content: center;
+        margin-top: 0px;
+    }
+
+    .team-list-item {
+        position: relative;
+        width: 200px;
+        display: flex;
+        height: fit-content;
+        align-content: center;
+        justify-content: center;
+    }
+}
+
+
+@media (max-width: 525px) {
+    .project-list-item {
+        height: 275px;
+    }
+
+    .chatbot-story-container {
+        margin-bottom: 5px;
+    }
+}
+
+
+@media (max-width: 345px) {
+    .project-list-item {
+        height: 350px;
+    }
+
+    .project-item-text {
+        top: 70px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 970px) {
+    .project-container {
+        margin-bottom: 75px;
+    }
+}
