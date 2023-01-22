@@ -101,11 +101,9 @@ waitForElement(".css-qpwdbp").then((chatWindow) => {
     sleepyLogoImage.classList.add("sleepy-logo-image");
     emptyChatWindow.appendChild(sleepyLogoImage);
 
-    var coversationBubbles = '<div class="css-14otd4b-0"><div role="button" tabindex="0" data-e2e="EventContainer-bot-1674236214.85" id="" class="css-6es4cf-0"><div class="css-hu563a"><div class="css-463jce"><div class="css-wpkmsk"><img src="./images/logo.svg" width="16" height="16"></div></div><div class="css-19h6xf9"><div class="css-l3rx45" aria-describedby="tooltip-3" style="max-width: 320px;"><div data-qa="conversation-message-bubbles_div" class="css-1di2tiy"><div><span data-qa="markdown-text" class="css-8f4u10">Hallo!<br><br>Ich bin <b>Travy - dein Zugreise-Assistent!</b><br>Gib mir deinen Zugnamen (zB. ICE 123) und ich informiere dich während deiner Zugreise über wichtige Informationen und Änderungen.</span></div></div></div></div></div></div></div>'
     
     //document.getElementsByClassName("css-1c77470")[0].insertAdjacentHTML("beforeend", coversationBubbles);
-    var element = document.createRange().createContextualFragment(coversationBubbles);
-    document.getElementsByClassName("css-1c77470")[0].appendChild(element);
+    
 
     // center placeholder of chat input field which is for some reason not centered
     var typeInstructionText = document.getElementsByClassName("noBorder variant--default css-1fzv815")[0];
@@ -122,6 +120,11 @@ waitForElement(".css-qpwdbp").then((chatWindow) => {
 
         // remove sleepy logo image
         emptyChatWindow.removeChild(sleepyLogoImage);
+        
+        // inject welcome message bubble into the widget
+        var coversationBubbles = '<div class="css-14otd4b-0"><div role="button" tabindex="0" data-e2e="EventContainer-bot-1674236214.85" id="" class="css-6es4cf-0"><div class="css-hu563a"><div class="css-463jce"><div class="css-wpkmsk"><img src="./images/logo.svg" width="16" height="16"></div></div><div class="css-19h6xf9"><div class="css-l3rx45" aria-describedby="tooltip-3" style="max-width: 320px;"><div data-qa="conversation-message-bubbles_div" class="css-1di2tiy"><div><span data-qa="markdown-text" class="css-8f4u10">Hi!<br><br>Ich bin <b>Travy, dein Zugreise-Assistent</b>!<br>Gib mir deinen Zugnamen (zB. ICE 123) und ich informiere dich während deiner Zugreise über wichtige Informationen und Änderungen. Falls du Hilfe benötigst, sag einfach Bescheid!</span></div></div></div></div></div></div></div>'
+        var element = document.createRange().createContextualFragment(coversationBubbles);
+        document.getElementsByClassName("css-1c77470")[0].appendChild(element);
     })
     .catch(error => {
         ;
@@ -155,6 +158,11 @@ function checkStatus() {
         var emptyChatWindow = document.getElementsByClassName("css-1c77470")[0];
         var sleepyLogoImage = document.getElementsByClassName("sleepy-logo-image")[0];
         emptyChatWindow.removeChild(sleepyLogoImage);
+
+        // inject welcome message bubble into the widget
+        var coversationBubbles = '<div class="css-14otd4b-0"><div role="button" tabindex="0" data-e2e="EventContainer-bot-1674236214.85" id="" class="css-6es4cf-0"><div class="css-hu563a"><div class="css-463jce"><div class="css-wpkmsk"><img src="./images/logo.svg" width="16" height="16"></div></div><div class="css-19h6xf9"><div class="css-l3rx45" aria-describedby="tooltip-3" style="max-width: 320px;"><div data-qa="conversation-message-bubbles_div" class="css-1di2tiy"><div><span data-qa="markdown-text" class="css-8f4u10">Hi!<br><br>Ich bin <b>Travy, dein Zugreise-Assistent!</b><br>Gib mir deinen Zugnamen (zB. ICE 123) und ich informiere dich während deiner Zugreise über wichtige Informationen und Änderungen. Falls du Hilfe benötigst, sag einfach Bescheid!</span></div></div></div></div></div></div></div>'
+        var element = document.createRange().createContextualFragment(coversationBubbles);
+        document.getElementsByClassName("css-1c77470")[0].appendChild(element);
 
         console.log("rasa server online");
     })
