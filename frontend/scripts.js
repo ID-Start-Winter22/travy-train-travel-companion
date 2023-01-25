@@ -196,7 +196,7 @@ var checkStatusInterval = setInterval(checkStatus, 5000);
 var chatWidgetChildren = document.getElementsByClassName("css-1kgb40s")[0].childNodes;
 chatWidgetChildren[0].style.boxShadow = "0 10px 25px -15px rgb(148 148 148)";
 
-
+/*
 var storyButton = document.getElementsByClassName("toggle-story-button")[0];
 var storyContainer = document.getElementsByClassName("story-container")[0];
 var toggleStoryArrow = document.getElementsByClassName("toggle-arrow")[0];
@@ -208,7 +208,7 @@ storyButton.onclick = function() {
     if (isOpen) {
         storyContainer.style.height = "fit-content";
         storyContainer.style.visibility = "visible";
-        toggleStoryArrow.style.transform = "rotate(0deg)"
+        toggleStoryArrow.style.transform = "rotate(0deg)";
     }
     else {
         storyContainer.style.height = "0px";
@@ -216,3 +216,4 @@ storyButton.onclick = function() {
         toggleStoryArrow.style.transform = "rotate(270deg)";
     }
 };
+*/
