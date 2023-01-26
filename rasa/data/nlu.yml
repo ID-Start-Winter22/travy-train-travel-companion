@@ -38,20 +38,18 @@ nlu:
 
 - intent: greet
   examples: |
-    - Wer bist du?
-    - wer bist du
-    - Bist du ein bot?
-    - bist du ein bot
     - hallo
     - Hallo
+    - halli hallo
     - hi
     - hey
+    - heyyyy
     - hello! 
     - hey bro
     - hey yo
     - was geht
-    
-
+    - guten tag
+    - guten morgen
 
 - intent: ask_mood
   examples: |
@@ -59,7 +57,6 @@ nlu:
     - wie geht es dir
     - Wie läuft's
     - wie gehts
-    - wassup
     - how is it going
     - how's it going?
 
@@ -79,6 +76,8 @@ nlu:
     - Nicht so gut
     - Beschissen
     - Kacke
+    - geht
+    - geht so
     - Bad!
     - Scheisse  
 
@@ -91,6 +90,11 @@ nlu:
     - was kannst du?
     - was machst du
     - Was machst du?
+    - Wer bist du?
+    - wer bist du
+    - Bist du ein bot?
+    - bist du ein bot
+    - wie funktionierst du?
     - help
 
 - intent: chitchat/say_goodbye
