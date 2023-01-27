@@ -159,10 +159,10 @@ responses:
     image: https://images.gutefrage.net/media/fragen/bilder/wo-befindet-sich-im-muenchener-hbf-das-gleis-10-fluegelbahnhof/0_big.jpg?v=1478258160000
 
   utter_ask_departure_station:
-  - text: In welcher Station steigst du ein?
+  - text: An welcher Station steigst du ein?
 
   utter_ask_arrival_station:
-  - text: In welcher Station steigst du aus?
+  - text: An welcher Station steigst du aus?
 
   utter_react_to_abort:
   - text: Oh, okay!
