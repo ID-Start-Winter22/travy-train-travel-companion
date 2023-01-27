@@ -33,5 +33,5 @@ Train Travel Compagnion is for everyone who wants to revieve relevant and concis
 
 # 👉 Demo:
 <p align="center">
-  <img src="./assets/demo.gif" width="1000px" margin="20px"/>
+  <img src="./assets/demo.gif" width="750px" margin="20px"/>
 </p>
