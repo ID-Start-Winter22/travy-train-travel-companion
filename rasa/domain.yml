@@ -97,10 +97,13 @@ responses:
   - text: "Pong!"
 
   utter_greet:
-  - text: |
-      Hi!
-      Ich bin Travy - dein Zugreise-Assistent!
-      Gib mir deinen Zugnamen (zB. ICE 123) und ich informiere dich während deiner Zugreise über wichtige Informationen und Änderungen!
+  - text: "Hi!"
+  - text: "Hey!"
+
+  # utter_greet:
+  # - text: |
+  #    Ich bin **Travy, dein Zugreise-Assistent**! Gib mir deinen Zugnamen (zB. ICE 123) und ich informiere dich während deiner Zugreise über wichtige Informationen und Änderungen. Falls du Hilfe benötigst, sag einfach Bescheid!
+
 
   utter_mood: 
   - text: "Mir geht's gut, Danke! Und dir?"
@@ -117,17 +120,13 @@ responses:
   - text: "Das tut mir Leid!"
   - text: "Kopf hoch!"
   - text: "Das wird schon wieder!"
-  
+
   utter_help:
   - text: |
-      Bevor du das nächste mal mit dem Zug fährst kannst du mir deine Zugnummer schreiben und ich werde dich auf deiner Reise begleiten! Ich kann dir mitteilen, ...
-      ... wenn sich dein Gleis ändert,
-      ... ob sich dein Zug verspätet,
-      ... ob dein Zug ausfällt,
-      ... wie du deinen Gleis findest,
-      ... und vieles mehr!
-      Wenn dich interessiert, was ich noch so kann oder vielleicht auch wie ich funktionere, schau gerne mal hier rein:
-      https://github.com/ID-Start-Winter22/chat-team-11/wiki
+      Ich bin **Travy, dein Zugreise-Assistent**! Um mir mitzuteilen mit welchen Zug du fährst, schreibe mir bitte einfach nur die Zugnummer (du findest sie auf deinem Ticket, z.B. ICE 123). Ich werde dich dann nacheinander nach deiner Abfahrts- und Ankunftsstationfragen und we are ready to go!
+      Während deiner Reise werde ich dich benachrichtigen, wenn sich dein Gleis ändert, sich dein Zug verspätet oder dein Zug ausfällt.
+      Falls du sonst irgendetwas in Verbindung mit deiner Reise wissen möchtest: Einfach fragen!
+      Wenn dich interessiert, was ich noch so kann oder vielleicht auch wie ich funktionere, schau gerne mal [hier](https://github.com/ID-Start-Winter22/chat-team-11/wiki) rein!
 
   utter_failed:
   - text: "Sorry! Das hab ich leider nicht verstanden."
@@ -160,10 +159,10 @@ responses:
     image: https://images.gutefrage.net/media/fragen/bilder/wo-befindet-sich-im-muenchener-hbf-das-gleis-10-fluegelbahnhof/0_big.jpg?v=1478258160000
 
   utter_ask_departure_station:
-  - text: In welcher Station steigst du ein?
+  - text: An welcher Station steigst du ein?
 
   utter_ask_arrival_station:
-  - text: In welcher Station steigst du aus?
+  - text: An welcher Station steigst du aus?
 
   utter_react_to_abort:
   - text: Oh, okay!
